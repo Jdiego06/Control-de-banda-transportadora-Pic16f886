@@ -2374,15 +2374,22 @@ extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 27 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\xc.h" 2 3
 # 2 "./Config.h" 2
-# 41 "./Config.h"
-#pragma config FOSC = HS
+# 36 "./Config.h"
+#pragma config FOSC = INTRC_NOCLKOUT
 #pragma config WDTE = OFF
 #pragma config PWRTE = OFF
-#pragma config BOREN = ON
-#pragma config LVP = OFF
-#pragma config CPD = OFF
-#pragma config WRT = OFF
+#pragma config MCLRE = ON
 #pragma config CP = OFF
+#pragma config CPD = OFF
+#pragma config BOREN = ON
+#pragma config IESO = ON
+#pragma config FCMEN = ON
+#pragma config LVP = OFF
+
+
+#pragma config BOR4V = BOR40V
+#pragma config WRT = OFF
+
 
 void PinsInit() {
 
@@ -2612,7 +2619,7 @@ void Lcd_Cmd(char a) {
     RB2 = 0;
     Lcd_Port(a);
     RB3 = 1;
-    _delay((unsigned long)((4)*(8000000/4000.0)));
+    _delay((unsigned long)((4)*(4000000/4000.0)));
     RB3 = 0;
 }
 
@@ -2640,11 +2647,11 @@ void Lcd_Set_Cursor(char a, char b) {
 
 void Lcd_Init() {
     Lcd_Port(0x00);
-    _delay((unsigned long)((20)*(8000000/4000.0)));
+    _delay((unsigned long)((20)*(4000000/4000.0)));
     Lcd_Cmd(0x03);
-    _delay((unsigned long)((5)*(8000000/4000.0)));
+    _delay((unsigned long)((5)*(4000000/4000.0)));
     Lcd_Cmd(0x03);
-    _delay((unsigned long)((11)*(8000000/4000.0)));
+    _delay((unsigned long)((11)*(4000000/4000.0)));
     Lcd_Cmd(0x03);
 
     Lcd_Cmd(0x02);
@@ -2663,11 +2670,11 @@ void Lcd_Write_Char(char a) {
     RB2 = 1;
     Lcd_Port(y >> 4);
     RB3 = 1;
-    _delay((unsigned long)((40)*(8000000/4000000.0)));
+    _delay((unsigned long)((40)*(4000000/4000000.0)));
     RB3 = 0;
     Lcd_Port(temp);
     RB3 = 1;
-    _delay((unsigned long)((40)*(8000000/4000000.0)));
+    _delay((unsigned long)((40)*(4000000/4000000.0)));
     RB3 = 0;
 }
 
@@ -2720,7 +2727,7 @@ int KeyPadGetKey() {
             RA1 = (row & 0x0002) >> 1;
             RA2 = (row & 0x0004) >> 2;
             RA3 = (row & 0x0008) >> 3;
-            _delay((unsigned long)((1)*(8000000/4000.0)));
+            _delay((unsigned long)((1)*(4000000/4000.0)));
         }
 
         if (RA4)break;
@@ -2751,7 +2758,6 @@ int KeyPadGetKey() {
 
 
 
-
 int Grados = 0;
 int key2 = '0';
 int buffer = 0;
@@ -2759,6 +2765,7 @@ int CmHorario = 0;
 int CmAntiHorario = 0;
 _Bool LastState = 0;
 char keypress = '0';
+int cm = 0;
 
 
 
@@ -2770,8 +2777,8 @@ int main() {
     Lcd_Init();
 
     StopMotor();
-    configurarDerecha();
-    configurarIzquierda();
+    configurarHorario();
+    configurarAntiHorario();
 
     while (1) {
 
@@ -2782,10 +2789,10 @@ int main() {
 
             switch (keypress) {
                 case 'A':
-                    configurarDerecha();
+                    configurarHorario();
                     break;
                 case'B':
-                    configurarIzquierda();
+                    configurarAntiHorario();
                     break;
                 case'C':
                     StopMotor();
@@ -2802,11 +2809,10 @@ int main() {
         } else if (RB0 == 0) {
             LastState = 0;
         }
-        _delay((unsigned long)((1)*(8000000/4000.0)));
+        _delay((unsigned long)((1)*(4000000/4000.0)));
     }
     return 0;
 }
-
 
 
 
@@ -2825,14 +2831,16 @@ int StopMotor() {
     return 0;
 }
 
-int configurarDerecha() {
+int configurarHorario() {
 
     buffer = 0;
     StopMotor();
 
     Lcd_Clear();
     Lcd_Set_Cursor(1, 1);
-    Lcd_Write_String("Config-derecha: ");
+    Lcd_Write_String("Adelante: ");
+    Lcd_Set_Cursor(2, 1);
+    Lcd_Write_String("0 Cm");
 
     while (1) {
 
@@ -2842,6 +2850,12 @@ int configurarDerecha() {
             switch (key2) {
 
                 case 'A':
+                    buffer = 0;
+                    Lcd_Clear();
+                    Lcd_Set_Cursor(1, 1);
+                    Lcd_Write_String("Adelante: ");
+                    Lcd_Set_Cursor(2, 1);
+                    Lcd_Write_String("0 Cm");
                     break;
                 case 'B':
                     break;
@@ -2867,18 +2881,20 @@ int configurarDerecha() {
                     Lcd_Write_String(" Cm");
             }
         }
-        _delay((unsigned long)((1)*(8000000/4000.0)));
+        _delay((unsigned long)((1)*(4000000/4000.0)));
     }
 }
 
-int configurarIzquierda() {
+int configurarAntiHorario() {
 
     buffer = 0;
     StopMotor();
 
     Lcd_Clear();
     Lcd_Set_Cursor(1, 1);
-    Lcd_Write_String("Config-izquierda: ");
+    Lcd_Write_String("Atras: ");
+    Lcd_Set_Cursor(2, 1);
+    Lcd_Write_String("0 Cm");
 
     while (1) {
 
@@ -2889,6 +2905,12 @@ int configurarIzquierda() {
                 case 'A':
                     break;
                 case 'B':
+                    buffer = 0;
+                    Lcd_Clear();
+                    Lcd_Set_Cursor(1, 1);
+                    Lcd_Write_String("Atras: ");
+                    Lcd_Set_Cursor(2, 1);
+                    Lcd_Write_String("0 Cm");
                     break;
                 case 'C':
                     break;
@@ -2912,16 +2934,16 @@ int configurarIzquierda() {
                     Lcd_Write_String(" Cm");
             }
         }
-        _delay((unsigned long)((1)*(8000000/4000.0)));
+        _delay((unsigned long)((1)*(4000000/4000.0)));
     }
 }
 
 int VerificarInversionGiro() {
-    if (RC0 && (Grados * (35/360) >= CmHorario)) {
+    if (RC0 && (Grados * 0.097 >= CmHorario)) {
         Grados = 0;
         RC0 = !RC0;
         RC1 = !RC1;
-    } else if (RC1 && Grados * (35/360) >= CmAntiHorario) {
+    } else if (RC1 && Grados * 0.097 >= CmAntiHorario) {
         Grados = 0;
         RC0 = !RC0;
         RC1 = !RC1;
@@ -2934,20 +2956,24 @@ int Encoder() {
     Grados++;
     VerificarInversionGiro();
 
-    if (RC0) {
+    cm = Grados * 0.097;
+
+    if (RC0 && (Grados * 0.097 != cm)) {
+        cm = Grados * 0.097;
         Lcd_Clear();
         Lcd_Set_Cursor(1, 1);
-        Lcd_Write_String("Dir: Horario");
+        Lcd_Write_String("Dir: Adelante");
         Lcd_Set_Cursor(2, 1);
-        Lcd_Write_Integer(Grados * (35/360));
+        Lcd_Write_Integer(cm);
         Lcd_Write_String(" Cm de: ");
         Lcd_Write_Integer(CmHorario);
-    } else {
+    } else if (RC1 && (Grados * 0.097 != cm)) {
+        cm = Grados * 0.097;
         Lcd_Clear();
         Lcd_Set_Cursor(1, 1);
-        Lcd_Write_String("Dir: AntiHorario");
+        Lcd_Write_String("Dir: Atras");
         Lcd_Set_Cursor(2, 1);
-        Lcd_Write_Integer(Grados * (35/360));
+        Lcd_Write_Integer(Grados * 0.097);
         Lcd_Write_String(" Cm de: ");
         Lcd_Write_Integer(CmAntiHorario);
     }
