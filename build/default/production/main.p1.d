@@ -1,5 +1,5 @@
 build/default/production/main.p1:  \
 main.c  \
+Config.h  \
 lcd.h  \
-uart.h  \
 KeyPad.h 

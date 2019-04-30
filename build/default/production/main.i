@@ -7,17 +7,7 @@
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
 # 1 "main.c" 2
-# 11 "main.c"
-#pragma config FOSC = HS
-#pragma config WDTE = OFF
-#pragma config PWRTE = OFF
-#pragma config BOREN = ON
-#pragma config LVP = OFF
-#pragma config CPD = OFF
-#pragma config WRT = OFF
-#pragma config CP = OFF
-
-
+# 1 "./Config.h" 1
 
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\xc.h" 1 3
 # 18 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\xc.h" 3
@@ -2383,7 +2373,33 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 27 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\xc.h" 2 3
-# 21 "main.c" 2
+# 2 "./Config.h" 2
+# 41 "./Config.h"
+#pragma config FOSC = HS
+#pragma config WDTE = OFF
+#pragma config PWRTE = OFF
+#pragma config BOREN = ON
+#pragma config LVP = OFF
+#pragma config CPD = OFF
+#pragma config WRT = OFF
+#pragma config CP = OFF
+
+void PinsInit() {
+
+    ANSELH = ANSEL = 0;
+
+
+    TRISB = 0x01;
+
+
+    TRISC = 0x00;
+
+
+    TRISA = 0xf0;
+    PORTA = 0x00;
+}
+# 1 "main.c" 2
+
 
 # 1 "./lcd.h" 1
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c90\\stdio.h" 1 3
@@ -2568,7 +2584,8 @@ extern char * ultoa(char * buf, unsigned long val, int base);
 
 extern char * ftoa(float f, int * status);
 # 3 "./lcd.h" 2
-# 13 "./lcd.h"
+
+
 void Lcd_Port(char a) {
     if (a & 1)
         RB4 = 1;
@@ -2675,64 +2692,14 @@ void Lcd_Shift_Left() {
     Lcd_Cmd(0x01);
     Lcd_Cmd(0x08);
 }
-# 22 "main.c" 2
-
-# 1 "./uart.h" 1
-char UART_Init(const long int baudrate) {
-    unsigned int x;
-    x = (8000000 - baudrate * 64) / (baudrate * 64);
-    if (x > 255) {
-        x = (8000000 - baudrate * 16) / (baudrate * 16);
-        BRGH = 1;
-    }
-    if (x < 256) {
-        SPBRG = x;
-        SYNC = 0;
-        SPEN = 1;
-        TRISC7 = 1;
-        TRISC6 = 1;
-        CREN = 1;
-        TXEN = 1;
-        return 1;
-    }
-    return 0;
-}
-
-char UART_TX_Empty() {
-    return TRMT;
-}
-
-char UART_Data_Ready() {
-    return RCIF;
-}
-
-char UART_Read() {
-
-    while (!RCIF);
-    return RCREG;
-}
-
-void UART_Read_Text(char *Output, unsigned int length) {
-    unsigned int i;
-    for (int i = 0; i < length; i++)
-        Output[i] = UART_Read();
-}
-
-void UART_Write(char data) {
-    while (!TRMT);
-    TXREG = data;
-}
-
-void UART_Write_Text(char *text) {
-
-    int i;
-    for (i = 0; text[i] != '\0'; i++)
-        UART_Write(text[i]);
-}
-# 23 "main.c" 2
+# 3 "main.c" 2
 
 # 1 "./KeyPad.h" 1
-# 17 "./KeyPad.h"
+
+
+
+
+
 const int keyPadMatrix[] = {
     'A', '1', '2', '3',
     'B', '4', '5', '6',
@@ -2742,11 +2709,6 @@ const int keyPadMatrix[] = {
 };
 
 char key, old_key;
-
-void KeyPadInit() {
-    TRISA = 0xf0;
-    PORTA = 0x00;
-}
 
 int KeyPadGetKey() {
 
@@ -2780,57 +2742,49 @@ int KeyPadGetKey() {
     } else
         return keyPadMatrix[ 0x10 ];
 }
-# 24 "main.c" 2
+# 4 "main.c" 2
+
+# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c90\\stdbool.h" 1 3
+# 5 "main.c" 2
 
 
 
 
 
-char keypress = '0';
+
+int Grados = 0;
 int key2 = '0';
-
 int buffer = 0;
+int CmHorario = 0;
+int CmAntiHorario = 0;
+_Bool LastState = 0;
+char keypress = '0';
 
-int CmDerecha = 0;
-int CmIzquierda = 0;
 
 
 
 int main() {
-    unsigned int a;
-    ANSELH = ANSEL = 0;
-
-    TRISB = 0x00;
 
 
-    UART_Init(9600);
-    nRBPU = 0;
+    PinsInit();
     Lcd_Init();
-    KeyPadInit();
 
-
+    StopMotor();
+    configurarDerecha();
+    configurarIzquierda();
 
     while (1) {
 
-
-        Lcd_Clear();
-        Lcd_Set_Cursor(1, 1);
-# 66 "main.c"
         keypress = KeyPadGetKey();
-        if (keypress != keyPadMatrix[ 0x10 ]) {
 
+
+        if (keypress != keyPadMatrix[ 0x10 ]) {
 
             switch (keypress) {
                 case 'A':
-                    UART_Write_Text("Va a configurar derecha ");
-
                     configurarDerecha();
                     break;
                 case'B':
-                    UART_Write_Text("Va a configurar I ");
-                    Lcd_Clear();
-                    Lcd_Set_Cursor(1, 1);
-                    Lcd_Write_String("Config-derecha: ");
                     configurarIzquierda();
                     break;
                 case'C':
@@ -2838,25 +2792,48 @@ int main() {
                     break;
                 case'D':
                     RunMotor();
-
                     break;
             }
-            _delay((unsigned long)((10)*(8000000/4000.0)));
         }
+
+
+        if (RB0 == 1 && LastState == 0) {
+            Encoder();
+        } else if (RB0 == 0) {
+            LastState = 0;
+        }
+        _delay((unsigned long)((1)*(8000000/4000.0)));
     }
     return 0;
 }
 
-configurarDerecha() {
+
+
+
+
+int RunMotor() {
+    if (CmAntiHorario != 0 && CmHorario != 0) {
+        RC0 = 1;
+        RC1 = 0;
+    }
+    return 0;
+}
+
+int StopMotor() {
+    RC1 = 0;
+    RC0 = 0;
+    return 0;
+}
+
+int configurarDerecha() {
+
+    buffer = 0;
+    StopMotor();
 
     Lcd_Clear();
     Lcd_Set_Cursor(1, 1);
     Lcd_Write_String("Config-derecha: ");
 
-    buffer = 0;
-    StopMotor();
-
-    Lcd_Set_Cursor(2, 1);
     while (1) {
 
         keypress = KeyPadGetKey();
@@ -2871,9 +2848,12 @@ configurarDerecha() {
                 case 'C':
                     break;
                 case 'D':
-                    CmDerecha = buffer;
+                    Grados = 0;
+                    CmHorario = buffer;
                     RunMotor();
-                    return 0;
+                    if (CmHorario != 0) {
+                        return 0;
+                    }
                     break;
                 case '*':
                     break;
@@ -2884,29 +2864,28 @@ configurarDerecha() {
                     buffer -= 48;
                     Lcd_Set_Cursor(2, 1);
                     Lcd_Write_Integer(buffer);
+                    Lcd_Write_String(" Cm");
             }
         }
-        _delay((unsigned long)((10)*(8000000/4000.0)));
+        _delay((unsigned long)((1)*(8000000/4000.0)));
     }
 }
 
-configurarIzquierda() {
+int configurarIzquierda() {
+
+    buffer = 0;
+    StopMotor();
 
     Lcd_Clear();
     Lcd_Set_Cursor(1, 1);
     Lcd_Write_String("Config-izquierda: ");
 
-    buffer = 0;
-    StopMotor();
-
-    Lcd_Set_Cursor(2, 1);
     while (1) {
 
         keypress = KeyPadGetKey();
         if (keypress != keyPadMatrix[ 0x10 ]) {
             key2 = keypress;
             switch (key2) {
-
                 case 'A':
                     break;
                 case 'B':
@@ -2914,9 +2893,12 @@ configurarIzquierda() {
                 case 'C':
                     break;
                 case 'D':
-                    CmIzquierda = buffer;
+                    Grados = 0;
+                    CmAntiHorario = buffer;
                     RunMotor();
-                    return 0;
+                    if (CmAntiHorario != 0) {
+                        return 0;
+                    }
                     break;
                 case '*':
                     break;
@@ -2927,27 +2909,47 @@ configurarIzquierda() {
                     buffer -= 48;
                     Lcd_Set_Cursor(2, 1);
                     Lcd_Write_Integer(buffer);
-
+                    Lcd_Write_String(" Cm");
             }
         }
-        _delay((unsigned long)((10)*(8000000/4000.0)));
+        _delay((unsigned long)((1)*(8000000/4000.0)));
     }
 }
 
-RunMotor() {
-    UART_Write_Text("Run Motor");
-    int y = 0;
-    for (y = 0; y < 300; y++) {
-        Lcd_Clear();
-        Lcd_Set_Cursor(1,1);
-        Lcd_Write_Integer(y);
-        _delay((unsigned long)((1000)*(8000000/4000.0)));
-        UART_Write('W');
+int VerificarInversionGiro() {
+    if (RC0 && (Grados * (35/360) >= CmHorario)) {
+        Grados = 0;
+        RC0 = !RC0;
+        RC1 = !RC1;
+    } else if (RC1 && Grados * (35/360) >= CmAntiHorario) {
+        Grados = 0;
+        RC0 = !RC0;
+        RC1 = !RC1;
     }
     return 0;
-
 }
 
-StopMotor() {
-    UART_Write_Text("Stop Motor");
+int Encoder() {
+    LastState = 1;
+    Grados++;
+    VerificarInversionGiro();
+
+    if (RC0) {
+        Lcd_Clear();
+        Lcd_Set_Cursor(1, 1);
+        Lcd_Write_String("Dir: Horario");
+        Lcd_Set_Cursor(2, 1);
+        Lcd_Write_Integer(Grados * (35/360));
+        Lcd_Write_String(" Cm de: ");
+        Lcd_Write_Integer(CmHorario);
+    } else {
+        Lcd_Clear();
+        Lcd_Set_Cursor(1, 1);
+        Lcd_Write_String("Dir: AntiHorario");
+        Lcd_Set_Cursor(2, 1);
+        Lcd_Write_Integer(Grados * (35/360));
+        Lcd_Write_String(" Cm de: ");
+        Lcd_Write_Integer(CmAntiHorario);
+    }
+    return 0;
 }

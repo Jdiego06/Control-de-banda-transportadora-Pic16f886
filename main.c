@@ -1,83 +1,45 @@
-#define _XTAL_FREQ 8000000
-
-#define RS RB2
-#define EN RB3
-#define D4 RB4
-#define D5 RB5
-#define D6 RB6
-#define D7 RB7
-
-// BEGIN CONFIG
-#pragma config FOSC = HS // Oscillator Selection bits (HS oscillator)
-#pragma config WDTE = OFF // Watchdog Timer Enable bit (WDT enabled)
-#pragma config PWRTE = OFF // Power-up Timer Enable bit (PWRT disabled)
-#pragma config BOREN = ON // Brown-out Reset Enable bit (BOR enabled)
-#pragma config LVP = OFF // Low-Voltage (Single-Supply) In-Circuit Serial Programming Enable bit (RB3 is digital I/O, HV on MCLR must be used for programming)
-#pragma config CPD = OFF // Data EEPROM Memory Code Protection bit (Data EEPROM code protection off)
-#pragma config WRT = OFF // Flash Program Memory Write Enable bits (Write protection off; all program memory may be written to by EECON control)
-#pragma config CP = OFF // Flash Program Memory Code Protection bit (Code protection off)
-//END CONFIG
-
+#include "Config.h"
 #include <xc.h>
 #include "lcd.h"
-#include "uart.h"
 #include "KeyPad.h"
-//#include <stdlib.h>
-//#include <stdio.h>
-//Variables del programa
+#include <stdbool.h>
 
-char keypress = '0';
+
+// ------------------ Variables Del Programa --------------------------
+
+int Grados = 0;
 int key2 = '0';
-
 int buffer = 0;
+int CmHorario = 0;
+int CmAntiHorario = 0;
+bool LastState = false;
+char keypress = '0';
 
-int CmDerecha = 0;
-int CmIzquierda = 0;
 
-//char Data[10];
+//---------------------------- MAIN CODE ---------------------------------------
 
 int main() {
-    unsigned int a;
-    ANSELH = ANSEL = 0;
-    //TRISC=  0x00;
-    TRISB = 0x00;
 
 
-    UART_Init(9600);
-    nRBPU = 0;
+    PinsInit();
     Lcd_Init();
-    KeyPadInit();
 
-
+    StopMotor();
+    configurarDerecha();
+    configurarIzquierda();
 
     while (1) {
 
+        keypress = KeyPadGetKey();
 
-        Lcd_Clear();
-        Lcd_Set_Cursor(1, 1);
-
-
-
-
-        //UART_Write_Text(myStg);
-
-        //UART_Write(x);
-
-        keypress = KeyPadGetKey(); //Si se preciono una tecla
+        //Si se presiona una tecla
         if (keypress != keyPadMatrix[ 0x10 ]) {
-
 
             switch (keypress) {
                 case 'A':
-                    UART_Write_Text("Va a configurar derecha ");
-
                     configurarDerecha();
                     break;
                 case'B':
-                    UART_Write_Text("Va a configurar I ");
-                    Lcd_Clear();
-                    Lcd_Set_Cursor(1, 1);
-                    Lcd_Write_String("Config-derecha: ");
                     configurarIzquierda();
                     break;
                 case'C':
@@ -85,28 +47,50 @@ int main() {
                     break;
                 case'D':
                     RunMotor();
-
                     break;
             }
-            __delay_ms(10);
         }
+
+        // Si se presenta un pulso del encoder
+        if (pinEncoder == 1 && LastState == false) {
+            Encoder();
+        } else if (pinEncoder == 0) {
+            LastState = false;
+        }
+        __delay_ms(1);
     }
     return 0;
 }
 
-configurarDerecha() {
+
+//----------------------------------- SUBRUTINAS -------------------------------
+
+int RunMotor() {
+    if (CmAntiHorario != 0 && CmHorario != 0) {
+        MotorHorario = 1;
+        MotorAntiHorario = 0;
+    }
+    return 0;
+}
+
+int StopMotor() {
+    MotorAntiHorario = 0;
+    MotorHorario = 0;
+    return 0;
+}
+
+int configurarDerecha() {
+
+    buffer = 0;
+    StopMotor();
 
     Lcd_Clear();
     Lcd_Set_Cursor(1, 1);
     Lcd_Write_String("Config-derecha: ");
 
-    buffer = 0;
-    StopMotor();
-
-    Lcd_Set_Cursor(2, 1);
     while (1) {
 
-        keypress = KeyPadGetKey(); //Si se preciono una tecla
+        keypress = KeyPadGetKey();
         if (keypress != keyPadMatrix[ 0x10 ]) {
             key2 = keypress;
             switch (key2) {
@@ -118,9 +102,12 @@ configurarDerecha() {
                 case 'C':
                     break;
                 case 'D':
-                    CmDerecha = buffer;
+                    Grados = 0;
+                    CmHorario = buffer;
                     RunMotor();
-                    return 0;
+                    if (CmHorario != 0) {
+                        return 0;
+                    }
                     break;
                 case '*':
                     break;
@@ -131,29 +118,28 @@ configurarDerecha() {
                     buffer -= 48;
                     Lcd_Set_Cursor(2, 1);
                     Lcd_Write_Integer(buffer);
+                    Lcd_Write_String(" Cm");
             }
         }
-        __delay_ms(10);
+        __delay_ms(1);
     }
 }
 
-configurarIzquierda() {
+int configurarIzquierda() {
+
+    buffer = 0;
+    StopMotor();
 
     Lcd_Clear();
     Lcd_Set_Cursor(1, 1);
     Lcd_Write_String("Config-izquierda: ");
 
-    buffer = 0;
-    StopMotor();
-
-    Lcd_Set_Cursor(2, 1);
     while (1) {
 
-        keypress = KeyPadGetKey(); //Si se preciono una tecla
+        keypress = KeyPadGetKey();
         if (keypress != keyPadMatrix[ 0x10 ]) {
             key2 = keypress;
             switch (key2) {
-
                 case 'A':
                     break;
                 case 'B':
@@ -161,9 +147,12 @@ configurarIzquierda() {
                 case 'C':
                     break;
                 case 'D':
-                    CmIzquierda = buffer;
+                    Grados = 0;
+                    CmAntiHorario = buffer;
                     RunMotor();
-                    return 0;
+                    if (CmAntiHorario != 0) {
+                        return 0;
+                    }
                     break;
                 case '*':
                     break;
@@ -174,28 +163,49 @@ configurarIzquierda() {
                     buffer -= 48;
                     Lcd_Set_Cursor(2, 1);
                     Lcd_Write_Integer(buffer);
-
+                    Lcd_Write_String(" Cm");
             }
         }
-        __delay_ms(10);
+        __delay_ms(1);
     }
 }
 
-RunMotor() {
-    UART_Write_Text("Run Motor");
-    int y = 0;
-    for (y = 0; y < 300; y++) {
+int VerificarInversionGiro() {
+    if (MotorHorario && (Grados * CteVueltas >= CmHorario)) {
+        Grados = 0;
+        MotorHorario = !MotorHorario;
+        MotorAntiHorario = !MotorAntiHorario;
+    } else if (MotorAntiHorario && Grados * CteVueltas >= CmAntiHorario) {
+        Grados = 0;
+        MotorHorario = !MotorHorario;
+        MotorAntiHorario = !MotorAntiHorario;
+    }
+    return 0;
+}
+
+int Encoder() {
+    LastState = true;
+    Grados++;
+    VerificarInversionGiro();
+
+    if (MotorHorario) {
         Lcd_Clear();
-        Lcd_Set_Cursor(1,1);
-        Lcd_Write_Integer(y);
-        __delay_ms(1000);
-        UART_Write('W');
+        Lcd_Set_Cursor(1, 1);
+        Lcd_Write_String("Dir: Horario");
+        Lcd_Set_Cursor(2, 1);
+        Lcd_Write_Integer(Grados * CteVueltas);
+        Lcd_Write_String(" Cm de: ");
+        Lcd_Write_Integer(CmHorario);
+    } else {
+        Lcd_Clear();
+        Lcd_Set_Cursor(1, 1);
+        Lcd_Write_String("Dir: AntiHorario");
+        Lcd_Set_Cursor(2, 1);
+        Lcd_Write_Integer(Grados * CteVueltas);
+        Lcd_Write_String(" Cm de: ");
+        Lcd_Write_Integer(CmAntiHorario);
     }
     return 0;
-
 }
 
-StopMotor() {
-    UART_Write_Text("Stop Motor");
-    return 0;
-}
+

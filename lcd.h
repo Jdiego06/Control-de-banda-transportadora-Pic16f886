@@ -2,14 +2,6 @@
 #include <stdlib.h>
 #include <xc.h>
 
-//Pines Para el lcd
-#define RS RB2
-#define EN RB3
-#define D4 RB4
-#define D5 RB5
-#define D6 RB6
-#define D7 RB7
-
 void Lcd_Port(char a) {
     if (a & 1)
         D4 = 1;

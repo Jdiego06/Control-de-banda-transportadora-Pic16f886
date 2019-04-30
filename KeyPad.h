@@ -3,17 +3,6 @@
 #include <xc.h>
 
 
-#define row1 RA0
-#define row2 RA1
-#define row3 RA2
-#define row4 RA3
-
-#define col1 RA4
-#define col2 RA5
-#define col3 RA6
-#define col4 RA7 
-
-
 const int keyPadMatrix[] = {
     'A', '1', '2', '3',
     'B', '4', '5', '6',
@@ -23,11 +12,6 @@ const int keyPadMatrix[] = {
 };
 
 char key, old_key;
-
-void KeyPadInit() {
-    TRISA = 0xf0;
-    PORTA = 0x00;
-}
 
 int KeyPadGetKey() {
     // This routine returns the first key found to be pressed during the scan.
