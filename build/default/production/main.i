@@ -2386,182 +2386,6 @@ extern __bank0 __bit __timeout;
 # 21 "main.c" 2
 
 # 1 "./lcd.h" 1
-# 11 "./lcd.h"
-void Lcd_Port(char a)
-{
- if(a & 1)
-  RB4 = 1;
- else
-  RB4 = 0;
-
- if(a & 2)
-  RB5 = 1;
- else
-  RB5 = 0;
-
- if(a & 4)
-  RB6 = 1;
- else
-  RB6 = 0;
-
- if(a & 8)
-  RB7 = 1;
- else
-  RB7 = 0;
-}
-void Lcd_Cmd(char a)
-{
- RB2 = 0;
- Lcd_Port(a);
- RB3 = 1;
-        _delay((unsigned long)((4)*(8000000/4000.0)));
-        RB3 = 0;
-}
-
-void Lcd_Clear()
-{
- Lcd_Cmd(0);
- Lcd_Cmd(1);
-}
-
-void Lcd_Set_Cursor(char a, char b)
-{
- char temp,z,y;
- if(a == 1)
- {
-   temp = 0x80 + b - 1;
-  z = temp>>4;
-  y = temp & 0x0F;
-  Lcd_Cmd(z);
-  Lcd_Cmd(y);
- }
- else if(a == 2)
- {
-  temp = 0xC0 + b - 1;
-  z = temp>>4;
-  y = temp & 0x0F;
-  Lcd_Cmd(z);
-  Lcd_Cmd(y);
- }
-}
-
-void Lcd_Init()
-{
-  Lcd_Port(0x00);
-   _delay((unsigned long)((20)*(8000000/4000.0)));
-  Lcd_Cmd(0x03);
- _delay((unsigned long)((5)*(8000000/4000.0)));
-  Lcd_Cmd(0x03);
- _delay((unsigned long)((11)*(8000000/4000.0)));
-  Lcd_Cmd(0x03);
-
-  Lcd_Cmd(0x02);
-  Lcd_Cmd(0x02);
-  Lcd_Cmd(0x08);
-  Lcd_Cmd(0x00);
-  Lcd_Cmd(0x0C);
-  Lcd_Cmd(0x00);
-  Lcd_Cmd(0x06);
-}
-
-void Lcd_Write_Char(char a)
-{
-   char temp,y;
-   temp = a&0x0F;
-   y = a&0xF0;
-   RB2 = 1;
-   Lcd_Port(y>>4);
-   RB3 = 1;
-   _delay((unsigned long)((40)*(8000000/4000000.0)));
-   RB3 = 0;
-   Lcd_Port(temp);
-   RB3 = 1;
-   _delay((unsigned long)((40)*(8000000/4000000.0)));
-   RB3 = 0;
-}
-
-void Lcd_Write_String(char *a)
-{
- int i;
- for(i=0;a[i]!='\0';i++)
-    Lcd_Write_Char(a[i]);
-}
-
-void Lcd_Shift_Right()
-{
- Lcd_Cmd(0x01);
- Lcd_Cmd(0x0C);
-}
-
-void Lcd_Shift_Left()
-{
- Lcd_Cmd(0x01);
- Lcd_Cmd(0x08);
-}
-# 22 "main.c" 2
-
-# 1 "./uart.h" 1
-char UART_Init(const long int baudrate) {
-    unsigned int x;
-    x = (8000000 - baudrate * 64) / (baudrate * 64);
-    if (x > 255) {
-        x = (8000000 - baudrate * 16) / (baudrate * 16);
-        BRGH = 1;
-    }
-    if (x < 256) {
-        SPBRG = x;
-        SYNC = 0;
-        SPEN = 1;
-        TRISC7 = 1;
-        TRISC6 = 1;
-        CREN = 1;
-        TXEN = 1;
-        return 1;
-    }
-    return 0;
-}
-
-char UART_TX_Empty() {
-    return TRMT;
-}
-
-char UART_Data_Ready() {
-    return RCIF;
-}
-
-char UART_Read() {
-
-    while (!RCIF);
-    return RCREG;
-}
-
-void UART_Read_Text(char *Output, unsigned int length) {
-    unsigned int i;
-    for (int i = 0; i < length; i++)
-        Output[i] = UART_Read();
-}
-
-void UART_Write(char data) {
-    while (!TRMT);
-    TXREG = data;
-}
-
-void UART_Write_Text(char *text) {
-
-    int i;
-    for (i = 0; text[i] != '\0'; i++)
-        UART_Write(text[i]);
-}
-
-void Uart2(char *a)
-{
- int i;
- for(i=0;a[i]!='\0';i++)
-    UART_Write(a[i]);
-}
-# 23 "main.c" 2
-
-# 1 "./KeyPad.h" 1
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c90\\stdio.h" 1 3
 
 
@@ -2659,8 +2483,7 @@ extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupport
 #pragma printf_check(sprintf) const
 extern int sprintf(char *, const char *, ...);
 extern int printf(const char *, ...);
-# 1 "./KeyPad.h" 2
-
+# 2 "./lcd.h" 2
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c90\\stdlib.h" 1 3
 
 
@@ -2744,13 +2567,177 @@ extern char * ltoa(char * buf, long val, int base);
 extern char * ultoa(char * buf, unsigned long val, int base);
 
 extern char * ftoa(float f, int * status);
-# 2 "./KeyPad.h" 2
+# 3 "./lcd.h" 2
+# 13 "./lcd.h"
+void Lcd_Port(char a) {
+    if (a & 1)
+        RB4 = 1;
+    else
+        RB4 = 0;
+
+    if (a & 2)
+        RB5 = 1;
+    else
+        RB5 = 0;
+
+    if (a & 4)
+        RB6 = 1;
+    else
+        RB6 = 0;
+
+    if (a & 8)
+        RB7 = 1;
+    else
+        RB7 = 0;
+}
+
+void Lcd_Cmd(char a) {
+    RB2 = 0;
+    Lcd_Port(a);
+    RB3 = 1;
+    _delay((unsigned long)((4)*(8000000/4000.0)));
+    RB3 = 0;
+}
+
+void Lcd_Clear() {
+    Lcd_Cmd(0);
+    Lcd_Cmd(1);
+}
+
+void Lcd_Set_Cursor(char a, char b) {
+    char temp, z, y;
+    if (a == 1) {
+        temp = 0x80 + b - 1;
+        z = temp >> 4;
+        y = temp & 0x0F;
+        Lcd_Cmd(z);
+        Lcd_Cmd(y);
+    } else if (a == 2) {
+        temp = 0xC0 + b - 1;
+        z = temp >> 4;
+        y = temp & 0x0F;
+        Lcd_Cmd(z);
+        Lcd_Cmd(y);
+    }
+}
+
+void Lcd_Init() {
+    Lcd_Port(0x00);
+    _delay((unsigned long)((20)*(8000000/4000.0)));
+    Lcd_Cmd(0x03);
+    _delay((unsigned long)((5)*(8000000/4000.0)));
+    Lcd_Cmd(0x03);
+    _delay((unsigned long)((11)*(8000000/4000.0)));
+    Lcd_Cmd(0x03);
+
+    Lcd_Cmd(0x02);
+    Lcd_Cmd(0x02);
+    Lcd_Cmd(0x08);
+    Lcd_Cmd(0x00);
+    Lcd_Cmd(0x0C);
+    Lcd_Cmd(0x00);
+    Lcd_Cmd(0x06);
+}
+
+void Lcd_Write_Char(char a) {
+    char temp, y;
+    temp = a & 0x0F;
+    y = a & 0xF0;
+    RB2 = 1;
+    Lcd_Port(y >> 4);
+    RB3 = 1;
+    _delay((unsigned long)((40)*(8000000/4000000.0)));
+    RB3 = 0;
+    Lcd_Port(temp);
+    RB3 = 1;
+    _delay((unsigned long)((40)*(8000000/4000000.0)));
+    RB3 = 0;
+}
+
+void Lcd_Write_String(char *a) {
+    int i;
+    for (i = 0; a[i] != '\0'; i++)
+        Lcd_Write_Char(a[i]);
+}
+
+void Lcd_Write_Integer(int a) {
+    char Data[10];
+    sprintf(Data, "%d", a);
+    Lcd_Write_String(Data);
+}
+
+void Lcd_Shift_Right() {
+    Lcd_Cmd(0x01);
+    Lcd_Cmd(0x0C);
+}
+
+void Lcd_Shift_Left() {
+    Lcd_Cmd(0x01);
+    Lcd_Cmd(0x08);
+}
+# 22 "main.c" 2
+
+# 1 "./uart.h" 1
+char UART_Init(const long int baudrate) {
+    unsigned int x;
+    x = (8000000 - baudrate * 64) / (baudrate * 64);
+    if (x > 255) {
+        x = (8000000 - baudrate * 16) / (baudrate * 16);
+        BRGH = 1;
+    }
+    if (x < 256) {
+        SPBRG = x;
+        SYNC = 0;
+        SPEN = 1;
+        TRISC7 = 1;
+        TRISC6 = 1;
+        CREN = 1;
+        TXEN = 1;
+        return 1;
+    }
+    return 0;
+}
+
+char UART_TX_Empty() {
+    return TRMT;
+}
+
+char UART_Data_Ready() {
+    return RCIF;
+}
+
+char UART_Read() {
+
+    while (!RCIF);
+    return RCREG;
+}
+
+void UART_Read_Text(char *Output, unsigned int length) {
+    unsigned int i;
+    for (int i = 0; i < length; i++)
+        Output[i] = UART_Read();
+}
+
+void UART_Write(char data) {
+    while (!TRMT);
+    TXREG = data;
+}
+
+void UART_Write_Text(char *text) {
+
+    int i;
+    for (i = 0; text[i] != '\0'; i++)
+        UART_Write(text[i]);
+}
+# 23 "main.c" 2
+
+# 1 "./KeyPad.h" 1
 # 17 "./KeyPad.h"
 const int keyPadMatrix[] = {
-    '7', '8', '9', '/',
-    '4', '5', '6', '*',
-    '1', '2', '3', '-',
-    'N', '0', '=', '+',
+    'A', '1', '2', '3',
+    'B', '4', '5', '6',
+    'C', '7', '8', '9',
+    'D', '*', '0', '#',
     0xFF
 };
 
@@ -2796,13 +2783,25 @@ int KeyPadGetKey() {
 # 24 "main.c" 2
 
 
+
+
+
+char keypress = '0';
+int key2 = '0';
+
+int buffer = 0;
+
+int CmDerecha = 0;
+int CmIzquierda = 0;
+
+
+
 int main() {
     unsigned int a;
     ANSELH = ANSEL = 0;
 
     TRISB = 0x00;
 
-    char keypress = '0';
 
     UART_Init(9600);
     nRBPU = 0;
@@ -2810,25 +2809,145 @@ int main() {
     KeyPadInit();
 
 
+
     while (1) {
 
 
+        Lcd_Clear();
+        Lcd_Set_Cursor(1, 1);
+# 66 "main.c"
+        keypress = KeyPadGetKey();
+        if (keypress != keyPadMatrix[ 0x10 ]) {
 
+
+            switch (keypress) {
+                case 'A':
+                    UART_Write_Text("Va a configurar derecha ");
+
+                    configurarDerecha();
+                    break;
+                case'B':
+                    UART_Write_Text("Va a configurar I ");
+                    Lcd_Clear();
+                    Lcd_Set_Cursor(1, 1);
+                    Lcd_Write_String("Config-derecha: ");
+                    configurarIzquierda();
+                    break;
+                case'C':
+                    StopMotor();
+                    break;
+                case'D':
+                    RunMotor();
+
+                    break;
+            }
+            _delay((unsigned long)((10)*(8000000/4000.0)));
+        }
+    }
+    return 0;
+}
+
+configurarDerecha() {
+
+    Lcd_Clear();
+    Lcd_Set_Cursor(1, 1);
+    Lcd_Write_String("Config-derecha: ");
+
+    buffer = 0;
+    StopMotor();
+
+    Lcd_Set_Cursor(2, 1);
+    while (1) {
 
         keypress = KeyPadGetKey();
         if (keypress != keyPadMatrix[ 0x10 ]) {
-            UART_Write(keypress);
-            Lcd_Clear();
-            Lcd_Set_Cursor(1, 1);
-            Lcd_Write_String("Hola");
-            UART_Write_Text("Hola");
-        } else {
-            UART_Write('-');
+            key2 = keypress;
+            switch (key2) {
+
+                case 'A':
+                    break;
+                case 'B':
+                    break;
+                case 'C':
+                    break;
+                case 'D':
+                    CmDerecha = buffer;
+                    RunMotor();
+                    return 0;
+                    break;
+                case '*':
+                    break;
+                case '#':
+                    break;
+                default:
+                    buffer = (10 * buffer + key2);
+                    buffer -= 48;
+                    Lcd_Set_Cursor(2, 1);
+                    Lcd_Write_Integer(buffer);
+            }
         }
-# 65 "main.c"
         _delay((unsigned long)((10)*(8000000/4000.0)));
+    }
+}
 
+configurarIzquierda() {
 
+    Lcd_Clear();
+    Lcd_Set_Cursor(1, 1);
+    Lcd_Write_String("Config-izquierda: ");
+
+    buffer = 0;
+    StopMotor();
+
+    Lcd_Set_Cursor(2, 1);
+    while (1) {
+
+        keypress = KeyPadGetKey();
+        if (keypress != keyPadMatrix[ 0x10 ]) {
+            key2 = keypress;
+            switch (key2) {
+
+                case 'A':
+                    break;
+                case 'B':
+                    break;
+                case 'C':
+                    break;
+                case 'D':
+                    CmIzquierda = buffer;
+                    RunMotor();
+                    return 0;
+                    break;
+                case '*':
+                    break;
+                case '#':
+                    break;
+                default:
+                    buffer = (10 * buffer + key2);
+                    buffer -= 48;
+                    Lcd_Set_Cursor(2, 1);
+                    Lcd_Write_Integer(buffer);
+
+            }
+        }
+        _delay((unsigned long)((10)*(8000000/4000.0)));
+    }
+}
+
+RunMotor() {
+    UART_Write_Text("Run Motor");
+    int y = 0;
+    for (y = 0; y < 300; y++) {
+        Lcd_Clear();
+        Lcd_Set_Cursor(1,1);
+        Lcd_Write_Integer(y);
+        _delay((unsigned long)((1000)*(8000000/4000.0)));
+        UART_Write('W');
     }
     return 0;
+
+}
+
+StopMotor() {
+    UART_Write_Text("Stop Motor");
 }
