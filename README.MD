@@ -4,4 +4,4 @@ Este programa controla la cantidad de dezplazamiento de una banda transportadora
 
 - El proyecto fué desarrollado haciendo uso de MPLAB y el compilador XC8
 - La conexion del pic con los perifericos puede ser modificada en el archivo ```Config.h```
-- Si el proyecto arroja algun problema a la hora de compilar, cambiar el nombre del archivo .hex ubicado en: ```.\dist\default\production```
+- Si el proyecto arroja algun problema a la hora de compilar, cambiar el nombre del proyecto, incluida la carpeta en la que se encuentra ubicado
