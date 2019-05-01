@@ -3,11 +3,11 @@
 [d edition pro ]
 [d chip 16F886 ]
 [d frameptr 6 ]
-"52 C:\Users\jd99\Desktop\Potencia.X/Config.h
+"52 D:\Potencia/Config.h
 [v _PinsInit PinsInit `(v  1 e 1 0 ]
-"16 C:\Users\jd99\Desktop\Potencia.X/KeyPad.h
+"16 D:\Potencia/KeyPad.h
 [v _KeyPadGetKey KeyPadGetKey `(i  1 e 2 0 ]
-"5 C:\Users\jd99\Desktop\Potencia.X/lcd.h
+"5 D:\Potencia/lcd.h
 [v _Lcd_Port Lcd_Port `(v  1 e 1 0 ]
 "27
 [v _Lcd_Cmd Lcd_Cmd `(v  1 e 1 0 ]
@@ -49,7 +49,7 @@
 [v ___eecpymem __eecpymem `(v  1 e 1 0 ]
 "39
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
-"22 C:\Users\jd99\Desktop\Potencia.X\main.c
+"22 D:\Potencia\main.c
 [v _main main `(i  1 e 2 0 ]
 "69
 [v _RunMotor RunMotor `(i  1 e 2 0 ]
@@ -63,7 +63,7 @@
 [v _VerificarInversionGiro VerificarInversionGiro `(i  1 e 2 0 ]
 "203
 [v _Encoder Encoder `(i  1 e 2 0 ]
-"6 C:\Users\jd99\Desktop\Potencia.X/KeyPad.h
+"6 D:\Potencia/KeyPad.h
 [v _keyPadMatrix keyPadMatrix `DC[17]i  1 e 34 0 ]
 "14
 [v _old_key old_key `uc  1 e 1 0 ]
@@ -115,7 +115,7 @@
 [v _RC1 RC1 `VEb  1 e 0 @57 ]
 "358 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c90\common\doprnt.c
 [v _dpowers dpowers `DC[5]ui  1 s 10 dpowers ]
-"10 C:\Users\jd99\Desktop\Potencia.X\main.c
+"10 D:\Potencia\main.c
 [v _Grados Grados `i  1 e 2 0 ]
 "11
 [v _key2 key2 `i  1 e 2 0 ]
@@ -156,7 +156,7 @@
 [v ___wmul@multiplicand multiplicand `ui  1 p 2 2 ]
 "53
 } 0
-"77 C:\Users\jd99\Desktop\Potencia.X\main.c
+"77 D:\Potencia\main.c
 [v _StopMotor StopMotor `(i  1 e 2 0 ]
 {
 "81
@@ -166,7 +166,7 @@
 {
 "75
 } 0
-"16 C:\Users\jd99\Desktop\Potencia.X/KeyPad.h
+"16 D:\Potencia/KeyPad.h
 [v _KeyPadGetKey KeyPadGetKey `(i  1 e 2 0 ]
 {
 "18
@@ -174,17 +174,17 @@
 [v KeyPadGetKey@key key `uc  1 a 1 3 ]
 "47
 } 0
-"52 C:\Users\jd99\Desktop\Potencia.X/Config.h
+"52 D:\Potencia/Config.h
 [v _PinsInit PinsInit `(v  1 e 1 0 ]
 {
 "65
 } 0
-"57 C:\Users\jd99\Desktop\Potencia.X/lcd.h
+"57 D:\Potencia/lcd.h
 [v _Lcd_Init Lcd_Init `(v  1 e 1 0 ]
 {
 "73
 } 0
-"203 C:\Users\jd99\Desktop\Potencia.X\main.c
+"203 D:\Potencia\main.c
 [v _Encoder Encoder `(i  1 e 2 0 ]
 {
 "230
@@ -206,7 +206,7 @@
 [v ___fleq@ff2 ff2 `d  1 p 4 30 ]
 "12
 } 0
-"190 C:\Users\jd99\Desktop\Potencia.X\main.c
+"190 D:\Potencia\main.c
 [v _VerificarInversionGiro VerificarInversionGiro `(i  1 e 2 0 ]
 {
 "201
@@ -272,7 +272,7 @@
 [v ___flge@ff2 ff2 `d  1 p 4 30 ]
 "19
 } 0
-"96 C:\Users\jd99\Desktop\Potencia.X/lcd.h
+"96 D:\Potencia/lcd.h
 [v _Lcd_Write_Integer Lcd_Write_Integer `(v  1 e 1 0 ]
 {
 "97
@@ -324,7 +324,7 @@
 [v ___lwdiv@dividend dividend `ui  1 p 2 2 ]
 "30
 } 0
-"90 C:\Users\jd99\Desktop\Potencia.X/lcd.h
+"90 D:\Potencia/lcd.h
 [v _Lcd_Write_String Lcd_Write_String `(v  1 e 1 0 ]
 {
 "91
