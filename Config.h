@@ -48,19 +48,19 @@
 #pragma config BOR4V = BOR40V   // Brown-out Reset Selection bit (Brown-out Reset set to 4.0V)
 #pragma config WRT = OFF        // Flash Program Memory Self Write Enable bits (Write protection off)
 
-
 void PinsInit() {
     //All Pins Digitals
-    ANSELH = ANSEL = 0; 
+    ANSELH = ANSEL = 0;
 
     //for Lcd
     TRISB = 0x01;
-    
+
     //Port C as Output
     TRISC = 0x00;
-    
+    PORTC = 0x00;
+
     //For Keypad
-    TRISA = 0xf0; 
+    TRISA = 0xf0;
     PORTA = 0x00;
 }
 

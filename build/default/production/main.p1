@@ -11,6 +11,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "1461
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f886.h: 1461: extern volatile unsigned char TRISC __attribute__((address(0x087)));
 [v _TRISC `Vuc ~T0 @X0 0 e@135 ]
+"290
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f886.h: 290: extern volatile unsigned char PORTC __attribute__((address(0x007)));
+[v _PORTC `Vuc ~T0 @X0 0 e@7 ]
 "1337
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f886.h: 1337: extern volatile unsigned char TRISA __attribute__((address(0x085)));
 [v _TRISA `Vuc ~T0 @X0 0 e@133 ]
@@ -65,24 +68,63 @@ Version 4.0 HI-TECH Software Intermediate Code
 "3915
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f886.h: 3915: extern volatile __bit RA7 __attribute__((address(0x2F)));
 [v _RA7 `Vb ~T0 @X0 0 e@47 ]
+"3510
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f886.h: 3510: extern volatile __bit BRGH __attribute__((address(0x4C2)));
+[v _BRGH `Vb ~T0 @X0 0 e@1218 ]
+"2484
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f886.h: 2484: extern volatile unsigned char SPBRG __attribute__((address(0x099)));
+[v _SPBRG `Vuc ~T0 @X0 0 e@153 ]
+"4095
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f886.h: 4095: extern volatile __bit SYNC __attribute__((address(0x4C4)));
+[v _SYNC `Vb ~T0 @X0 0 e@1220 ]
+"4041
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f886.h: 4041: extern volatile __bit SPEN __attribute__((address(0xC7)));
+[v _SPEN `Vb ~T0 @X0 0 e@199 ]
+"4251
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f886.h: 4251: extern volatile __bit TRISC7 __attribute__((address(0x43F)));
+[v _TRISC7 `Vb ~T0 @X0 0 e@1087 ]
+"4248
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f886.h: 4248: extern volatile __bit TRISC6 __attribute__((address(0x43E)));
+[v _TRISC6 `Vb ~T0 @X0 0 e@1086 ]
+"3651
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f886.h: 3651: extern volatile __bit CREN __attribute__((address(0xC4)));
+[v _CREN `Vb ~T0 @X0 0 e@196 ]
+"4287
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f886.h: 4287: extern volatile __bit TXEN __attribute__((address(0x4C5)));
+[v _TXEN `Vb ~T0 @X0 0 e@1221 ]
+"4257
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f886.h: 4257: extern volatile __bit TRMT __attribute__((address(0x4C1)));
+[v _TRMT `Vb ~T0 @X0 0 e@1217 ]
+"3990
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f886.h: 3990: extern volatile __bit RCIF __attribute__((address(0x65)));
+[v _RCIF `Vb ~T0 @X0 0 e@101 ]
+"1061
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f886.h: 1061: extern volatile unsigned char RCREG __attribute__((address(0x01A)));
+[v _RCREG `Vuc ~T0 @X0 0 e@26 ]
+"1054
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f886.h: 1054: extern volatile unsigned char TXREG __attribute__((address(0x019)));
+[v _TXREG `Vuc ~T0 @X0 0 e@25 ]
 [p mainexit ]
-"28 main.c
-[; ;main.c: 28:     StopMotor();
+"4413
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f886.h: 4413: extern volatile __bit nRBPU __attribute__((address(0x40F)));
+[v _nRBPU `Vb ~T0 @X0 0 e@1039 ]
+"31 main.c
+[; ;main.c: 31:     StopMotor();
 [v _StopMotor `(i ~T0 @X0 0 e? ]
-"29
-[; ;main.c: 29:     configurarHorario();
+"32
+[; ;main.c: 32:     configurarHorario();
 [v _configurarHorario `(i ~T0 @X0 0 e? ]
-"30
-[; ;main.c: 30:     configurarAntiHorario();
+"33
+[; ;main.c: 33:     configurarAntiHorario();
 [v _configurarAntiHorario `(i ~T0 @X0 0 e? ]
-"50
-[; ;main.c: 50:                     RunMotor();
+"53
+[; ;main.c: 53:                     RunMotor();
 [v _RunMotor `(i ~T0 @X0 0 e? ]
 "3918 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f886.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f886.h: 3918: extern volatile __bit RB0 __attribute__((address(0x30)));
 [v _RB0 `Vb ~T0 @X0 0 e@48 ]
-"57 main.c
-[; ;main.c: 57:             Encoder();
+"60 main.c
+[; ;main.c: 60:             Encoder();
 [v _Encoder `(i ~T0 @X0 0 e? ]
 "3948 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f886.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f886.h: 3948: extern volatile __bit RC0 __attribute__((address(0x38)));
@@ -342,17 +384,19 @@ Version 4.0 HI-TECH Software Intermediate Code
 [p x BOR4V = BOR40V ]
 "49
 [p x WRT = OFF ]
-"52
+"51
 [v _PinsInit `(v ~T0 @X0 1 ef ]
 {
 [e :U _PinsInit ]
 [f ]
-"54
+"53
 [e = _ANSELH = _ANSEL -> -> 0 `i `uc ]
-"57
+"56
 [e = _TRISB -> -> 1 `i `uc ]
-"60
+"59
 [e = _TRISC -> -> 0 `i `uc ]
+"60
+[e = _PORTC -> -> 0 `i `uc ]
 "63
 [e = _TRISA -> -> 240 `i `uc ]
 "64
@@ -856,6 +900,222 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;./KeyPad.h: 47: }
 [e :UE 165 ]
 }
+"1 ./uart.h
+[; ;./uart.h: 1: char UART_Init(const long int baudrate) {
+[v _UART_Init `(uc ~T0 @X0 1 ef1`Cl ]
+{
+[e :U _UART_Init ]
+[v _baudrate `Cl ~T0 @X0 1 r1 ]
+[f ]
+"2
+[; ;./uart.h: 2:     unsigned int x;
+[v _x `ui ~T0 @X0 1 a ]
+"3
+[; ;./uart.h: 3:     x = (4000000 - baudrate * 64) / (baudrate * 64);
+[e = _x -> / - -> 4000000 `l * _baudrate -> -> 64 `i `l * _baudrate -> -> 64 `i `l `ui ]
+"4
+[; ;./uart.h: 4:     if (x > 255) {
+[e $ ! > _x -> -> 255 `i `ui 176  ]
+{
+"5
+[; ;./uart.h: 5:         x = (4000000 - baudrate * 16) / (baudrate * 16);
+[e = _x -> / - -> 4000000 `l * _baudrate -> -> 16 `i `l * _baudrate -> -> 16 `i `l `ui ]
+"6
+[; ;./uart.h: 6:         BRGH = 1;
+[e = _BRGH -> -> 1 `i `b ]
+"7
+[; ;./uart.h: 7:     }
+}
+[e :U 176 ]
+"8
+[; ;./uart.h: 8:     if (x < 256) {
+[e $ ! < _x -> -> 256 `i `ui 177  ]
+{
+"9
+[; ;./uart.h: 9:         SPBRG = x;
+[e = _SPBRG -> _x `uc ]
+"10
+[; ;./uart.h: 10:         SYNC = 0;
+[e = _SYNC -> -> 0 `i `b ]
+"11
+[; ;./uart.h: 11:         SPEN = 1;
+[e = _SPEN -> -> 1 `i `b ]
+"12
+[; ;./uart.h: 12:         TRISC7 = 1;
+[e = _TRISC7 -> -> 1 `i `b ]
+"13
+[; ;./uart.h: 13:         TRISC6 = 1;
+[e = _TRISC6 -> -> 1 `i `b ]
+"14
+[; ;./uart.h: 14:         CREN = 1;
+[e = _CREN -> -> 1 `i `b ]
+"15
+[; ;./uart.h: 15:         TXEN = 1;
+[e = _TXEN -> -> 1 `i `b ]
+"16
+[; ;./uart.h: 16:         return 1;
+[e ) -> -> 1 `i `uc ]
+[e $UE 175  ]
+"17
+[; ;./uart.h: 17:     }
+}
+[e :U 177 ]
+"18
+[; ;./uart.h: 18:     return 0;
+[e ) -> -> 0 `i `uc ]
+[e $UE 175  ]
+"19
+[; ;./uart.h: 19: }
+[e :UE 175 ]
+}
+"21
+[; ;./uart.h: 21: char UART_TX_Empty() {
+[v _UART_TX_Empty `(uc ~T0 @X0 1 ef ]
+{
+[e :U _UART_TX_Empty ]
+[f ]
+"22
+[; ;./uart.h: 22:     return TRMT;
+[e ) -> _TRMT `uc ]
+[e $UE 178  ]
+"23
+[; ;./uart.h: 23: }
+[e :UE 178 ]
+}
+"25
+[; ;./uart.h: 25: char UART_Data_Ready() {
+[v _UART_Data_Ready `(uc ~T0 @X0 1 ef ]
+{
+[e :U _UART_Data_Ready ]
+[f ]
+"26
+[; ;./uart.h: 26:     return RCIF;
+[e ) -> _RCIF `uc ]
+[e $UE 179  ]
+"27
+[; ;./uart.h: 27: }
+[e :UE 179 ]
+}
+"29
+[; ;./uart.h: 29: char UART_Read() {
+[v _UART_Read `(uc ~T0 @X0 1 ef ]
+{
+[e :U _UART_Read ]
+[f ]
+"31
+[; ;./uart.h: 31:     while (!RCIF);
+[e $U 181  ]
+[e :U 182 ]
+[e :U 181 ]
+[e $ ! _RCIF 182  ]
+[e :U 183 ]
+"32
+[; ;./uart.h: 32:     return RCREG;
+[e ) -> _RCREG `uc ]
+[e $UE 180  ]
+"33
+[; ;./uart.h: 33: }
+[e :UE 180 ]
+}
+"35
+[; ;./uart.h: 35: void UART_Read_Text(char *Output, unsigned int length) {
+[v _UART_Read_Text `(v ~T0 @X0 1 ef2`*uc`ui ]
+{
+[e :U _UART_Read_Text ]
+[v _Output `*uc ~T0 @X0 1 r1 ]
+[v _length `ui ~T0 @X0 1 r2 ]
+[f ]
+"36
+[; ;./uart.h: 36:     unsigned int i;
+[v _i `ui ~T0 @X0 1 a ]
+"37
+[; ;./uart.h: 37:     for (int i = 0; i < length; i++)
+{
+[v _i `i ~T0 @X0 1 a ]
+[e = _i -> 0 `i ]
+[e $U 188  ]
+[e :U 185 ]
+"38
+[; ;./uart.h: 38:         Output[i] = UART_Read();
+[e = *U + _Output * -> _i `x -> -> # *U _Output `i `x ( _UART_Read ..  ]
+[e ++ _i -> 1 `i ]
+[e :U 188 ]
+[e $ < -> _i `ui _length 185  ]
+[e :U 186 ]
+}
+"39
+[; ;./uart.h: 39: }
+[e :UE 184 ]
+}
+"41
+[; ;./uart.h: 41: void UART_Write(char data) {
+[v _UART_Write `(v ~T0 @X0 1 ef1`uc ]
+{
+[e :U _UART_Write ]
+[v _data `uc ~T0 @X0 1 r1 ]
+[f ]
+"42
+[; ;./uart.h: 42:     while (!TRMT);
+[e $U 190  ]
+[e :U 191 ]
+[e :U 190 ]
+[e $ ! _TRMT 191  ]
+[e :U 192 ]
+"43
+[; ;./uart.h: 43:     TXREG = data;
+[e = _TXREG -> _data `uc ]
+"44
+[; ;./uart.h: 44: }
+[e :UE 189 ]
+}
+"46
+[; ;./uart.h: 46: void UART_Write_Text(char *text) {
+[v _UART_Write_Text `(v ~T0 @X0 1 ef1`*uc ]
+{
+[e :U _UART_Write_Text ]
+[v _text `*uc ~T0 @X0 1 r1 ]
+[f ]
+"48
+[; ;./uart.h: 48:     int i;
+[v _i `i ~T0 @X0 1 a ]
+"49
+[; ;./uart.h: 49:     for (i = 0; text[i] != '\0'; i++)
+{
+[e = _i -> 0 `i ]
+[e $U 197  ]
+[e :U 194 ]
+"50
+[; ;./uart.h: 50:         UART_Write(text[i]);
+[e ( _UART_Write (1 *U + _text * -> _i `x -> -> # *U _text `i `x ]
+[e ++ _i -> 1 `i ]
+[e :U 197 ]
+[e $ != -> *U + _text * -> _i `x -> -> # *U _text `i `x `ui -> 0 `ui 194  ]
+[e :U 195 ]
+}
+"51
+[; ;./uart.h: 51: }
+[e :UE 193 ]
+}
+"54
+[; ;./uart.h: 54: void UART_Write_Integer(int a) {
+[v _UART_Write_Integer `(v ~T0 @X0 1 ef1`i ]
+{
+[e :U _UART_Write_Integer ]
+[v _a `i ~T0 @X0 1 r1 ]
+[f ]
+"55
+[; ;./uart.h: 55:     char Data[10];
+[v _Data `uc ~T0 @X0 -> 10 `i a ]
+"56
+[; ;./uart.h: 56:     sprintf(Data, "%d", a);
+[e ( _sprintf (1 , (. , &U _Data :s 2C _a ]
+"57
+[; ;./uart.h: 57:     UART_Write_Text(Data);
+[e ( _UART_Write_Text (1 &U _Data ]
+"58
+[; ;./uart.h: 58: }
+[e :UE 198 ]
+}
 "10 main.c
 [; ;main.c: 10: int Grados = 0;
 [v _Grados `i ~T0 @X0 1 e ]
@@ -904,668 +1164,690 @@ Version 4.0 HI-TECH Software Intermediate Code
 [i _cm
 -> 0 `i
 ]
+"18
+[; ;main.c: 18: int lastCm = 0;
+[v _lastCm `i ~T0 @X0 1 e ]
+[i _lastCm
+-> 0 `i
+]
 [v $root$_main `(v ~T0 @X0 0 e ]
-"22
-[; ;main.c: 22: int main() {
+"23
+[; ;main.c: 23: int main() {
 [v _main `(i ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
 "25
-[; ;main.c: 25:     PinsInit();
-[e ( _PinsInit ..  ]
+[; ;main.c: 25:     nRBPU = 0;
+[e = _nRBPU -> -> 0 `i `b ]
 "26
-[; ;main.c: 26:     Lcd_Init();
-[e ( _Lcd_Init ..  ]
+[; ;main.c: 26:     UART_Init(9600);
+[e ( _UART_Init (1 -> -> 9600 `i `l ]
 "28
-[; ;main.c: 28:     StopMotor();
-[e ( _StopMotor ..  ]
+[; ;main.c: 28:     PinsInit();
+[e ( _PinsInit ..  ]
 "29
-[; ;main.c: 29:     configurarHorario();
-[e ( _configurarHorario ..  ]
-"30
-[; ;main.c: 30:     configurarAntiHorario();
-[e ( _configurarAntiHorario ..  ]
+[; ;main.c: 29:     Lcd_Init();
+[e ( _Lcd_Init ..  ]
+"31
+[; ;main.c: 31:     StopMotor();
+[e ( _StopMotor ..  ]
 "32
-[; ;main.c: 32:     while (1) {
-[e :U 177 ]
-{
-"34
-[; ;main.c: 34:         keypress = KeyPadGetKey();
-[e = _keypress -> ( _KeyPadGetKey ..  `uc ]
-"37
-[; ;main.c: 37:         if (keypress != keyPadMatrix[ 0x10 ]) {
-[e $ ! != -> _keypress `i *U + &U _keyPadMatrix * -> -> -> 16 `i `ui `ux -> -> # *U &U _keyPadMatrix `ui `ux 179  ]
-{
-"39
-[; ;main.c: 39:             switch (keypress) {
-[e $U 181  ]
-{
-"40
-[; ;main.c: 40:                 case 'A':
-[e :U 182 ]
-"41
-[; ;main.c: 41:                     configurarHorario();
+[; ;main.c: 32:     configurarHorario();
 [e ( _configurarHorario ..  ]
-"42
-[; ;main.c: 42:                     break;
-[e $U 180  ]
-"43
-[; ;main.c: 43:                 case'B':
-[e :U 183 ]
-"44
-[; ;main.c: 44:                     configurarAntiHorario();
+"33
+[; ;main.c: 33:     configurarAntiHorario();
 [e ( _configurarAntiHorario ..  ]
+"35
+[; ;main.c: 35:     while (1) {
+[e :U 201 ]
+{
+"37
+[; ;main.c: 37:         keypress = KeyPadGetKey();
+[e = _keypress -> ( _KeyPadGetKey ..  `uc ]
+"40
+[; ;main.c: 40:         if (keypress != keyPadMatrix[ 0x10 ]) {
+[e $ ! != -> _keypress `i *U + &U _keyPadMatrix * -> -> -> 16 `i `ui `ux -> -> # *U &U _keyPadMatrix `ui `ux 203  ]
+{
+"42
+[; ;main.c: 42:             switch (keypress) {
+[e $U 205  ]
+{
+"43
+[; ;main.c: 43:                 case 'A':
+[e :U 206 ]
+"44
+[; ;main.c: 44:                     configurarHorario();
+[e ( _configurarHorario ..  ]
 "45
 [; ;main.c: 45:                     break;
-[e $U 180  ]
+[e $U 204  ]
 "46
-[; ;main.c: 46:                 case'C':
-[e :U 184 ]
+[; ;main.c: 46:                 case'B':
+[e :U 207 ]
 "47
-[; ;main.c: 47:                     StopMotor();
-[e ( _StopMotor ..  ]
+[; ;main.c: 47:                     configurarAntiHorario();
+[e ( _configurarAntiHorario ..  ]
 "48
 [; ;main.c: 48:                     break;
-[e $U 180  ]
+[e $U 204  ]
 "49
-[; ;main.c: 49:                 case'D':
-[e :U 185 ]
+[; ;main.c: 49:                 case'C':
+[e :U 208 ]
 "50
-[; ;main.c: 50:                     RunMotor();
-[e ( _RunMotor ..  ]
+[; ;main.c: 50:                     StopMotor();
+[e ( _StopMotor ..  ]
 "51
 [; ;main.c: 51:                     break;
-[e $U 180  ]
+[e $U 204  ]
 "52
-[; ;main.c: 52:             }
-}
-[e $U 180  ]
-[e :U 181 ]
-[e [\ -> _keypress `i , $ -> -> 65 `ui `i 182
- , $ -> -> 66 `ui `i 183
- , $ -> -> 67 `ui `i 184
- , $ -> -> 68 `ui `i 185
- 180 ]
-[e :U 180 ]
+[; ;main.c: 52:                 case'D':
+[e :U 209 ]
 "53
-[; ;main.c: 53:         }
+[; ;main.c: 53:                     RunMotor();
+[e ( _RunMotor ..  ]
+"54
+[; ;main.c: 54:                     break;
+[e $U 204  ]
+"55
+[; ;main.c: 55:             }
 }
-[e :U 179 ]
+[e $U 204  ]
+[e :U 205 ]
+[e [\ -> _keypress `i , $ -> -> 65 `ui `i 206
+ , $ -> -> 66 `ui `i 207
+ , $ -> -> 67 `ui `i 208
+ , $ -> -> 68 `ui `i 209
+ 204 ]
+[e :U 204 ]
 "56
-[; ;main.c: 56:         if (RB0 == 1 && LastState == 0) {
-[e $ ! && == -> _RB0 `i -> 1 `i == -> _LastState `i -> 0 `i 186  ]
-{
-"57
-[; ;main.c: 57:             Encoder();
-[e ( _Encoder ..  ]
-"58
-[; ;main.c: 58:         } else if (RB0 == 0) {
+[; ;main.c: 56:         }
 }
-[e $U 187  ]
-[e :U 186 ]
-[e $ ! == -> _RB0 `i -> 0 `i 188  ]
-{
+[e :U 203 ]
 "59
-[; ;main.c: 59:             LastState = 0;
-[e = _LastState -> -> 0 `i `a ]
+[; ;main.c: 59:         if (RB0 == 1 && LastState == 0) {
+[e $ ! && == -> _RB0 `i -> 1 `i == -> _LastState `i -> 0 `i 210  ]
+{
 "60
-[; ;main.c: 60:         }
-}
-[e :U 188 ]
-[e :U 187 ]
+[; ;main.c: 60:             Encoder();
+[e ( _Encoder ..  ]
 "61
-[; ;main.c: 61:         _delay((unsigned long)((1)*(4000000/4000.0)));
-[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+[; ;main.c: 61:         } else if (RB0 == 0) {
+}
+[e $U 211  ]
+[e :U 210 ]
+[e $ ! == -> _RB0 `i -> 0 `i 212  ]
+{
 "62
-[; ;main.c: 62:     }
-}
-[e :U 176 ]
-[e $U 177  ]
-[e :U 178 ]
+[; ;main.c: 62:             LastState = 0;
+[e = _LastState -> -> 0 `i `a ]
 "63
-[; ;main.c: 63:     return 0;
-[e ) -> 0 `i ]
-[e $UE 175  ]
-"64
-[; ;main.c: 64: }
-[e :UE 175 ]
+[; ;main.c: 63:         }
 }
-"69
-[; ;main.c: 69: int RunMotor() {
+[e :U 212 ]
+[e :U 211 ]
+"64
+[; ;main.c: 64:         _delay((unsigned long)((1)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"65
+[; ;main.c: 65:     }
+}
+[e :U 200 ]
+[e $U 201  ]
+[e :U 202 ]
+"66
+[; ;main.c: 66:     return 0;
+[e ) -> 0 `i ]
+[e $UE 199  ]
+"67
+[; ;main.c: 67: }
+[e :UE 199 ]
+}
+"72
+[; ;main.c: 72: int RunMotor() {
 [v _RunMotor `(i ~T0 @X0 1 ef ]
 {
 [e :U _RunMotor ]
 [f ]
-"70
-[; ;main.c: 70:     if (CmAntiHorario != 0 && CmHorario != 0) {
-[e $ ! && != _CmAntiHorario -> 0 `i != _CmHorario -> 0 `i 190  ]
-{
-"71
-[; ;main.c: 71:         RC0 = 1;
-[e = _RC0 -> -> 1 `i `b ]
-"72
-[; ;main.c: 72:         RC1 = 0;
-[e = _RC1 -> -> 0 `i `b ]
 "73
-[; ;main.c: 73:     }
-}
-[e :U 190 ]
+[; ;main.c: 73:     if (CmAntiHorario != 0 && CmHorario != 0) {
+[e $ ! && != _CmAntiHorario -> 0 `i != _CmHorario -> 0 `i 214  ]
+{
 "74
-[; ;main.c: 74:     return 0;
-[e ) -> 0 `i ]
-[e $UE 189  ]
+[; ;main.c: 74:         RC0 = 1;
+[e = _RC0 -> -> 1 `i `b ]
 "75
-[; ;main.c: 75: }
-[e :UE 189 ]
+[; ;main.c: 75:         RC1 = 0;
+[e = _RC1 -> -> 0 `i `b ]
+"76
+[; ;main.c: 76:     }
 }
+[e :U 214 ]
 "77
-[; ;main.c: 77: int StopMotor() {
+[; ;main.c: 77:     return 0;
+[e ) -> 0 `i ]
+[e $UE 213  ]
+"78
+[; ;main.c: 78: }
+[e :UE 213 ]
+}
+"80
+[; ;main.c: 80: int StopMotor() {
 [v _StopMotor `(i ~T0 @X0 1 ef ]
 {
 [e :U _StopMotor ]
 [f ]
-"78
-[; ;main.c: 78:     RC1 = 0;
-[e = _RC1 -> -> 0 `i `b ]
-"79
-[; ;main.c: 79:     RC0 = 0;
-[e = _RC0 -> -> 0 `i `b ]
-"80
-[; ;main.c: 80:     return 0;
-[e ) -> 0 `i ]
-[e $UE 191  ]
 "81
-[; ;main.c: 81: }
-[e :UE 191 ]
-}
+[; ;main.c: 81:     RC1 = 0;
+[e = _RC1 -> -> 0 `i `b ]
+"82
+[; ;main.c: 82:     RC0 = 0;
+[e = _RC0 -> -> 0 `i `b ]
 "83
-[; ;main.c: 83: int configurarHorario() {
+[; ;main.c: 83:     return 0;
+[e ) -> 0 `i ]
+[e $UE 215  ]
+"84
+[; ;main.c: 84: }
+[e :UE 215 ]
+}
+"86
+[; ;main.c: 86: int configurarHorario() {
 [v _configurarHorario `(i ~T0 @X0 1 ef ]
 {
 [e :U _configurarHorario ]
 [f ]
-"85
-[; ;main.c: 85:     buffer = 0;
-[e = _buffer -> 0 `i ]
-"86
-[; ;main.c: 86:     StopMotor();
-[e ( _StopMotor ..  ]
 "88
-[; ;main.c: 88:     Lcd_Clear();
-[e ( _Lcd_Clear ..  ]
+[; ;main.c: 88:     buffer = 0;
+[e = _buffer -> 0 `i ]
 "89
-[; ;main.c: 89:     Lcd_Set_Cursor(1, 1);
-[e ( _Lcd_Set_Cursor (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
-"90
-[; ;main.c: 90:     Lcd_Write_String("Adelante: ");
-[e ( _Lcd_Write_String (1 :s 2C ]
+[; ;main.c: 89:     StopMotor();
+[e ( _StopMotor ..  ]
 "91
-[; ;main.c: 91:     Lcd_Set_Cursor(2, 1);
-[e ( _Lcd_Set_Cursor (2 , -> -> 2 `i `uc -> -> 1 `i `uc ]
+[; ;main.c: 91:     Lcd_Clear();
+[e ( _Lcd_Clear ..  ]
 "92
-[; ;main.c: 92:     Lcd_Write_String("0 Cm");
+[; ;main.c: 92:     Lcd_Set_Cursor(1, 1);
+[e ( _Lcd_Set_Cursor (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
+"93
+[; ;main.c: 93:     Lcd_Write_String("Adelante: ");
 [e ( _Lcd_Write_String (1 :s 3C ]
 "94
-[; ;main.c: 94:     while (1) {
-[e :U 194 ]
-{
-"96
-[; ;main.c: 96:         keypress = KeyPadGetKey();
-[e = _keypress -> ( _KeyPadGetKey ..  `uc ]
+[; ;main.c: 94:     Lcd_Set_Cursor(2, 1);
+[e ( _Lcd_Set_Cursor (2 , -> -> 2 `i `uc -> -> 1 `i `uc ]
+"95
+[; ;main.c: 95:     Lcd_Write_String("0 Cm");
+[e ( _Lcd_Write_String (1 :s 4C ]
 "97
-[; ;main.c: 97:         if (keypress != keyPadMatrix[ 0x10 ]) {
-[e $ ! != -> _keypress `i *U + &U _keyPadMatrix * -> -> -> 16 `i `ui `ux -> -> # *U &U _keyPadMatrix `ui `ux 196  ]
+[; ;main.c: 97:     while (1) {
+[e :U 218 ]
 {
-"98
-[; ;main.c: 98:             key2 = keypress;
-[e = _key2 -> _keypress `i ]
 "99
-[; ;main.c: 99:             switch (key2) {
-[e $U 198  ]
+[; ;main.c: 99:         keypress = KeyPadGetKey();
+[e = _keypress -> ( _KeyPadGetKey ..  `uc ]
+"100
+[; ;main.c: 100:         if (keypress != keyPadMatrix[ 0x10 ]) {
+[e $ ! != -> _keypress `i *U + &U _keyPadMatrix * -> -> -> 16 `i `ui `ux -> -> # *U &U _keyPadMatrix `ui `ux 220  ]
 {
 "101
-[; ;main.c: 101:                 case 'A':
-[e :U 199 ]
+[; ;main.c: 101:             key2 = keypress;
+[e = _key2 -> _keypress `i ]
 "102
-[; ;main.c: 102:                     buffer = 0;
-[e = _buffer -> 0 `i ]
-"103
-[; ;main.c: 103:                     Lcd_Clear();
-[e ( _Lcd_Clear ..  ]
-"104
-[; ;main.c: 104:                     Lcd_Set_Cursor(1, 1);
-[e ( _Lcd_Set_Cursor (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
-"105
-[; ;main.c: 105:                     Lcd_Write_String("Adelante: ");
-[e ( _Lcd_Write_String (1 :s 4C ]
-"106
-[; ;main.c: 106:                     Lcd_Set_Cursor(2, 1);
-[e ( _Lcd_Set_Cursor (2 , -> -> 2 `i `uc -> -> 1 `i `uc ]
-"107
-[; ;main.c: 107:                     Lcd_Write_String("0 Cm");
-[e ( _Lcd_Write_String (1 :s 5C ]
-"108
-[; ;main.c: 108:                     break;
-[e $U 197  ]
-"109
-[; ;main.c: 109:                 case 'B':
-[e :U 200 ]
-"110
-[; ;main.c: 110:                     break;
-[e $U 197  ]
-"111
-[; ;main.c: 111:                 case 'C':
-[e :U 201 ]
-"112
-[; ;main.c: 112:                     break;
-[e $U 197  ]
-"113
-[; ;main.c: 113:                 case 'D':
-[e :U 202 ]
-"114
-[; ;main.c: 114:                     Grados = 0;
-[e = _Grados -> 0 `i ]
-"115
-[; ;main.c: 115:                     CmHorario = buffer;
-[e = _CmHorario _buffer ]
-"116
-[; ;main.c: 116:                     RunMotor();
-[e ( _RunMotor ..  ]
-"117
-[; ;main.c: 117:                     if (CmHorario != 0) {
-[e $ ! != _CmHorario -> 0 `i 203  ]
+[; ;main.c: 102:             switch (key2) {
+[e $U 222  ]
 {
-"118
-[; ;main.c: 118:                         return 0;
-[e ) -> 0 `i ]
-[e $UE 192  ]
-"119
-[; ;main.c: 119:                     }
-}
-[e :U 203 ]
-"120
-[; ;main.c: 120:                     break;
-[e $U 197  ]
-"121
-[; ;main.c: 121:                 case '*':
-[e :U 204 ]
-"122
-[; ;main.c: 122:                     break;
-[e $U 197  ]
-"123
-[; ;main.c: 123:                 case '#':
-[e :U 205 ]
-"124
-[; ;main.c: 124:                     break;
-[e $U 197  ]
-"125
-[; ;main.c: 125:                 default:
-[e :U 206 ]
-"126
-[; ;main.c: 126:                     buffer = (10 * buffer + key2);
-[e = _buffer + * -> 10 `i _buffer _key2 ]
-"127
-[; ;main.c: 127:                     buffer -= 48;
-[e =- _buffer -> 48 `i ]
-"128
-[; ;main.c: 128:                     Lcd_Set_Cursor(2, 1);
+"104
+[; ;main.c: 104:                 case 'A':
+[e :U 223 ]
+"105
+[; ;main.c: 105:                     buffer = 0;
+[e = _buffer -> 0 `i ]
+"106
+[; ;main.c: 106:                     Lcd_Clear();
+[e ( _Lcd_Clear ..  ]
+"107
+[; ;main.c: 107:                     Lcd_Set_Cursor(1, 1);
+[e ( _Lcd_Set_Cursor (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
+"108
+[; ;main.c: 108:                     Lcd_Write_String("Adelante: ");
+[e ( _Lcd_Write_String (1 :s 5C ]
+"109
+[; ;main.c: 109:                     Lcd_Set_Cursor(2, 1);
 [e ( _Lcd_Set_Cursor (2 , -> -> 2 `i `uc -> -> 1 `i `uc ]
-"129
-[; ;main.c: 129:                     Lcd_Write_Integer(buffer);
-[e ( _Lcd_Write_Integer (1 _buffer ]
-"130
-[; ;main.c: 130:                     Lcd_Write_String(" Cm");
+"110
+[; ;main.c: 110:                     Lcd_Write_String("0 Cm");
 [e ( _Lcd_Write_String (1 :s 6C ]
+"111
+[; ;main.c: 111:                     break;
+[e $U 221  ]
+"112
+[; ;main.c: 112:                 case 'B':
+[e :U 224 ]
+"113
+[; ;main.c: 113:                     break;
+[e $U 221  ]
+"114
+[; ;main.c: 114:                 case 'C':
+[e :U 225 ]
+"115
+[; ;main.c: 115:                     break;
+[e $U 221  ]
+"116
+[; ;main.c: 116:                 case 'D':
+[e :U 226 ]
+"117
+[; ;main.c: 117:                     Grados = 0;
+[e = _Grados -> 0 `i ]
+"118
+[; ;main.c: 118:                     CmHorario = buffer;
+[e = _CmHorario _buffer ]
+"119
+[; ;main.c: 119:                     RunMotor();
+[e ( _RunMotor ..  ]
+"120
+[; ;main.c: 120:                     if (CmHorario != 0) {
+[e $ ! != _CmHorario -> 0 `i 227  ]
+{
+"121
+[; ;main.c: 121:                         return 0;
+[e ) -> 0 `i ]
+[e $UE 216  ]
+"122
+[; ;main.c: 122:                     }
+}
+[e :U 227 ]
+"123
+[; ;main.c: 123:                     break;
+[e $U 221  ]
+"124
+[; ;main.c: 124:                 case '*':
+[e :U 228 ]
+"125
+[; ;main.c: 125:                     break;
+[e $U 221  ]
+"126
+[; ;main.c: 126:                 case '#':
+[e :U 229 ]
+"127
+[; ;main.c: 127:                     break;
+[e $U 221  ]
+"128
+[; ;main.c: 128:                 default:
+[e :U 230 ]
+"129
+[; ;main.c: 129:                     buffer = (10 * buffer + key2);
+[e = _buffer + * -> 10 `i _buffer _key2 ]
+"130
+[; ;main.c: 130:                     buffer -= 48;
+[e =- _buffer -> 48 `i ]
 "131
-[; ;main.c: 131:             }
-}
-[e $U 197  ]
-[e :U 198 ]
-[e [\ _key2 , $ -> -> 65 `ui `i 199
- , $ -> -> 66 `ui `i 200
- , $ -> -> 67 `ui `i 201
- , $ -> -> 68 `ui `i 202
- , $ -> -> 42 `ui `i 204
- , $ -> -> 35 `ui `i 205
- 206 ]
-[e :U 197 ]
+[; ;main.c: 131:                     Lcd_Set_Cursor(2, 1);
+[e ( _Lcd_Set_Cursor (2 , -> -> 2 `i `uc -> -> 1 `i `uc ]
 "132
-[; ;main.c: 132:         }
-}
-[e :U 196 ]
+[; ;main.c: 132:                     Lcd_Write_Integer(buffer);
+[e ( _Lcd_Write_Integer (1 _buffer ]
 "133
-[; ;main.c: 133:         _delay((unsigned long)((1)*(4000000/4000.0)));
-[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+[; ;main.c: 133:                     Lcd_Write_String(" Cm");
+[e ( _Lcd_Write_String (1 :s 7C ]
 "134
-[; ;main.c: 134:     }
+[; ;main.c: 134:             }
 }
-[e :U 193 ]
-[e $U 194  ]
-[e :U 195 ]
+[e $U 221  ]
+[e :U 222 ]
+[e [\ _key2 , $ -> -> 65 `ui `i 223
+ , $ -> -> 66 `ui `i 224
+ , $ -> -> 67 `ui `i 225
+ , $ -> -> 68 `ui `i 226
+ , $ -> -> 42 `ui `i 228
+ , $ -> -> 35 `ui `i 229
+ 230 ]
+[e :U 221 ]
 "135
-[; ;main.c: 135: }
-[e :UE 192 ]
+[; ;main.c: 135:         }
 }
+[e :U 220 ]
+"136
+[; ;main.c: 136:         _delay((unsigned long)((1)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
 "137
-[; ;main.c: 137: int configurarAntiHorario() {
+[; ;main.c: 137:     }
+}
+[e :U 217 ]
+[e $U 218  ]
+[e :U 219 ]
+"138
+[; ;main.c: 138: }
+[e :UE 216 ]
+}
+"140
+[; ;main.c: 140: int configurarAntiHorario() {
 [v _configurarAntiHorario `(i ~T0 @X0 1 ef ]
 {
 [e :U _configurarAntiHorario ]
 [f ]
-"139
-[; ;main.c: 139:     buffer = 0;
-[e = _buffer -> 0 `i ]
-"140
-[; ;main.c: 140:     StopMotor();
-[e ( _StopMotor ..  ]
 "142
-[; ;main.c: 142:     Lcd_Clear();
-[e ( _Lcd_Clear ..  ]
+[; ;main.c: 142:     buffer = 0;
+[e = _buffer -> 0 `i ]
 "143
-[; ;main.c: 143:     Lcd_Set_Cursor(1, 1);
-[e ( _Lcd_Set_Cursor (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
-"144
-[; ;main.c: 144:     Lcd_Write_String("Atras: ");
-[e ( _Lcd_Write_String (1 :s 7C ]
+[; ;main.c: 143:     StopMotor();
+[e ( _StopMotor ..  ]
 "145
-[; ;main.c: 145:     Lcd_Set_Cursor(2, 1);
-[e ( _Lcd_Set_Cursor (2 , -> -> 2 `i `uc -> -> 1 `i `uc ]
+[; ;main.c: 145:     Lcd_Clear();
+[e ( _Lcd_Clear ..  ]
 "146
-[; ;main.c: 146:     Lcd_Write_String("0 Cm");
+[; ;main.c: 146:     Lcd_Set_Cursor(1, 1);
+[e ( _Lcd_Set_Cursor (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
+"147
+[; ;main.c: 147:     Lcd_Write_String("Atras: ");
 [e ( _Lcd_Write_String (1 :s 8C ]
 "148
-[; ;main.c: 148:     while (1) {
-[e :U 209 ]
-{
-"150
-[; ;main.c: 150:         keypress = KeyPadGetKey();
-[e = _keypress -> ( _KeyPadGetKey ..  `uc ]
-"151
-[; ;main.c: 151:         if (keypress != keyPadMatrix[ 0x10 ]) {
-[e $ ! != -> _keypress `i *U + &U _keyPadMatrix * -> -> -> 16 `i `ui `ux -> -> # *U &U _keyPadMatrix `ui `ux 211  ]
-{
-"152
-[; ;main.c: 152:             key2 = keypress;
-[e = _key2 -> _keypress `i ]
-"153
-[; ;main.c: 153:             switch (key2) {
-[e $U 213  ]
-{
-"154
-[; ;main.c: 154:                 case 'A':
-[e :U 214 ]
-"155
-[; ;main.c: 155:                     break;
-[e $U 212  ]
-"156
-[; ;main.c: 156:                 case 'B':
-[e :U 215 ]
-"157
-[; ;main.c: 157:                     buffer = 0;
-[e = _buffer -> 0 `i ]
-"158
-[; ;main.c: 158:                     Lcd_Clear();
-[e ( _Lcd_Clear ..  ]
-"159
-[; ;main.c: 159:                     Lcd_Set_Cursor(1, 1);
-[e ( _Lcd_Set_Cursor (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
-"160
-[; ;main.c: 160:                     Lcd_Write_String("Atras: ");
+[; ;main.c: 148:     Lcd_Set_Cursor(2, 1);
+[e ( _Lcd_Set_Cursor (2 , -> -> 2 `i `uc -> -> 1 `i `uc ]
+"149
+[; ;main.c: 149:     Lcd_Write_String("0 Cm");
 [e ( _Lcd_Write_String (1 :s 9C ]
-"161
-[; ;main.c: 161:                     Lcd_Set_Cursor(2, 1);
-[e ( _Lcd_Set_Cursor (2 , -> -> 2 `i `uc -> -> 1 `i `uc ]
-"162
-[; ;main.c: 162:                     Lcd_Write_String("0 Cm");
-[e ( _Lcd_Write_String (1 :s 10C ]
-"163
-[; ;main.c: 163:                     break;
-[e $U 212  ]
-"164
-[; ;main.c: 164:                 case 'C':
-[e :U 216 ]
-"165
-[; ;main.c: 165:                     break;
-[e $U 212  ]
-"166
-[; ;main.c: 166:                 case 'D':
-[e :U 217 ]
-"167
-[; ;main.c: 167:                     Grados = 0;
-[e = _Grados -> 0 `i ]
-"168
-[; ;main.c: 168:                     CmAntiHorario = buffer;
-[e = _CmAntiHorario _buffer ]
-"169
-[; ;main.c: 169:                     RunMotor();
-[e ( _RunMotor ..  ]
-"170
-[; ;main.c: 170:                     if (CmAntiHorario != 0) {
-[e $ ! != _CmAntiHorario -> 0 `i 218  ]
+"151
+[; ;main.c: 151:     while (1) {
+[e :U 233 ]
 {
-"171
-[; ;main.c: 171:                         return 0;
-[e ) -> 0 `i ]
-[e $UE 207  ]
-"172
-[; ;main.c: 172:                     }
-}
-[e :U 218 ]
-"173
-[; ;main.c: 173:                     break;
-[e $U 212  ]
-"174
-[; ;main.c: 174:                 case '*':
-[e :U 219 ]
-"175
-[; ;main.c: 175:                     break;
-[e $U 212  ]
-"176
-[; ;main.c: 176:                 case '#':
-[e :U 220 ]
-"177
-[; ;main.c: 177:                     break;
-[e $U 212  ]
-"178
-[; ;main.c: 178:                 default:
-[e :U 221 ]
-"179
-[; ;main.c: 179:                     buffer = (10 * buffer + key2);
-[e = _buffer + * -> 10 `i _buffer _key2 ]
-"180
-[; ;main.c: 180:                     buffer -= 48;
-[e =- _buffer -> 48 `i ]
-"181
-[; ;main.c: 181:                     Lcd_Set_Cursor(2, 1);
+"153
+[; ;main.c: 153:         keypress = KeyPadGetKey();
+[e = _keypress -> ( _KeyPadGetKey ..  `uc ]
+"154
+[; ;main.c: 154:         if (keypress != keyPadMatrix[ 0x10 ]) {
+[e $ ! != -> _keypress `i *U + &U _keyPadMatrix * -> -> -> 16 `i `ui `ux -> -> # *U &U _keyPadMatrix `ui `ux 235  ]
+{
+"155
+[; ;main.c: 155:             key2 = keypress;
+[e = _key2 -> _keypress `i ]
+"156
+[; ;main.c: 156:             switch (key2) {
+[e $U 237  ]
+{
+"157
+[; ;main.c: 157:                 case 'A':
+[e :U 238 ]
+"158
+[; ;main.c: 158:                     break;
+[e $U 236  ]
+"159
+[; ;main.c: 159:                 case 'B':
+[e :U 239 ]
+"160
+[; ;main.c: 160:                     buffer = 0;
+[e = _buffer -> 0 `i ]
+"161
+[; ;main.c: 161:                     Lcd_Clear();
+[e ( _Lcd_Clear ..  ]
+"162
+[; ;main.c: 162:                     Lcd_Set_Cursor(1, 1);
+[e ( _Lcd_Set_Cursor (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
+"163
+[; ;main.c: 163:                     Lcd_Write_String("Atras: ");
+[e ( _Lcd_Write_String (1 :s 10C ]
+"164
+[; ;main.c: 164:                     Lcd_Set_Cursor(2, 1);
 [e ( _Lcd_Set_Cursor (2 , -> -> 2 `i `uc -> -> 1 `i `uc ]
-"182
-[; ;main.c: 182:                     Lcd_Write_Integer(buffer);
-[e ( _Lcd_Write_Integer (1 _buffer ]
-"183
-[; ;main.c: 183:                     Lcd_Write_String(" Cm");
+"165
+[; ;main.c: 165:                     Lcd_Write_String("0 Cm");
 [e ( _Lcd_Write_String (1 :s 11C ]
+"166
+[; ;main.c: 166:                     break;
+[e $U 236  ]
+"167
+[; ;main.c: 167:                 case 'C':
+[e :U 240 ]
+"168
+[; ;main.c: 168:                     break;
+[e $U 236  ]
+"169
+[; ;main.c: 169:                 case 'D':
+[e :U 241 ]
+"170
+[; ;main.c: 170:                     Grados = 0;
+[e = _Grados -> 0 `i ]
+"171
+[; ;main.c: 171:                     CmAntiHorario = buffer;
+[e = _CmAntiHorario _buffer ]
+"172
+[; ;main.c: 172:                     RunMotor();
+[e ( _RunMotor ..  ]
+"173
+[; ;main.c: 173:                     if (CmAntiHorario != 0) {
+[e $ ! != _CmAntiHorario -> 0 `i 242  ]
+{
+"174
+[; ;main.c: 174:                         return 0;
+[e ) -> 0 `i ]
+[e $UE 231  ]
+"175
+[; ;main.c: 175:                     }
+}
+[e :U 242 ]
+"176
+[; ;main.c: 176:                     break;
+[e $U 236  ]
+"177
+[; ;main.c: 177:                 case '*':
+[e :U 243 ]
+"178
+[; ;main.c: 178:                     break;
+[e $U 236  ]
+"179
+[; ;main.c: 179:                 case '#':
+[e :U 244 ]
+"180
+[; ;main.c: 180:                     break;
+[e $U 236  ]
+"181
+[; ;main.c: 181:                 default:
+[e :U 245 ]
+"182
+[; ;main.c: 182:                     buffer = (10 * buffer + key2);
+[e = _buffer + * -> 10 `i _buffer _key2 ]
+"183
+[; ;main.c: 183:                     buffer -= 48;
+[e =- _buffer -> 48 `i ]
 "184
-[; ;main.c: 184:             }
-}
-[e $U 212  ]
-[e :U 213 ]
-[e [\ _key2 , $ -> -> 65 `ui `i 214
- , $ -> -> 66 `ui `i 215
- , $ -> -> 67 `ui `i 216
- , $ -> -> 68 `ui `i 217
- , $ -> -> 42 `ui `i 219
- , $ -> -> 35 `ui `i 220
- 221 ]
-[e :U 212 ]
+[; ;main.c: 184:                     Lcd_Set_Cursor(2, 1);
+[e ( _Lcd_Set_Cursor (2 , -> -> 2 `i `uc -> -> 1 `i `uc ]
 "185
-[; ;main.c: 185:         }
-}
-[e :U 211 ]
+[; ;main.c: 185:                     Lcd_Write_Integer(buffer);
+[e ( _Lcd_Write_Integer (1 _buffer ]
 "186
-[; ;main.c: 186:         _delay((unsigned long)((1)*(4000000/4000.0)));
-[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+[; ;main.c: 186:                     Lcd_Write_String(" Cm");
+[e ( _Lcd_Write_String (1 :s 12C ]
 "187
-[; ;main.c: 187:     }
+[; ;main.c: 187:             }
 }
-[e :U 208 ]
-[e $U 209  ]
-[e :U 210 ]
+[e $U 236  ]
+[e :U 237 ]
+[e [\ _key2 , $ -> -> 65 `ui `i 238
+ , $ -> -> 66 `ui `i 239
+ , $ -> -> 67 `ui `i 240
+ , $ -> -> 68 `ui `i 241
+ , $ -> -> 42 `ui `i 243
+ , $ -> -> 35 `ui `i 244
+ 245 ]
+[e :U 236 ]
 "188
-[; ;main.c: 188: }
-[e :UE 207 ]
+[; ;main.c: 188:         }
 }
+[e :U 235 ]
+"189
+[; ;main.c: 189:         _delay((unsigned long)((1)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
 "190
-[; ;main.c: 190: int VerificarInversionGiro() {
+[; ;main.c: 190:     }
+}
+[e :U 232 ]
+[e $U 233  ]
+[e :U 234 ]
+"191
+[; ;main.c: 191: }
+[e :UE 231 ]
+}
+"193
+[; ;main.c: 193: int VerificarInversionGiro() {
 [v _VerificarInversionGiro `(i ~T0 @X0 1 ef ]
 {
 [e :U _VerificarInversionGiro ]
 [f ]
-"191
-[; ;main.c: 191:     if (RC0 && (Grados * 0.097 >= CmHorario)) {
-[e $ ! && _RC0 >= * -> _Grados `d .0.097 -> _CmHorario `d 223  ]
-{
-"192
-[; ;main.c: 192:         Grados = 0;
-[e = _Grados -> 0 `i ]
-"193
-[; ;main.c: 193:         RC0 = !RC0;
-[e = _RC0 ! _RC0 ]
 "194
-[; ;main.c: 194:         RC1 = !RC1;
-[e = _RC1 ! _RC1 ]
-"195
-[; ;main.c: 195:     } else if (RC1 && Grados * 0.097 >= CmAntiHorario) {
-}
-[e $U 224  ]
-[e :U 223 ]
-[e $ ! && _RC1 >= * -> _Grados `d .0.097 -> _CmAntiHorario `d 225  ]
+[; ;main.c: 194:     if (RC0 && (Grados * 0.097 >= CmHorario)) {
+[e $ ! && _RC0 >= * -> _Grados `d .0.097 -> _CmHorario `d 247  ]
 {
-"196
-[; ;main.c: 196:         Grados = 0;
+"195
+[; ;main.c: 195:         Grados = 0;
 [e = _Grados -> 0 `i ]
-"197
-[; ;main.c: 197:         RC0 = !RC0;
+"196
+[; ;main.c: 196:         RC0 = !RC0;
 [e = _RC0 ! _RC0 ]
-"198
-[; ;main.c: 198:         RC1 = !RC1;
+"197
+[; ;main.c: 197:         RC1 = !RC1;
 [e = _RC1 ! _RC1 ]
+"198
+[; ;main.c: 198:         lastCm=0;
+[e = _lastCm -> 0 `i ]
 "199
-[; ;main.c: 199:     }
+[; ;main.c: 199:     } else if (RC1 && Grados * 0.097 >= CmAntiHorario) {
 }
-[e :U 225 ]
-[e :U 224 ]
+[e $U 248  ]
+[e :U 247 ]
+[e $ ! && _RC1 >= * -> _Grados `d .0.097 -> _CmAntiHorario `d 249  ]
+{
 "200
-[; ;main.c: 200:     return 0;
-[e ) -> 0 `i ]
-[e $UE 222  ]
+[; ;main.c: 200:         Grados = 0;
+[e = _Grados -> 0 `i ]
 "201
-[; ;main.c: 201: }
-[e :UE 222 ]
-}
+[; ;main.c: 201:         RC0 = !RC0;
+[e = _RC0 ! _RC0 ]
+"202
+[; ;main.c: 202:         RC1 = !RC1;
+[e = _RC1 ! _RC1 ]
 "203
-[; ;main.c: 203: int Encoder() {
+[; ;main.c: 203:         lastCm=0;
+[e = _lastCm -> 0 `i ]
+"204
+[; ;main.c: 204:     }
+}
+[e :U 249 ]
+[e :U 248 ]
+"205
+[; ;main.c: 205:     return 0;
+[e ) -> 0 `i ]
+[e $UE 246  ]
+"206
+[; ;main.c: 206: }
+[e :UE 246 ]
+}
+"208
+[; ;main.c: 208: int Encoder() {
 [v _Encoder `(i ~T0 @X0 1 ef ]
 {
 [e :U _Encoder ]
 [f ]
-"204
-[; ;main.c: 204:     LastState = 1;
+"209
+[; ;main.c: 209:     LastState = 1;
 [e = _LastState -> -> 1 `i `a ]
-"205
-[; ;main.c: 205:     Grados++;
-[e ++ _Grados -> 1 `i ]
-"206
-[; ;main.c: 206:     VerificarInversionGiro();
-[e ( _VerificarInversionGiro ..  ]
-"208
-[; ;main.c: 208:     cm = Grados * 0.097;
-[e = _cm -> * -> _Grados `d .0.097 `i ]
 "210
-[; ;main.c: 210:     if (RC0 && (Grados * 0.097 != cm)) {
-[e $ ! && _RC0 != * -> _Grados `d .0.097 -> _cm `d 227  ]
-{
+[; ;main.c: 210:     Grados++;
+[e ++ _Grados -> 1 `i ]
 "211
-[; ;main.c: 211:         cm = Grados * 0.097;
-[e = _cm -> * -> _Grados `d .0.097 `i ]
-"212
-[; ;main.c: 212:         Lcd_Clear();
-[e ( _Lcd_Clear ..  ]
+[; ;main.c: 211:     VerificarInversionGiro();
+[e ( _VerificarInversionGiro ..  ]
 "213
-[; ;main.c: 213:         Lcd_Set_Cursor(1, 1);
-[e ( _Lcd_Set_Cursor (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
-"214
-[; ;main.c: 214:         Lcd_Write_String("Dir: Adelante");
-[e ( _Lcd_Write_String (1 :s 12C ]
-"215
-[; ;main.c: 215:         Lcd_Set_Cursor(2, 1);
-[e ( _Lcd_Set_Cursor (2 , -> -> 2 `i `uc -> -> 1 `i `uc ]
-"216
-[; ;main.c: 216:         Lcd_Write_Integer(cm);
-[e ( _Lcd_Write_Integer (1 _cm ]
-"217
-[; ;main.c: 217:         Lcd_Write_String(" Cm de: ");
-[e ( _Lcd_Write_String (1 :s 13C ]
-"218
-[; ;main.c: 218:         Lcd_Write_Integer(CmHorario);
-[e ( _Lcd_Write_Integer (1 _CmHorario ]
-"219
-[; ;main.c: 219:     } else if (RC1 && (Grados * 0.097 != cm)) {
-}
-[e $U 228  ]
-[e :U 227 ]
-[e $ ! && _RC1 != * -> _Grados `d .0.097 -> _cm `d 229  ]
-{
-"220
-[; ;main.c: 220:         cm = Grados * 0.097;
+[; ;main.c: 213:     cm = Grados * 0.097;
 [e = _cm -> * -> _Grados `d .0.097 `i ]
-"221
-[; ;main.c: 221:         Lcd_Clear();
+"215
+[; ;main.c: 215:     if (RC0 && (cm > lastCm)) {
+[e $ ! && _RC0 > _cm _lastCm 251  ]
+{
+"216
+[; ;main.c: 216:         lastCm = cm + 0.9;
+[e = _lastCm -> + -> _cm `d .0.9 `i ]
+"217
+[; ;main.c: 217:         Lcd_Clear();
 [e ( _Lcd_Clear ..  ]
-"222
-[; ;main.c: 222:         Lcd_Set_Cursor(1, 1);
+"218
+[; ;main.c: 218:         Lcd_Set_Cursor(1, 1);
 [e ( _Lcd_Set_Cursor (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
-"223
-[; ;main.c: 223:         Lcd_Write_String("Dir: Atras");
-[e ( _Lcd_Write_String (1 :s 14C ]
-"224
-[; ;main.c: 224:         Lcd_Set_Cursor(2, 1);
+"219
+[; ;main.c: 219:         Lcd_Write_String("Dir: Adelante");
+[e ( _Lcd_Write_String (1 :s 13C ]
+"220
+[; ;main.c: 220:         Lcd_Set_Cursor(2, 1);
 [e ( _Lcd_Set_Cursor (2 , -> -> 2 `i `uc -> -> 1 `i `uc ]
-"225
-[; ;main.c: 225:         Lcd_Write_Integer(Grados * 0.097);
-[e ( _Lcd_Write_Integer (1 -> * -> _Grados `d .0.097 `i ]
-"226
-[; ;main.c: 226:         Lcd_Write_String(" Cm de: ");
-[e ( _Lcd_Write_String (1 :s 15C ]
-"227
-[; ;main.c: 227:         Lcd_Write_Integer(CmAntiHorario);
-[e ( _Lcd_Write_Integer (1 _CmAntiHorario ]
-"228
-[; ;main.c: 228:     }
+"221
+[; ;main.c: 221:         Lcd_Write_Integer(cm);
+[e ( _Lcd_Write_Integer (1 _cm ]
+"222
+[; ;main.c: 222:         Lcd_Write_String(" Cm de: ");
+[e ( _Lcd_Write_String (1 :s 14C ]
+"223
+[; ;main.c: 223:         Lcd_Write_Integer(CmHorario);
+[e ( _Lcd_Write_Integer (1 _CmHorario ]
+"224
+[; ;main.c: 224:     } else if (RC1 && (cm > lastCm)) {
 }
-[e :U 229 ]
-[e :U 228 ]
+[e $U 252  ]
+[e :U 251 ]
+[e $ ! && _RC1 > _cm _lastCm 253  ]
+{
+"225
+[; ;main.c: 225:         lastCm = cm + 0.9;
+[e = _lastCm -> + -> _cm `d .0.9 `i ]
+"226
+[; ;main.c: 226:         cm = Grados * 0.097;
+[e = _cm -> * -> _Grados `d .0.097 `i ]
+"227
+[; ;main.c: 227:         Lcd_Clear();
+[e ( _Lcd_Clear ..  ]
+"228
+[; ;main.c: 228:         Lcd_Set_Cursor(1, 1);
+[e ( _Lcd_Set_Cursor (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
 "229
-[; ;main.c: 229:     return 0;
-[e ) -> 0 `i ]
-[e $UE 226  ]
+[; ;main.c: 229:         Lcd_Write_String("Dir: Atras");
+[e ( _Lcd_Write_String (1 :s 15C ]
 "230
-[; ;main.c: 230: }
-[e :UE 226 ]
+[; ;main.c: 230:         Lcd_Set_Cursor(2, 1);
+[e ( _Lcd_Set_Cursor (2 , -> -> 2 `i `uc -> -> 1 `i `uc ]
+"231
+[; ;main.c: 231:         Lcd_Write_Integer(Grados * 0.097);
+[e ( _Lcd_Write_Integer (1 -> * -> _Grados `d .0.097 `i ]
+"232
+[; ;main.c: 232:         Lcd_Write_String(" Cm de: ");
+[e ( _Lcd_Write_String (1 :s 16C ]
+"233
+[; ;main.c: 233:         Lcd_Write_Integer(CmAntiHorario);
+[e ( _Lcd_Write_Integer (1 _CmAntiHorario ]
+"234
+[; ;main.c: 234:     }
+}
+[e :U 253 ]
+[e :U 252 ]
+"235
+[; ;main.c: 235:     return 0;
+[e ) -> 0 `i ]
+[e $UE 250  ]
+"236
+[; ;main.c: 236: }
+[e :UE 250 ]
 }
 [p f _sprintf 8388736 ]
-[a 14C 68 105 114 58 32 65 116 114 97 115 0 ]
-[a 3C 48 32 67 109 0 ]
-[a 5C 48 32 67 109 0 ]
-[a 8C 48 32 67 109 0 ]
-[a 10C 48 32 67 109 0 ]
-[a 6C 32 67 109 0 ]
-[a 11C 32 67 109 0 ]
-[a 12C 68 105 114 58 32 65 100 101 108 97 110 116 101 0 ]
+[a 15C 68 105 114 58 32 65 116 114 97 115 0 ]
+[a 4C 48 32 67 109 0 ]
+[a 6C 48 32 67 109 0 ]
+[a 9C 48 32 67 109 0 ]
+[a 11C 48 32 67 109 0 ]
+[a 7C 32 67 109 0 ]
+[a 12C 32 67 109 0 ]
+[a 13C 68 105 114 58 32 65 100 101 108 97 110 116 101 0 ]
 [a 1C 37 100 0 ]
-[a 7C 65 116 114 97 115 58 32 0 ]
-[a 9C 65 116 114 97 115 58 32 0 ]
-[a 2C 65 100 101 108 97 110 116 101 58 32 0 ]
-[a 4C 65 100 101 108 97 110 116 101 58 32 0 ]
-[a 13C 32 67 109 32 100 101 58 32 0 ]
-[a 15C 32 67 109 32 100 101 58 32 0 ]
+[a 2C 37 100 0 ]
+[a 8C 65 116 114 97 115 58 32 0 ]
+[a 10C 65 116 114 97 115 58 32 0 ]
+[a 3C 65 100 101 108 97 110 116 101 58 32 0 ]
+[a 5C 65 100 101 108 97 110 116 101 58 32 0 ]
+[a 14C 32 67 109 32 100 101 58 32 0 ]
+[a 16C 32 67 109 32 100 101 58 32 0 ]

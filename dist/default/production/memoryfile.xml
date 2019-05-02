@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project>
-  <executable name="dist/default/production\Potencia.X.production.hex">
+  <executable name="dist/default/production\Practica3Potencia.X.production.hex">
     <memory name="program">
       <units>words</units>
       <length>8192</length>
-      <used>3720</used>
-      <free>4472</free>
+      <used>4512</used>
+      <free>3680</free>
     </memory>
     <memory name="data">
       <units>bytes</units>
       <length>368</length>
-      <used>90</used>
-      <free>278</free>
+      <used>92</used>
+      <free>276</free>
     </memory>
   </executable>
 </project>

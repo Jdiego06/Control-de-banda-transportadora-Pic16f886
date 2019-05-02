@@ -2390,7 +2390,6 @@ extern __bank0 __bit __timeout;
 #pragma config BOR4V = BOR40V
 #pragma config WRT = OFF
 
-
 void PinsInit() {
 
     ANSELH = ANSEL = 0;
@@ -2400,6 +2399,7 @@ void PinsInit() {
 
 
     TRISC = 0x00;
+    PORTC = 0x00;
 
 
     TRISA = 0xf0;
@@ -2754,6 +2754,66 @@ int KeyPadGetKey() {
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c90\\stdbool.h" 1 3
 # 5 "main.c" 2
 
+# 1 "./uart.h" 1
+char UART_Init(const long int baudrate) {
+    unsigned int x;
+    x = (4000000 - baudrate * 64) / (baudrate * 64);
+    if (x > 255) {
+        x = (4000000 - baudrate * 16) / (baudrate * 16);
+        BRGH = 1;
+    }
+    if (x < 256) {
+        SPBRG = x;
+        SYNC = 0;
+        SPEN = 1;
+        TRISC7 = 1;
+        TRISC6 = 1;
+        CREN = 1;
+        TXEN = 1;
+        return 1;
+    }
+    return 0;
+}
+
+char UART_TX_Empty() {
+    return TRMT;
+}
+
+char UART_Data_Ready() {
+    return RCIF;
+}
+
+char UART_Read() {
+
+    while (!RCIF);
+    return RCREG;
+}
+
+void UART_Read_Text(char *Output, unsigned int length) {
+    unsigned int i;
+    for (int i = 0; i < length; i++)
+        Output[i] = UART_Read();
+}
+
+void UART_Write(char data) {
+    while (!TRMT);
+    TXREG = data;
+}
+
+void UART_Write_Text(char *text) {
+
+    int i;
+    for (i = 0; text[i] != '\0'; i++)
+        UART_Write(text[i]);
+}
+
+
+void UART_Write_Integer(int a) {
+    char Data[10];
+    sprintf(Data, "%d", a);
+    UART_Write_Text(Data);
+}
+# 6 "main.c" 2
 
 
 
@@ -2766,12 +2826,15 @@ int CmAntiHorario = 0;
 _Bool LastState = 0;
 char keypress = '0';
 int cm = 0;
+int lastCm = 0;
 
 
 
 
 int main() {
 
+    nRBPU = 0;
+    UART_Init(9600);
 
     PinsInit();
     Lcd_Init();
@@ -2943,10 +3006,12 @@ int VerificarInversionGiro() {
         Grados = 0;
         RC0 = !RC0;
         RC1 = !RC1;
+        lastCm=0;
     } else if (RC1 && Grados * 0.097 >= CmAntiHorario) {
         Grados = 0;
         RC0 = !RC0;
         RC1 = !RC1;
+        lastCm=0;
     }
     return 0;
 }
@@ -2958,8 +3023,8 @@ int Encoder() {
 
     cm = Grados * 0.097;
 
-    if (RC0 && (Grados * 0.097 != cm)) {
-        cm = Grados * 0.097;
+    if (RC0 && (cm > lastCm)) {
+        lastCm = cm + 0.9;
         Lcd_Clear();
         Lcd_Set_Cursor(1, 1);
         Lcd_Write_String("Dir: Adelante");
@@ -2967,7 +3032,8 @@ int Encoder() {
         Lcd_Write_Integer(cm);
         Lcd_Write_String(" Cm de: ");
         Lcd_Write_Integer(CmHorario);
-    } else if (RC1 && (Grados * 0.097 != cm)) {
+    } else if (RC1 && (cm > lastCm)) {
+        lastCm = cm + 0.9;
         cm = Grados * 0.097;
         Lcd_Clear();
         Lcd_Set_Cursor(1, 1);

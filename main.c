@@ -3,7 +3,7 @@
 #include "lcd.h"
 #include "KeyPad.h"
 #include <stdbool.h>
-
+#include "uart.h"
 
 // ------------------ Variables Del Programa --------------------------
 
@@ -15,19 +15,22 @@ int CmAntiHorario = 0;
 bool LastState = false;
 char keypress = '0';
 int cm = 0;
+int lastCm = 0;
 
 
 //---------------------------- MAIN CODE ---------------------------------------
 
 int main() {
-
+   
+    nRBPU = 0;
+    UART_Init(9600);
 
     PinsInit();
     Lcd_Init();
 
     StopMotor();
     configurarHorario();
-    configurarAntiHorario();
+    configurarAntiHorario(); 
 
     while (1) {
 
@@ -192,10 +195,12 @@ int VerificarInversionGiro() {
         Grados = 0;
         MotorHorario = !MotorHorario;
         MotorAntiHorario = !MotorAntiHorario;
+        lastCm=0;
     } else if (MotorAntiHorario && Grados * CteVueltas >= CmAntiHorario) {
         Grados = 0;
         MotorHorario = !MotorHorario;
         MotorAntiHorario = !MotorAntiHorario;
+        lastCm=0;
     }
     return 0;
 }
@@ -207,8 +212,8 @@ int Encoder() {
 
     cm = Grados * CteVueltas;
 
-    if (MotorHorario && (Grados * CteVueltas != cm)) {
-        cm = Grados * CteVueltas;
+    if (MotorHorario && (cm > lastCm)) {
+        lastCm = cm + 0.9;  
         Lcd_Clear();
         Lcd_Set_Cursor(1, 1);
         Lcd_Write_String("Dir: Adelante");
@@ -216,7 +221,8 @@ int Encoder() {
         Lcd_Write_Integer(cm);
         Lcd_Write_String(" Cm de: ");
         Lcd_Write_Integer(CmHorario);
-    } else if (MotorAntiHorario && (Grados * CteVueltas != cm)) {
+    } else if (MotorAntiHorario && (cm > lastCm)) {
+        lastCm = cm + 0.9;
         cm = Grados * CteVueltas;
         Lcd_Clear();
         Lcd_Set_Cursor(1, 1);
