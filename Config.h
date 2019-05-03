@@ -1,10 +1,14 @@
-#define _XTAL_FREQ 4000000
-#include <xc.h>
+#ifndef CONFIG_H
+#define CONFIG_H
+#include <stdbool.h>
+
 
 //Constamte del encoder Se calcula así: DiametroRodillo/PulsosVueltaEncoder 
 //Ej: 35Cm/360Pulses = 0.097
 #define CteVueltas 0.097
 
+//Frecuencia del reloj
+#define _XTAL_FREQ 8000000
 
 //KeyPad Pins
 #define row1 RA0
@@ -48,21 +52,24 @@
 #pragma config BOR4V = BOR40V   // Brown-out Reset Selection bit (Brown-out Reset set to 4.0V)
 #pragma config WRT = OFF        // Flash Program Memory Self Write Enable bits (Write protection off)
 
-void PinsInit() {
-    //All Pins Digitals
-    ANSELH = ANSEL = 0;
 
-    //for Lcd
-    TRISB = 0x01;
+int Grados = 0;
+int key2 = '0';
+int buffer = 0;
+int CmHorario = 0;
+int CmAntiHorario = 0;
+bool LastState;
+char keypress;
+int cm = 0;
+int lastCm = 0;
 
-    //Port C as Output
-    TRISC = 0x00;
-    PORTC = 0x00;
-
-    //For Keypad
-    TRISA = 0xf0;
-    PORTA = 0x00;
-}
-
+void ConfigInit();
+int RunMotor();
+int StopMotor();
+int configurarAntiHorario();
+int configurarHorario() ;
+int VerificarInversionGiro();
+int Encoder();
 
 
+#endif

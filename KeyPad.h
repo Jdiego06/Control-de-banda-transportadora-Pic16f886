@@ -1,3 +1,6 @@
+#ifndef KEY_PAD_H
+#define  KEY_PAD_H
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <xc.h>
@@ -46,4 +49,4 @@ int KeyPadGetKey() {
         return keyPadMatrix[ 0x10 ];
 }
 
-
+#endif

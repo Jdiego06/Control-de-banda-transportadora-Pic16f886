@@ -1,3 +1,5 @@
+#include <stdio.h>
+
 char UART_Init(const long int baudrate) {
     unsigned int x;
     x = (_XTAL_FREQ - baudrate * 64) / (baudrate * 64);

@@ -1,3 +1,6 @@
+#ifndef LCD_H
+#define  LCD_H
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <xc.h>
@@ -109,3 +112,4 @@ void Lcd_Shift_Left() {
     Lcd_Cmd(0x08);
 }
 
+#endif
