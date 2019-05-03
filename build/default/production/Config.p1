@@ -46,43 +46,61 @@ Version 4.0 HI-TECH Software Intermediate Code
 "3900
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f886.h: 3900: extern volatile __bit RA2 __attribute__((address(0x2A)));
 [v _RA2 `Vb ~T0 @X0 0 e@42 ]
-"3903
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f886.h: 3903: extern volatile __bit RA3 __attribute__((address(0x2B)));
-[v _RA3 `Vb ~T0 @X0 0 e@43 ]
+"3906
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f886.h: 3906: extern volatile __bit RA4 __attribute__((address(0x2C)));
+[v _RA4 `Vb ~T0 @X0 0 e@44 ]
 [v F1212 `(v ~T0 @X0 1 tf1`ul ]
 "92 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic.h
 [v __delay `JF1212 ~T0 @X0 0 e ]
 [p i __delay ]
-"3906 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f886.h
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f886.h: 3906: extern volatile __bit RA4 __attribute__((address(0x2C)));
-[v _RA4 `Vb ~T0 @X0 0 e@44 ]
+"3903 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f886.h
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f886.h: 3903: extern volatile __bit RA3 __attribute__((address(0x2B)));
+[v _RA3 `Vb ~T0 @X0 0 e@43 ]
 "3909
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f886.h: 3909: extern volatile __bit RA5 __attribute__((address(0x2D)));
 [v _RA5 `Vb ~T0 @X0 0 e@45 ]
-"3912
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f886.h: 3912: extern volatile __bit RA6 __attribute__((address(0x2E)));
-[v _RA6 `Vb ~T0 @X0 0 e@46 ]
 "3915
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f886.h: 3915: extern volatile __bit RA7 __attribute__((address(0x2F)));
 [v _RA7 `Vb ~T0 @X0 0 e@47 ]
-"3930
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f886.h: 3930: extern volatile __bit RB4 __attribute__((address(0x34)));
-[v _RB4 `Vb ~T0 @X0 0 e@52 ]
-"3933
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f886.h: 3933: extern volatile __bit RB5 __attribute__((address(0x35)));
-[v _RB5 `Vb ~T0 @X0 0 e@53 ]
-"3936
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f886.h: 3936: extern volatile __bit RB6 __attribute__((address(0x36)));
-[v _RB6 `Vb ~T0 @X0 0 e@54 ]
+"3912
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f886.h: 3912: extern volatile __bit RA6 __attribute__((address(0x2E)));
+[v _RA6 `Vb ~T0 @X0 0 e@46 ]
 "3939
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f886.h: 3939: extern volatile __bit RB7 __attribute__((address(0x37)));
 [v _RB7 `Vb ~T0 @X0 0 e@55 ]
+"3930
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f886.h: 3930: extern volatile __bit RB4 __attribute__((address(0x34)));
+[v _RB4 `Vb ~T0 @X0 0 e@52 ]
+"3936
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f886.h: 3936: extern volatile __bit RB6 __attribute__((address(0x36)));
+[v _RB6 `Vb ~T0 @X0 0 e@54 ]
+"3933
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f886.h: 3933: extern volatile __bit RB5 __attribute__((address(0x35)));
+[v _RB5 `Vb ~T0 @X0 0 e@53 ]
 "3924
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f886.h: 3924: extern volatile __bit RB2 __attribute__((address(0x32)));
 [v _RB2 `Vb ~T0 @X0 0 e@50 ]
 "3927
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f886.h: 3927: extern volatile __bit RB3 __attribute__((address(0x33)));
 [v _RB3 `Vb ~T0 @X0 0 e@51 ]
+"1710
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f886.h: 1710:     struct {
+[s S66 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :3 `uc 1 ]
+[n S66 . SCS LTS HTS OSTS IRCF ]
+"1717
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f886.h: 1717:     struct {
+[s S67 :4 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S67 . . IRCF0 IRCF1 IRCF2 ]
+"1709
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f886.h: 1709: typedef union {
+[u S65 `S66 1 `S67 1 ]
+[n S65 . . . ]
+"1724
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f886.h: 1724: extern volatile OSCCONbits_t OSCCONbits __attribute__((address(0x08F)));
+[v _OSCCONbits `VS65 ~T0 @X0 0 e@143 ]
+"1769
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f886.h: 1769: extern volatile unsigned char OSCTUNE __attribute__((address(0x090)));
+[v _OSCTUNE `Vuc ~T0 @X0 0 e@144 ]
 "3273
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f886.h: 3273: extern volatile unsigned char ANSELH __attribute__((address(0x189)));
 [v _ANSELH `Vuc ~T0 @X0 0 e@393 ]
@@ -113,6 +131,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "3951
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f886.h: 3951: extern volatile __bit RC1 __attribute__((address(0x39)));
 [v _RC1 `Vb ~T0 @X0 0 e@57 ]
+"3954
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f886.h: 3954: extern volatile __bit RC2 __attribute__((address(0x3A)));
+[v _RC2 `Vb ~T0 @X0 0 e@58 ]
 "40 ./Config.h
 [p x FOSC = INTRC_NOCLKOUT ]
 "41
@@ -680,8 +701,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;./KeyPad.h: 27:             RA2 = (row & 0x0004) >> 2;
 [e = _RA2 -> >> & -> _row `i -> 4 `i -> 2 `i `b ]
 "28
-[; ;./KeyPad.h: 28:             RA3 = (row & 0x0008) >> 3;
-[e = _RA3 -> >> & -> _row `i -> 8 `i -> 3 `i `b ]
+[; ;./KeyPad.h: 28:             RA4 = (row & 0x0008) >> 3;
+[e = _RA4 -> >> & -> _row `i -> 8 `i -> 3 `i `b ]
 "29
 [; ;./KeyPad.h: 29:             _delay((unsigned long)((1)*(8000000/4000.0)));
 [e ( __delay (1 -> * -> -> 1 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
@@ -689,8 +710,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;./KeyPad.h: 30:         }
 }
 "32
-[; ;./KeyPad.h: 32:         if (RA4)break;
-[e $ ! _RA4 167  ]
+[; ;./KeyPad.h: 32:         if (RA3)break;
+[e $ ! _RA3 167  ]
 [e $U 165  ]
 [e :U 167 ]
 "33
@@ -705,16 +726,16 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;./KeyPad.h: 35:         key++;
 [e ++ _key -> -> 1 `i `uc ]
 "36
-[; ;./KeyPad.h: 36:         if (RA6)break;
-[e $ ! _RA6 169  ]
+[; ;./KeyPad.h: 36:         if (RA7)break;
+[e $ ! _RA7 169  ]
 [e $U 165  ]
 [e :U 169 ]
 "37
 [; ;./KeyPad.h: 37:         key++;
 [e ++ _key -> -> 1 `i `uc ]
 "38
-[; ;./KeyPad.h: 38:         if (RA7)break;
-[e $ ! _RA7 170  ]
+[; ;./KeyPad.h: 38:         if (RA6)break;
+[e $ ! _RA6 170  ]
 [e $U 165  ]
 [e :U 170 ]
 "39
@@ -737,8 +758,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;./KeyPad.h: 43:     RA2 = 0;
 [e = _RA2 -> -> 0 `i `b ]
 "44
-[; ;./KeyPad.h: 44:     RA3 = 0;
-[e = _RA3 -> -> 0 `i `b ]
+[; ;./KeyPad.h: 44:     RA4 = 0;
+[e = _RA4 -> -> 0 `i `b ]
 "45
 [; ;./KeyPad.h: 45:     if (key != old_key) {
 [e $ ! != -> _key `i -> _old_key `i 171  ]
@@ -775,29 +796,29 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;./lcd.h: 9:     if (a & 1)
 [e $ ! != & -> _a `i -> 1 `i -> 0 `i 174  ]
 "10
-[; ;./lcd.h: 10:         RB4 = 1;
-[e = _RB4 -> -> 1 `i `b ]
+[; ;./lcd.h: 10:         RB7 = 1;
+[e = _RB7 -> -> 1 `i `b ]
 [e $U 175  ]
 "11
 [; ;./lcd.h: 11:     else
 [e :U 174 ]
 "12
-[; ;./lcd.h: 12:         RB4 = 0;
-[e = _RB4 -> -> 0 `i `b ]
+[; ;./lcd.h: 12:         RB7 = 0;
+[e = _RB7 -> -> 0 `i `b ]
 [e :U 175 ]
 "14
 [; ;./lcd.h: 14:     if (a & 2)
 [e $ ! != & -> _a `i -> 2 `i -> 0 `i 176  ]
 "15
-[; ;./lcd.h: 15:         RB5 = 1;
-[e = _RB5 -> -> 1 `i `b ]
+[; ;./lcd.h: 15:         RB4 = 1;
+[e = _RB4 -> -> 1 `i `b ]
 [e $U 177  ]
 "16
 [; ;./lcd.h: 16:     else
 [e :U 176 ]
 "17
-[; ;./lcd.h: 17:         RB5 = 0;
-[e = _RB5 -> -> 0 `i `b ]
+[; ;./lcd.h: 17:         RB4 = 0;
+[e = _RB4 -> -> 0 `i `b ]
 [e :U 177 ]
 "19
 [; ;./lcd.h: 19:     if (a & 4)
@@ -817,15 +838,15 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;./lcd.h: 24:     if (a & 8)
 [e $ ! != & -> _a `i -> 8 `i -> 0 `i 180  ]
 "25
-[; ;./lcd.h: 25:         RB7 = 1;
-[e = _RB7 -> -> 1 `i `b ]
+[; ;./lcd.h: 25:         RB5 = 1;
+[e = _RB5 -> -> 1 `i `b ]
 [e $U 181  ]
 "26
 [; ;./lcd.h: 26:     else
 [e :U 180 ]
 "27
-[; ;./lcd.h: 27:         RB7 = 0;
-[e = _RB7 -> -> 0 `i `b ]
+[; ;./lcd.h: 27:         RB5 = 0;
+[e = _RB5 -> -> 0 `i `b ]
 [e :U 181 ]
 "28
 [; ;./lcd.h: 28: }
@@ -1123,224 +1144,233 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U _ConfigInit ]
 [f ]
 "12
-[; ;Config.c: 12:     ANSELH = ANSEL = 0;
+[; ;Config.c: 12:     OSCCONbits.IRCF = 0x7;
+[e = . . _OSCCONbits 0 4 -> -> 7 `i `uc ]
+"13
+[; ;Config.c: 13:     OSCCONbits.SCS = 0;
+[e = . . _OSCCONbits 0 0 -> -> 0 `i `uc ]
+"14
+[; ;Config.c: 14:     OSCTUNE = 0x00;
+[e = _OSCTUNE -> -> 0 `i `uc ]
+"17
+[; ;Config.c: 17:     ANSELH = ANSEL = 0;
 [e = _ANSELH = _ANSEL -> -> 0 `i `uc ]
-"15
-[; ;Config.c: 15:     TRISB = 0x01;
+"20
+[; ;Config.c: 20:     TRISB = 0x01;
 [e = _TRISB -> -> 1 `i `uc ]
-"18
-[; ;Config.c: 18:     TRISC = 0x00;
-[e = _TRISC -> -> 0 `i `uc ]
-"19
-[; ;Config.c: 19:     PORTC = 0x00;
-[e = _PORTC -> -> 0 `i `uc ]
-"22
-[; ;Config.c: 22:     TRISA = 0xf0;
-[e = _TRISA -> -> 240 `i `uc ]
 "23
-[; ;Config.c: 23:     PORTA = 0x00;
-[e = _PORTA -> -> 0 `i `uc ]
-"26
-[; ;Config.c: 26:     nRBPU = 0;
-[e = _nRBPU -> -> 0 `i `b ]
+[; ;Config.c: 23:     TRISC = 0x00;
+[e = _TRISC -> -> 0 `i `uc ]
+"24
+[; ;Config.c: 24:     PORTC = 0x00;
+[e = _PORTC -> -> 0 `i `uc ]
 "27
-[; ;Config.c: 27:     UART_Init(9600);
-[e ( _UART_Init (1 -> -> 9600 `i `l ]
+[; ;Config.c: 27:     TRISA = 0xE8;
+[e = _TRISA -> -> 232 `i `uc ]
 "28
-[; ;Config.c: 28:     Lcd_Init();
+[; ;Config.c: 28:     PORTA = 0x00;
+[e = _PORTA -> -> 0 `i `uc ]
+"31
+[; ;Config.c: 31:     nRBPU = 0;
+[e = _nRBPU -> -> 0 `i `b ]
+"32
+[; ;Config.c: 32:     UART_Init(9600);
+[e ( _UART_Init (1 -> -> 9600 `i `l ]
+"33
+[; ;Config.c: 33:     Lcd_Init();
 [e ( _Lcd_Init ..  ]
-"30
-[; ;Config.c: 30: }
+"35
+[; ;Config.c: 35: }
 [e :UE 198 ]
 }
-"32
-[; ;Config.c: 32: int RunMotor() {
+"37
+[; ;Config.c: 37: int RunMotor() {
 [v _RunMotor `(i ~T0 @X0 1 ef ]
 {
 [e :U _RunMotor ]
 [f ]
-"33
-[; ;Config.c: 33:     if (CmAntiHorario != 0 && CmHorario != 0) {
+"38
+[; ;Config.c: 38:     if (CmAntiHorario != 0 && CmHorario != 0) {
 [e $ ! && != _CmAntiHorario -> 0 `i != _CmHorario -> 0 `i 200  ]
 {
-"34
-[; ;Config.c: 34:         RC0 = 1;
+"39
+[; ;Config.c: 39:         RC0 = 1;
 [e = _RC0 -> -> 1 `i `b ]
-"35
-[; ;Config.c: 35:         RC1 = 0;
+"40
+[; ;Config.c: 40:         RC1 = 0;
 [e = _RC1 -> -> 0 `i `b ]
-"36
-[; ;Config.c: 36:     }
+"41
+[; ;Config.c: 41:     }
 }
 [e :U 200 ]
-"37
-[; ;Config.c: 37:     return 0;
+"42
+[; ;Config.c: 42:     return 0;
 [e ) -> 0 `i ]
 [e $UE 199  ]
-"38
-[; ;Config.c: 38: }
+"43
+[; ;Config.c: 43: }
 [e :UE 199 ]
 }
-"40
-[; ;Config.c: 40: int StopMotor() {
+"45
+[; ;Config.c: 45: int StopMotor() {
 [v _StopMotor `(i ~T0 @X0 1 ef ]
 {
 [e :U _StopMotor ]
 [f ]
-"41
-[; ;Config.c: 41:     RC1 = 0;
+"46
+[; ;Config.c: 46:     RC1 = 0;
 [e = _RC1 -> -> 0 `i `b ]
-"42
-[; ;Config.c: 42:     RC0 = 0;
+"47
+[; ;Config.c: 47:     RC0 = 0;
 [e = _RC0 -> -> 0 `i `b ]
-"43
-[; ;Config.c: 43:     return 0;
+"48
+[; ;Config.c: 48:     return 0;
 [e ) -> 0 `i ]
 [e $UE 201  ]
-"44
-[; ;Config.c: 44: }
+"49
+[; ;Config.c: 49: }
 [e :UE 201 ]
 }
-"46
-[; ;Config.c: 46: int configurarAntiHorario() {
+"51
+[; ;Config.c: 51: int configurarAntiHorario() {
 [v _configurarAntiHorario `(i ~T0 @X0 1 ef ]
 {
 [e :U _configurarAntiHorario ]
 [f ]
-"48
-[; ;Config.c: 48:     buffer = 0;
-[e = _buffer -> 0 `i ]
-"49
-[; ;Config.c: 49:     StopMotor();
-[e ( _StopMotor ..  ]
-"51
-[; ;Config.c: 51:     Lcd_Clear();
-[e ( _Lcd_Clear ..  ]
-"52
-[; ;Config.c: 52:     Lcd_Set_Cursor(1, 1);
-[e ( _Lcd_Set_Cursor (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
 "53
-[; ;Config.c: 53:     Lcd_Write_String("Atras: ");
-[e ( _Lcd_Write_String (1 :s 3C ]
+[; ;Config.c: 53:     buffer = 0;
+[e = _buffer -> 0 `i ]
 "54
-[; ;Config.c: 54:     Lcd_Set_Cursor(2, 1);
-[e ( _Lcd_Set_Cursor (2 , -> -> 2 `i `uc -> -> 1 `i `uc ]
-"55
-[; ;Config.c: 55:     Lcd_Write_String("0 Cm");
-[e ( _Lcd_Write_String (1 :s 4C ]
+[; ;Config.c: 54:     StopMotor();
+[e ( _StopMotor ..  ]
+"56
+[; ;Config.c: 56:     Lcd_Clear();
+[e ( _Lcd_Clear ..  ]
 "57
-[; ;Config.c: 57:     while (1) {
+[; ;Config.c: 57:     Lcd_Set_Cursor(1, 1);
+[e ( _Lcd_Set_Cursor (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
+"58
+[; ;Config.c: 58:     Lcd_Write_String("Atras: ");
+[e ( _Lcd_Write_String (1 :s 3C ]
+"59
+[; ;Config.c: 59:     Lcd_Set_Cursor(2, 1);
+[e ( _Lcd_Set_Cursor (2 , -> -> 2 `i `uc -> -> 1 `i `uc ]
+"60
+[; ;Config.c: 60:     Lcd_Write_String("0 Cm");
+[e ( _Lcd_Write_String (1 :s 4C ]
+"62
+[; ;Config.c: 62:     while (1) {
 [e :U 204 ]
 {
-"59
-[; ;Config.c: 59:         keypress = KeyPadGetKey();
+"64
+[; ;Config.c: 64:         keypress = KeyPadGetKey();
 [e = _keypress -> ( _KeyPadGetKey ..  `uc ]
-"60
-[; ;Config.c: 60:         if (keypress != keyPadMatrix[ 0x10 ]) {
+"65
+[; ;Config.c: 65:         if (keypress != keyPadMatrix[ 0x10 ]) {
 [e $ ! != -> _keypress `i *U + &U _keyPadMatrix * -> -> -> 16 `i `ui `ux -> -> # *U &U _keyPadMatrix `ui `ux 206  ]
 {
-"61
-[; ;Config.c: 61:             key2 = keypress;
+"66
+[; ;Config.c: 66:             key2 = keypress;
 [e = _key2 -> _keypress `i ]
-"62
-[; ;Config.c: 62:             switch (key2) {
+"67
+[; ;Config.c: 67:             switch (key2) {
 [e $U 208  ]
 {
-"63
-[; ;Config.c: 63:                 case 'A':
-[e :U 209 ]
-"64
-[; ;Config.c: 64:                     break;
-[e $U 207  ]
-"65
-[; ;Config.c: 65:                 case 'B':
-[e :U 210 ]
-"66
-[; ;Config.c: 66:                     buffer = 0;
-[e = _buffer -> 0 `i ]
-"67
-[; ;Config.c: 67:                     Lcd_Clear();
-[e ( _Lcd_Clear ..  ]
 "68
-[; ;Config.c: 68:                     Lcd_Set_Cursor(1, 1);
-[e ( _Lcd_Set_Cursor (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
+[; ;Config.c: 68:                 case 'A':
+[e :U 209 ]
 "69
-[; ;Config.c: 69:                     Lcd_Write_String("Atras: ");
-[e ( _Lcd_Write_String (1 :s 5C ]
+[; ;Config.c: 69:                     break;
+[e $U 207  ]
 "70
-[; ;Config.c: 70:                     Lcd_Set_Cursor(2, 1);
-[e ( _Lcd_Set_Cursor (2 , -> -> 2 `i `uc -> -> 1 `i `uc ]
+[; ;Config.c: 70:                 case 'B':
+[e :U 210 ]
 "71
-[; ;Config.c: 71:                     Lcd_Write_String("0 Cm");
-[e ( _Lcd_Write_String (1 :s 6C ]
+[; ;Config.c: 71:                     buffer = 0;
+[e = _buffer -> 0 `i ]
 "72
-[; ;Config.c: 72:                     break;
-[e $U 207  ]
+[; ;Config.c: 72:                     Lcd_Clear();
+[e ( _Lcd_Clear ..  ]
 "73
-[; ;Config.c: 73:                 case 'C':
-[e :U 211 ]
+[; ;Config.c: 73:                     Lcd_Set_Cursor(1, 1);
+[e ( _Lcd_Set_Cursor (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
 "74
-[; ;Config.c: 74:                     break;
-[e $U 207  ]
+[; ;Config.c: 74:                     Lcd_Write_String("Atras: ");
+[e ( _Lcd_Write_String (1 :s 5C ]
 "75
-[; ;Config.c: 75:                 case 'D':
-[e :U 212 ]
+[; ;Config.c: 75:                     Lcd_Set_Cursor(2, 1);
+[e ( _Lcd_Set_Cursor (2 , -> -> 2 `i `uc -> -> 1 `i `uc ]
 "76
-[; ;Config.c: 76:                     Grados = 0;
-[e = _Grados -> 0 `i ]
+[; ;Config.c: 76:                     Lcd_Write_String("0 Cm");
+[e ( _Lcd_Write_String (1 :s 6C ]
 "77
-[; ;Config.c: 77:                     CmAntiHorario = buffer;
-[e = _CmAntiHorario _buffer ]
+[; ;Config.c: 77:                     break;
+[e $U 207  ]
 "78
-[; ;Config.c: 78:                     RunMotor();
-[e ( _RunMotor ..  ]
+[; ;Config.c: 78:                 case 'C':
+[e :U 211 ]
 "79
-[; ;Config.c: 79:                     if (CmAntiHorario != 0) {
+[; ;Config.c: 79:                     break;
+[e $U 207  ]
+"80
+[; ;Config.c: 80:                 case 'D':
+[e :U 212 ]
+"81
+[; ;Config.c: 81:                     Grados = 0;
+[e = _Grados -> 0 `i ]
+"82
+[; ;Config.c: 82:                     CmAntiHorario = buffer;
+[e = _CmAntiHorario _buffer ]
+"83
+[; ;Config.c: 83:                     RunMotor();
+[e ( _RunMotor ..  ]
+"84
+[; ;Config.c: 84:                     if (CmAntiHorario != 0) {
 [e $ ! != _CmAntiHorario -> 0 `i 213  ]
 {
-"80
-[; ;Config.c: 80:                         return 0;
+"85
+[; ;Config.c: 85:                         return 0;
 [e ) -> 0 `i ]
 [e $UE 202  ]
-"81
-[; ;Config.c: 81:                     }
+"86
+[; ;Config.c: 86:                     }
 }
 [e :U 213 ]
-"82
-[; ;Config.c: 82:                     break;
-[e $U 207  ]
-"83
-[; ;Config.c: 83:                 case '*':
-[e :U 214 ]
-"84
-[; ;Config.c: 84:                     break;
-[e $U 207  ]
-"85
-[; ;Config.c: 85:                 case '#':
-[e :U 215 ]
-"86
-[; ;Config.c: 86:                     break;
-[e $U 207  ]
 "87
-[; ;Config.c: 87:                 default:
-[e :U 216 ]
+[; ;Config.c: 87:                     break;
+[e $U 207  ]
 "88
-[; ;Config.c: 88:                     buffer = (10 * buffer + key2);
-[e = _buffer + * -> 10 `i _buffer _key2 ]
+[; ;Config.c: 88:                 case '*':
+[e :U 214 ]
 "89
-[; ;Config.c: 89:                     buffer -= 48;
-[e =- _buffer -> 48 `i ]
+[; ;Config.c: 89:                     break;
+[e $U 207  ]
 "90
-[; ;Config.c: 90:                     Lcd_Set_Cursor(2, 1);
-[e ( _Lcd_Set_Cursor (2 , -> -> 2 `i `uc -> -> 1 `i `uc ]
+[; ;Config.c: 90:                 case '#':
+[e :U 215 ]
 "91
-[; ;Config.c: 91:                     Lcd_Write_Integer(buffer);
-[e ( _Lcd_Write_Integer (1 _buffer ]
+[; ;Config.c: 91:                     break;
+[e $U 207  ]
 "92
-[; ;Config.c: 92:                     Lcd_Write_String(" Cm");
-[e ( _Lcd_Write_String (1 :s 7C ]
+[; ;Config.c: 92:                 default:
+[e :U 216 ]
 "93
-[; ;Config.c: 93:             }
+[; ;Config.c: 93:                     buffer = (10 * buffer + key2);
+[e = _buffer + * -> 10 `i _buffer _key2 ]
+"94
+[; ;Config.c: 94:                     buffer -= 48;
+[e =- _buffer -> 48 `i ]
+"95
+[; ;Config.c: 95:                     Lcd_Set_Cursor(2, 1);
+[e ( _Lcd_Set_Cursor (2 , -> -> 2 `i `uc -> -> 1 `i `uc ]
+"96
+[; ;Config.c: 96:                     Lcd_Write_Integer(buffer);
+[e ( _Lcd_Write_Integer (1 _buffer ]
+"97
+[; ;Config.c: 97:                     Lcd_Write_String(" Cm");
+[e ( _Lcd_Write_String (1 :s 7C ]
+"98
+[; ;Config.c: 98:             }
 }
 [e $U 207  ]
 [e :U 208 ]
@@ -1352,163 +1382,163 @@ Version 4.0 HI-TECH Software Intermediate Code
  , $ -> -> 35 `ui `i 215
  216 ]
 [e :U 207 ]
-"94
-[; ;Config.c: 94:         }
+"99
+[; ;Config.c: 99:         }
 }
 [e :U 206 ]
-"95
-[; ;Config.c: 95:         _delay((unsigned long)((1)*(8000000/4000.0)));
+"100
+[; ;Config.c: 100:         _delay((unsigned long)((1)*(8000000/4000.0)));
 [e ( __delay (1 -> * -> -> 1 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"96
-[; ;Config.c: 96:     }
+"101
+[; ;Config.c: 101:     }
 }
 [e :U 203 ]
 [e $U 204  ]
 [e :U 205 ]
-"97
-[; ;Config.c: 97: }
+"102
+[; ;Config.c: 102: }
 [e :UE 202 ]
 }
-"99
-[; ;Config.c: 99: int configurarHorario() {
+"104
+[; ;Config.c: 104: int configurarHorario() {
 [v _configurarHorario `(i ~T0 @X0 1 ef ]
 {
 [e :U _configurarHorario ]
 [f ]
-"101
-[; ;Config.c: 101:     buffer = 0;
-[e = _buffer -> 0 `i ]
-"102
-[; ;Config.c: 102:     StopMotor();
-[e ( _StopMotor ..  ]
-"104
-[; ;Config.c: 104:     Lcd_Clear();
-[e ( _Lcd_Clear ..  ]
-"105
-[; ;Config.c: 105:     Lcd_Set_Cursor(1, 1);
-[e ( _Lcd_Set_Cursor (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
 "106
-[; ;Config.c: 106:     Lcd_Write_String("Adelante: ");
-[e ( _Lcd_Write_String (1 :s 8C ]
+[; ;Config.c: 106:     buffer = 0;
+[e = _buffer -> 0 `i ]
 "107
-[; ;Config.c: 107:     Lcd_Set_Cursor(2, 1);
-[e ( _Lcd_Set_Cursor (2 , -> -> 2 `i `uc -> -> 1 `i `uc ]
-"108
-[; ;Config.c: 108:     Lcd_Write_String("0 Cm");
-[e ( _Lcd_Write_String (1 :s 9C ]
+[; ;Config.c: 107:     StopMotor();
+[e ( _StopMotor ..  ]
+"109
+[; ;Config.c: 109:     Lcd_Clear();
+[e ( _Lcd_Clear ..  ]
 "110
-[; ;Config.c: 110:     while (1) {
+[; ;Config.c: 110:     Lcd_Set_Cursor(1, 1);
+[e ( _Lcd_Set_Cursor (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
+"111
+[; ;Config.c: 111:     Lcd_Write_String("Adelante: ");
+[e ( _Lcd_Write_String (1 :s 8C ]
+"112
+[; ;Config.c: 112:     Lcd_Set_Cursor(2, 1);
+[e ( _Lcd_Set_Cursor (2 , -> -> 2 `i `uc -> -> 1 `i `uc ]
+"113
+[; ;Config.c: 113:     Lcd_Write_String("0 Cm");
+[e ( _Lcd_Write_String (1 :s 9C ]
+"115
+[; ;Config.c: 115:     while (1) {
 [e :U 219 ]
 {
-"112
-[; ;Config.c: 112:         keypress = KeyPadGetKey();
+"117
+[; ;Config.c: 117:         keypress = KeyPadGetKey();
 [e = _keypress -> ( _KeyPadGetKey ..  `uc ]
-"113
-[; ;Config.c: 113:         if (keypress != keyPadMatrix[ 0x10 ]) {
+"118
+[; ;Config.c: 118:         if (keypress != keyPadMatrix[ 0x10 ]) {
 [e $ ! != -> _keypress `i *U + &U _keyPadMatrix * -> -> -> 16 `i `ui `ux -> -> # *U &U _keyPadMatrix `ui `ux 221  ]
 {
-"114
-[; ;Config.c: 114:             key2 = keypress;
+"119
+[; ;Config.c: 119:             key2 = keypress;
 [e = _key2 -> _keypress `i ]
-"115
-[; ;Config.c: 115:             switch (key2) {
+"120
+[; ;Config.c: 120:             switch (key2) {
 [e $U 223  ]
 {
-"117
-[; ;Config.c: 117:                 case 'A':
-[e :U 224 ]
-"118
-[; ;Config.c: 118:                     buffer = 0;
-[e = _buffer -> 0 `i ]
-"119
-[; ;Config.c: 119:                     Lcd_Clear();
-[e ( _Lcd_Clear ..  ]
-"120
-[; ;Config.c: 120:                     Lcd_Set_Cursor(1, 1);
-[e ( _Lcd_Set_Cursor (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
-"121
-[; ;Config.c: 121:                     Lcd_Write_String("Adelante: ");
-[e ( _Lcd_Write_String (1 :s 10C ]
 "122
-[; ;Config.c: 122:                     Lcd_Set_Cursor(2, 1);
-[e ( _Lcd_Set_Cursor (2 , -> -> 2 `i `uc -> -> 1 `i `uc ]
+[; ;Config.c: 122:                 case 'A':
+[e :U 224 ]
 "123
-[; ;Config.c: 123:                     Lcd_Write_String("0 Cm");
-[e ( _Lcd_Write_String (1 :s 11C ]
+[; ;Config.c: 123:                     buffer = 0;
+[e = _buffer -> 0 `i ]
 "124
-[; ;Config.c: 124:                     break;
-[e $U 222  ]
+[; ;Config.c: 124:                     Lcd_Clear();
+[e ( _Lcd_Clear ..  ]
 "125
-[; ;Config.c: 125:                 case 'B':
-[e :U 225 ]
+[; ;Config.c: 125:                     Lcd_Set_Cursor(1, 1);
+[e ( _Lcd_Set_Cursor (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
 "126
-[; ;Config.c: 126:                     break;
-[e $U 222  ]
+[; ;Config.c: 126:                     Lcd_Write_String("Adelante: ");
+[e ( _Lcd_Write_String (1 :s 10C ]
 "127
-[; ;Config.c: 127:                 case 'C':
-[e :U 226 ]
+[; ;Config.c: 127:                     Lcd_Set_Cursor(2, 1);
+[e ( _Lcd_Set_Cursor (2 , -> -> 2 `i `uc -> -> 1 `i `uc ]
 "128
-[; ;Config.c: 128:                     break;
-[e $U 222  ]
+[; ;Config.c: 128:                     Lcd_Write_String("0 Cm");
+[e ( _Lcd_Write_String (1 :s 11C ]
 "129
-[; ;Config.c: 129:                 case 'D':
-[e :U 227 ]
+[; ;Config.c: 129:                     break;
+[e $U 222  ]
 "130
-[; ;Config.c: 130:                     Grados = 0;
-[e = _Grados -> 0 `i ]
+[; ;Config.c: 130:                 case 'B':
+[e :U 225 ]
 "131
-[; ;Config.c: 131:                     CmHorario = buffer;
-[e = _CmHorario _buffer ]
+[; ;Config.c: 131:                     break;
+[e $U 222  ]
 "132
-[; ;Config.c: 132:                     RunMotor();
-[e ( _RunMotor ..  ]
+[; ;Config.c: 132:                 case 'C':
+[e :U 226 ]
 "133
-[; ;Config.c: 133:                     if (CmHorario != 0) {
+[; ;Config.c: 133:                     break;
+[e $U 222  ]
+"134
+[; ;Config.c: 134:                 case 'D':
+[e :U 227 ]
+"135
+[; ;Config.c: 135:                     Grados = 0;
+[e = _Grados -> 0 `i ]
+"136
+[; ;Config.c: 136:                     CmHorario = buffer;
+[e = _CmHorario _buffer ]
+"137
+[; ;Config.c: 137:                     RunMotor();
+[e ( _RunMotor ..  ]
+"138
+[; ;Config.c: 138:                     if (CmHorario != 0) {
 [e $ ! != _CmHorario -> 0 `i 228  ]
 {
-"134
-[; ;Config.c: 134:                         return 0;
+"139
+[; ;Config.c: 139:                         return 0;
 [e ) -> 0 `i ]
 [e $UE 217  ]
-"135
-[; ;Config.c: 135:                     }
+"140
+[; ;Config.c: 140:                     }
 }
 [e :U 228 ]
-"136
-[; ;Config.c: 136:                     break;
-[e $U 222  ]
-"137
-[; ;Config.c: 137:                 case '*':
-[e :U 229 ]
-"138
-[; ;Config.c: 138:                     break;
-[e $U 222  ]
-"139
-[; ;Config.c: 139:                 case '#':
-[e :U 230 ]
-"140
-[; ;Config.c: 140:                     break;
-[e $U 222  ]
 "141
-[; ;Config.c: 141:                 default:
-[e :U 231 ]
+[; ;Config.c: 141:                     break;
+[e $U 222  ]
 "142
-[; ;Config.c: 142:                     buffer = (10 * buffer + key2);
-[e = _buffer + * -> 10 `i _buffer _key2 ]
+[; ;Config.c: 142:                 case '*':
+[e :U 229 ]
 "143
-[; ;Config.c: 143:                     buffer -= 48;
-[e =- _buffer -> 48 `i ]
+[; ;Config.c: 143:                     break;
+[e $U 222  ]
 "144
-[; ;Config.c: 144:                     Lcd_Set_Cursor(2, 1);
-[e ( _Lcd_Set_Cursor (2 , -> -> 2 `i `uc -> -> 1 `i `uc ]
+[; ;Config.c: 144:                 case '#':
+[e :U 230 ]
 "145
-[; ;Config.c: 145:                     Lcd_Write_Integer(buffer);
-[e ( _Lcd_Write_Integer (1 _buffer ]
+[; ;Config.c: 145:                     break;
+[e $U 222  ]
 "146
-[; ;Config.c: 146:                     Lcd_Write_String(" Cm");
-[e ( _Lcd_Write_String (1 :s 12C ]
+[; ;Config.c: 146:                 default:
+[e :U 231 ]
 "147
-[; ;Config.c: 147:             }
+[; ;Config.c: 147:                     buffer = (10 * buffer + key2);
+[e = _buffer + * -> 10 `i _buffer _key2 ]
+"148
+[; ;Config.c: 148:                     buffer -= 48;
+[e =- _buffer -> 48 `i ]
+"149
+[; ;Config.c: 149:                     Lcd_Set_Cursor(2, 1);
+[e ( _Lcd_Set_Cursor (2 , -> -> 2 `i `uc -> -> 1 `i `uc ]
+"150
+[; ;Config.c: 150:                     Lcd_Write_Integer(buffer);
+[e ( _Lcd_Write_Integer (1 _buffer ]
+"151
+[; ;Config.c: 151:                     Lcd_Write_String(" Cm");
+[e ( _Lcd_Write_String (1 :s 12C ]
+"152
+[; ;Config.c: 152:             }
 }
 [e $U 222  ]
 [e :U 223 ]
@@ -1520,48 +1550,29 @@ Version 4.0 HI-TECH Software Intermediate Code
  , $ -> -> 35 `ui `i 230
  231 ]
 [e :U 222 ]
-"148
-[; ;Config.c: 148:         }
+"153
+[; ;Config.c: 153:         }
 }
 [e :U 221 ]
-"150
-[; ;Config.c: 150:     }
+"155
+[; ;Config.c: 155:     }
 }
 [e :U 218 ]
 [e $U 219  ]
 [e :U 220 ]
-"151
-[; ;Config.c: 151: }
+"156
+[; ;Config.c: 156: }
 [e :UE 217 ]
 }
-"153
-[; ;Config.c: 153: int VerificarInversionGiro() {
+"158
+[; ;Config.c: 158: int VerificarInversionGiro() {
 [v _VerificarInversionGiro `(i ~T0 @X0 1 ef ]
 {
 [e :U _VerificarInversionGiro ]
 [f ]
-"154
-[; ;Config.c: 154:     if (RC0 && (Grados * 0.097 >= CmHorario)) {
-[e $ ! && _RC0 >= * -> _Grados `d .0.097 -> _CmHorario `d 233  ]
-{
-"155
-[; ;Config.c: 155:         Grados = 0;
-[e = _Grados -> 0 `i ]
-"156
-[; ;Config.c: 156:         RC0 = !RC0;
-[e = _RC0 ! _RC0 ]
-"157
-[; ;Config.c: 157:         RC1 = !RC1;
-[e = _RC1 ! _RC1 ]
-"158
-[; ;Config.c: 158:         lastCm = 0;
-[e = _lastCm -> 0 `i ]
 "159
-[; ;Config.c: 159:     } else if (RC1 && Grados * 0.097 >= CmAntiHorario) {
-}
-[e $U 234  ]
-[e :U 233 ]
-[e $ ! && _RC1 >= * -> _Grados `d .0.097 -> _CmAntiHorario `d 235  ]
+[; ;Config.c: 159:     if (RC0 && (Grados * 0.97 >= CmHorario)) {
+[e $ ! && _RC0 >= * -> _Grados `d .0.97 -> _CmHorario `d 233  ]
 {
 "160
 [; ;Config.c: 160:         Grados = 0;
@@ -1576,109 +1587,131 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;Config.c: 163:         lastCm = 0;
 [e = _lastCm -> 0 `i ]
 "164
-[; ;Config.c: 164:     }
+[; ;Config.c: 164:     } else if (RC1 && Grados * 0.97 >= CmAntiHorario) {
+}
+[e $U 234  ]
+[e :U 233 ]
+[e $ ! && _RC1 >= * -> _Grados `d .0.97 -> _CmAntiHorario `d 235  ]
+{
+"165
+[; ;Config.c: 165:         Grados = 0;
+[e = _Grados -> 0 `i ]
+"166
+[; ;Config.c: 166:         RC0 = !RC0;
+[e = _RC0 ! _RC0 ]
+"167
+[; ;Config.c: 167:         RC1 = !RC1;
+[e = _RC1 ! _RC1 ]
+"168
+[; ;Config.c: 168:         lastCm = 0;
+[e = _lastCm -> 0 `i ]
+"169
+[; ;Config.c: 169:     }
 }
 [e :U 235 ]
 [e :U 234 ]
-"165
-[; ;Config.c: 165:     return 0;
+"170
+[; ;Config.c: 170:     return 0;
 [e ) -> 0 `i ]
 [e $UE 232  ]
-"166
-[; ;Config.c: 166: }
+"171
+[; ;Config.c: 171: }
 [e :UE 232 ]
 }
-"168
-[; ;Config.c: 168: int Encoder() {
+"173
+[; ;Config.c: 173: int Encoder() {
 [v _Encoder `(i ~T0 @X0 1 ef ]
 {
 [e :U _Encoder ]
 [f ]
-"169
-[; ;Config.c: 169:     LastState = 1;
+"174
+[; ;Config.c: 174:     LastState = 1;
 [e = _LastState -> -> 1 `i `a ]
-"170
-[; ;Config.c: 170:     Grados++;
-[e ++ _Grados -> 1 `i ]
-"171
-[; ;Config.c: 171:     VerificarInversionGiro();
-[e ( _VerificarInversionGiro ..  ]
-"173
-[; ;Config.c: 173:     cm = Grados * 0.097;
-[e = _cm -> * -> _Grados `d .0.097 `i ]
 "175
-[; ;Config.c: 175:     if (RC0 && (cm > lastCm)) {
+[; ;Config.c: 175:     Grados++;
+[e ++ _Grados -> 1 `i ]
+"176
+[; ;Config.c: 176:     VerificarInversionGiro();
+[e ( _VerificarInversionGiro ..  ]
+"177
+[; ;Config.c: 177:     RC2=!RC2;
+[e = _RC2 ! _RC2 ]
+"178
+[; ;Config.c: 178:     cm = Grados * 0.97;
+[e = _cm -> * -> _Grados `d .0.97 `i ]
+"180
+[; ;Config.c: 180:     if (RC0 && (cm > lastCm)) {
 [e $ ! && _RC0 > _cm _lastCm 237  ]
 {
-"176
-[; ;Config.c: 176:         lastCm = cm + 0.9;
-[e = _lastCm -> + -> _cm `d .0.9 `i ]
-"177
-[; ;Config.c: 177:         Lcd_Clear();
-[e ( _Lcd_Clear ..  ]
-"178
-[; ;Config.c: 178:         Lcd_Set_Cursor(1, 1);
-[e ( _Lcd_Set_Cursor (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
-"179
-[; ;Config.c: 179:         Lcd_Write_String("Dir: Adelante");
-[e ( _Lcd_Write_String (1 :s 13C ]
-"180
-[; ;Config.c: 180:         Lcd_Set_Cursor(2, 1);
-[e ( _Lcd_Set_Cursor (2 , -> -> 2 `i `uc -> -> 1 `i `uc ]
 "181
-[; ;Config.c: 181:         Lcd_Write_Integer(cm);
-[e ( _Lcd_Write_Integer (1 _cm ]
+[; ;Config.c: 181:         lastCm = cm + 0.9;
+[e = _lastCm -> + -> _cm `d .0.9 `i ]
 "182
-[; ;Config.c: 182:         Lcd_Write_String(" Cm de: ");
-[e ( _Lcd_Write_String (1 :s 14C ]
+[; ;Config.c: 182:         Lcd_Clear();
+[e ( _Lcd_Clear ..  ]
 "183
-[; ;Config.c: 183:         Lcd_Write_Integer(CmHorario);
-[e ( _Lcd_Write_Integer (1 _CmHorario ]
+[; ;Config.c: 183:         Lcd_Set_Cursor(1, 1);
+[e ( _Lcd_Set_Cursor (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
 "184
-[; ;Config.c: 184:     } else if (RC1 && (cm > lastCm)) {
+[; ;Config.c: 184:         Lcd_Write_String("Dir: Adelante");
+[e ( _Lcd_Write_String (1 :s 13C ]
+"185
+[; ;Config.c: 185:         Lcd_Set_Cursor(2, 1);
+[e ( _Lcd_Set_Cursor (2 , -> -> 2 `i `uc -> -> 1 `i `uc ]
+"186
+[; ;Config.c: 186:         Lcd_Write_Integer(cm);
+[e ( _Lcd_Write_Integer (1 _cm ]
+"187
+[; ;Config.c: 187:         Lcd_Write_String(" Cm de: ");
+[e ( _Lcd_Write_String (1 :s 14C ]
+"188
+[; ;Config.c: 188:         Lcd_Write_Integer(CmHorario);
+[e ( _Lcd_Write_Integer (1 _CmHorario ]
+"189
+[; ;Config.c: 189:     } else if (RC1 && (cm > lastCm)) {
 }
 [e $U 238  ]
 [e :U 237 ]
 [e $ ! && _RC1 > _cm _lastCm 239  ]
 {
-"185
-[; ;Config.c: 185:         lastCm = cm + 0.9;
-[e = _lastCm -> + -> _cm `d .0.9 `i ]
-"186
-[; ;Config.c: 186:         cm = Grados * 0.097;
-[e = _cm -> * -> _Grados `d .0.097 `i ]
-"187
-[; ;Config.c: 187:         Lcd_Clear();
-[e ( _Lcd_Clear ..  ]
-"188
-[; ;Config.c: 188:         Lcd_Set_Cursor(1, 1);
-[e ( _Lcd_Set_Cursor (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
-"189
-[; ;Config.c: 189:         Lcd_Write_String("Dir: Atras");
-[e ( _Lcd_Write_String (1 :s 15C ]
 "190
-[; ;Config.c: 190:         Lcd_Set_Cursor(2, 1);
-[e ( _Lcd_Set_Cursor (2 , -> -> 2 `i `uc -> -> 1 `i `uc ]
+[; ;Config.c: 190:         lastCm = cm + 0.9;
+[e = _lastCm -> + -> _cm `d .0.9 `i ]
 "191
-[; ;Config.c: 191:         Lcd_Write_Integer(Grados * 0.097);
-[e ( _Lcd_Write_Integer (1 -> * -> _Grados `d .0.097 `i ]
+[; ;Config.c: 191:         cm = Grados * 0.97;
+[e = _cm -> * -> _Grados `d .0.97 `i ]
 "192
-[; ;Config.c: 192:         Lcd_Write_String(" Cm de: ");
-[e ( _Lcd_Write_String (1 :s 16C ]
+[; ;Config.c: 192:         Lcd_Clear();
+[e ( _Lcd_Clear ..  ]
 "193
-[; ;Config.c: 193:         Lcd_Write_Integer(CmAntiHorario);
-[e ( _Lcd_Write_Integer (1 _CmAntiHorario ]
+[; ;Config.c: 193:         Lcd_Set_Cursor(1, 1);
+[e ( _Lcd_Set_Cursor (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
 "194
-[; ;Config.c: 194:     }
+[; ;Config.c: 194:         Lcd_Write_String("Dir: Atras");
+[e ( _Lcd_Write_String (1 :s 15C ]
+"195
+[; ;Config.c: 195:         Lcd_Set_Cursor(2, 1);
+[e ( _Lcd_Set_Cursor (2 , -> -> 2 `i `uc -> -> 1 `i `uc ]
+"196
+[; ;Config.c: 196:         Lcd_Write_Integer(Grados * 0.97);
+[e ( _Lcd_Write_Integer (1 -> * -> _Grados `d .0.97 `i ]
+"197
+[; ;Config.c: 197:         Lcd_Write_String(" Cm de: ");
+[e ( _Lcd_Write_String (1 :s 16C ]
+"198
+[; ;Config.c: 198:         Lcd_Write_Integer(CmAntiHorario);
+[e ( _Lcd_Write_Integer (1 _CmAntiHorario ]
+"199
+[; ;Config.c: 199:     }
 }
 [e :U 239 ]
 [e :U 238 ]
-"195
-[; ;Config.c: 195:     return 0;
+"200
+[; ;Config.c: 200:     return 0;
 [e ) -> 0 `i ]
 [e $UE 236  ]
-"196
-[; ;Config.c: 196: }
+"201
+[; ;Config.c: 201: }
 [e :UE 236 ]
 }
 [p f _sprintf 8388736 ]

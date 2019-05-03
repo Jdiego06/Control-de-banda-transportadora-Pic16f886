@@ -8,6 +8,11 @@
 
 void ConfigInit() {
 
+    //Oscillator
+    OSCCONbits.IRCF = 0x7; //8MHz Clock
+    OSCCONbits.SCS = 0;
+    OSCTUNE = 0x00;
+
     //All Pins Digitals
     ANSELH = ANSEL = 0;
 
@@ -19,7 +24,7 @@ void ConfigInit() {
     PORTC = 0x00;
 
     //For Keypad
-    TRISA = 0xf0;
+    TRISA = 0xE8;
     PORTA = 0x00;
 
 
@@ -169,7 +174,7 @@ int Encoder() {
     LastState = true;
     Grados++;
     VerificarInversionGiro();
-
+    RC2=!RC2;
     cm = Grados * CteVueltas;
 
     if (MotorHorario && (cm > lastCm)) {

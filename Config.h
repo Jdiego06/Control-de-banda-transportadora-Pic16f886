@@ -4,8 +4,8 @@
 
 
 //Constamte del encoder Se calcula así: DiametroRodillo/PulsosVueltaEncoder 
-//Ej: 35Cm/360Pulses = 0.097
-#define CteVueltas 0.097
+//Ej: 35Cm/36Pulses = 0.97
+#define CteVueltas 0.97
 
 //Frecuencia del reloj
 #define _XTAL_FREQ 8000000
@@ -14,20 +14,20 @@
 #define row1 RA0
 #define row2 RA1
 #define row3 RA2
-#define row4 RA3
-#define col1 RA4
+#define row4 RA4
+#define col1 RA3
 #define col2 RA5
-#define col3 RA6
-#define col4 RA7 
+#define col3 RA7
+#define col4 RA6 
 
 
 //Lcd Pins
 #define RS RB2
 #define EN RB3
-#define D4 RB4
-#define D5 RB5
+#define D4 RB7
+#define D5 RB4
 #define D6 RB6
-#define D7 RB7
+#define D7 RB5
 
 
 //Program Definitions

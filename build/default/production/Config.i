@@ -2691,23 +2691,23 @@ int KeyPadGetKey() {
             RA0 = (row & 0x0001) >> 0;
             RA1 = (row & 0x0002) >> 1;
             RA2 = (row & 0x0004) >> 2;
-            RA3 = (row & 0x0008) >> 3;
+            RA4 = (row & 0x0008) >> 3;
             _delay((unsigned long)((1)*(8000000/4000.0)));
         }
 
-        if (RA4)break;
+        if (RA3)break;
         key++;
         if (RA5)break;
         key++;
-        if (RA6)break;
-        key++;
         if (RA7)break;
+        key++;
+        if (RA6)break;
         key++;
     }
     RA0 = 0;
     RA1 = 0;
     RA2 = 0;
-    RA3 = 0;
+    RA4 = 0;
     if (key != old_key) {
         old_key = key;
         return keyPadMatrix[ key ];
@@ -2726,14 +2726,14 @@ int KeyPadGetKey() {
 
 void Lcd_Port(char a) {
     if (a & 1)
+        RB7 = 1;
+    else
+        RB7 = 0;
+
+    if (a & 2)
         RB4 = 1;
     else
         RB4 = 0;
-
-    if (a & 2)
-        RB5 = 1;
-    else
-        RB5 = 0;
 
     if (a & 4)
         RB6 = 1;
@@ -2741,9 +2741,9 @@ void Lcd_Port(char a) {
         RB6 = 0;
 
     if (a & 8)
-        RB7 = 1;
+        RB5 = 1;
     else
-        RB7 = 0;
+        RB5 = 0;
 }
 
 void Lcd_Cmd(char a) {
@@ -2836,6 +2836,11 @@ void Lcd_Shift_Left() {
 void ConfigInit() {
 
 
+    OSCCONbits.IRCF = 0x7;
+    OSCCONbits.SCS = 0;
+    OSCTUNE = 0x00;
+
+
     ANSELH = ANSEL = 0;
 
 
@@ -2846,7 +2851,7 @@ void ConfigInit() {
     PORTC = 0x00;
 
 
-    TRISA = 0xf0;
+    TRISA = 0xE8;
     PORTA = 0x00;
 
 
@@ -2978,12 +2983,12 @@ int configurarHorario() {
 }
 
 int VerificarInversionGiro() {
-    if (RC0 && (Grados * 0.097 >= CmHorario)) {
+    if (RC0 && (Grados * 0.97 >= CmHorario)) {
         Grados = 0;
         RC0 = !RC0;
         RC1 = !RC1;
         lastCm = 0;
-    } else if (RC1 && Grados * 0.097 >= CmAntiHorario) {
+    } else if (RC1 && Grados * 0.97 >= CmAntiHorario) {
         Grados = 0;
         RC0 = !RC0;
         RC1 = !RC1;
@@ -2996,8 +3001,8 @@ int Encoder() {
     LastState = 1;
     Grados++;
     VerificarInversionGiro();
-
-    cm = Grados * 0.097;
+    RC2=!RC2;
+    cm = Grados * 0.97;
 
     if (RC0 && (cm > lastCm)) {
         lastCm = cm + 0.9;
@@ -3010,12 +3015,12 @@ int Encoder() {
         Lcd_Write_Integer(CmHorario);
     } else if (RC1 && (cm > lastCm)) {
         lastCm = cm + 0.9;
-        cm = Grados * 0.097;
+        cm = Grados * 0.97;
         Lcd_Clear();
         Lcd_Set_Cursor(1, 1);
         Lcd_Write_String("Dir: Atras");
         Lcd_Set_Cursor(2, 1);
-        Lcd_Write_Integer(Grados * 0.097);
+        Lcd_Write_Integer(Grados * 0.97);
         Lcd_Write_String(" Cm de: ");
         Lcd_Write_Integer(CmAntiHorario);
     }
