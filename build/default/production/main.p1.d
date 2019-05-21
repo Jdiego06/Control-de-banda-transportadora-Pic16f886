@@ -1,3 +1,6 @@
 build/default/production/main.p1:  \
 main.c  \
-Config.h 
+main.h  \
+Controls.h  \
+KeyPad.h  \
+Lcd.h 

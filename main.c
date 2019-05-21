@@ -1,21 +1,26 @@
-#include "Config.h"
-#include <xc.h>
-#include <stdbool.h>
+ /*---------------------------------------------------------------------------------------
+ * Description:
+ * 				This is the main code, checks the pulses of the encoder, 
+ *              or inputs by keypad and call the other functions
+ * --------------------------------------------------------------------------------------*/
 
+#include "main.h"
 
-//---------------------------- MAIN CODE ---------------------------------------
+char keypress='0';
+bool LastState=false;
 
 int main() {   
     ConfigInit(); 
+    Lcd_Init();
     StopMotor();
     configurarHorario();
     configurarAntiHorario();
 
     while (1) {
-
+        
         keypress = KeyPadGetKey();
 
-        //Si se presiona una tecla
+        //If key is press
         if (keypress != 0xFF) {
 
             switch (keypress) {
@@ -34,7 +39,7 @@ int main() {
             }
         }
 
-        // Si se presenta un pulso del encoder
+
         if (pinEncoder == 1 && LastState == false) {
             Encoder();
         } else if (pinEncoder == 0) {

@@ -1,9 +1,9 @@
-#ifndef LCD_H
-#define  LCD_H
+/*---------------------------------------------------------------------------------------
+ * Description:
+ * 				This code contains a set of functions for handling the LCD
+ * --------------------------------------------------------------------------------------*/
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <xc.h>
+#include "Lcd.h"
 
 void Lcd_Port(char a) {
     if (a & 1)
@@ -65,7 +65,6 @@ void Lcd_Init() {
     Lcd_Cmd(0x03);
     __delay_ms(11);
     Lcd_Cmd(0x03);
-    /////////////////////////////////////////////////////
     Lcd_Cmd(0x02);
     Lcd_Cmd(0x02);
     Lcd_Cmd(0x08);
@@ -111,5 +110,3 @@ void Lcd_Shift_Left() {
     Lcd_Cmd(0x01);
     Lcd_Cmd(0x08);
 }
-
-#endif

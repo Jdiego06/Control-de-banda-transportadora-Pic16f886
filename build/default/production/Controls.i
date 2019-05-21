@@ -1,4 +1,4 @@
-# 1 "main.c"
+# 1 "Controls.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,14 +6,11 @@
 # 1 "<built-in>" 2
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "main.c" 2
+# 1 "Controls.c" 2
 
 
 
 
-
-
-# 1 "./main.h" 1
 
 
 
@@ -22,10 +19,215 @@
 
 
 # 1 "./main.h" 1
-# 4 "./Controls.h" 2
 
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c90\\stdbool.h" 1 3
-# 5 "./Controls.h" 2
+
+
+# 1 "./Controls.h" 1
+# 4 "./main.h" 2
+
+# 1 "./KeyPad.h" 1
+
+
+
+# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c90\\stdio.h" 1 3
+
+
+
+# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\__size_t.h" 1 3
+
+
+
+typedef unsigned size_t;
+# 4 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c90\\stdio.h" 2 3
+
+# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\__null.h" 1 3
+# 5 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c90\\stdio.h" 2 3
+
+
+
+
+
+
+# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c90\\stdarg.h" 1 3
+
+
+
+
+
+
+typedef void * va_list[1];
+
+#pragma intrinsic(__va_start)
+extern void * __va_start(void);
+
+#pragma intrinsic(__va_arg)
+extern void * __va_arg(void *, ...);
+# 11 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c90\\stdio.h" 2 3
+# 43 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c90\\stdio.h" 3
+struct __prbuf
+{
+ char * ptr;
+ void (* func)(char);
+};
+# 85 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c90\\stdio.h" 3
+# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c90\\conio.h" 1 3
+
+
+
+
+
+
+
+# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c90\\errno.h" 1 3
+# 29 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c90\\errno.h" 3
+extern int errno;
+# 8 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c90\\conio.h" 2 3
+
+
+
+
+extern void init_uart(void);
+
+extern char getch(void);
+extern char getche(void);
+extern void putch(char);
+extern void ungetch(char);
+
+extern __bit kbhit(void);
+
+
+
+extern char * cgets(char *);
+extern void cputs(const char *);
+# 85 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c90\\stdio.h" 2 3
+
+
+
+extern int cprintf(char *, ...);
+#pragma printf_check(cprintf)
+
+
+
+extern int _doprnt(struct __prbuf *, const register char *, register va_list);
+# 180 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c90\\stdio.h" 3
+#pragma printf_check(vprintf) const
+#pragma printf_check(vsprintf) const
+
+extern char * gets(char *);
+extern int puts(const char *);
+extern int scanf(const char *, ...) __attribute__((unsupported("scanf() is not supported by this compiler")));
+extern int sscanf(const char *, const char *, ...) __attribute__((unsupported("sscanf() is not supported by this compiler")));
+extern int vprintf(const char *, va_list) __attribute__((unsupported("vprintf() is not supported by this compiler")));
+extern int vsprintf(char *, const char *, va_list) __attribute__((unsupported("vsprintf() is not supported by this compiler")));
+extern int vscanf(const char *, va_list ap) __attribute__((unsupported("vscanf() is not supported by this compiler")));
+extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupported("vsscanf() is not supported by this compiler")));
+
+#pragma printf_check(printf) const
+#pragma printf_check(sprintf) const
+extern int sprintf(char *, const char *, ...);
+extern int printf(const char *, ...);
+# 4 "./KeyPad.h" 2
+
+# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c90\\stdlib.h" 1 3
+
+
+
+
+
+
+typedef unsigned short wchar_t;
+
+
+
+
+
+
+
+typedef struct {
+ int rem;
+ int quot;
+} div_t;
+typedef struct {
+ unsigned rem;
+ unsigned quot;
+} udiv_t;
+typedef struct {
+ long quot;
+ long rem;
+} ldiv_t;
+typedef struct {
+ unsigned long quot;
+ unsigned long rem;
+} uldiv_t;
+# 65 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c90\\stdlib.h" 3
+extern double atof(const char *);
+extern double strtod(const char *, const char **);
+extern int atoi(const char *);
+extern unsigned xtoi(const char *);
+extern long atol(const char *);
+
+
+
+extern long strtol(const char *, char **, int);
+
+extern int rand(void);
+extern void srand(unsigned int);
+extern void * calloc(size_t, size_t);
+extern div_t div(int numer, int denom);
+extern udiv_t udiv(unsigned numer, unsigned denom);
+extern ldiv_t ldiv(long numer, long denom);
+extern uldiv_t uldiv(unsigned long numer,unsigned long denom);
+
+
+
+extern unsigned long _lrotl(unsigned long value, unsigned int shift);
+extern unsigned long _lrotr(unsigned long value, unsigned int shift);
+extern unsigned int _rotl(unsigned int value, unsigned int shift);
+extern unsigned int _rotr(unsigned int value, unsigned int shift);
+
+
+
+
+extern void * malloc(size_t);
+extern void free(void *);
+extern void * realloc(void *, size_t);
+
+
+
+
+# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c90\\xc8debug.h" 1 3
+# 13 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c90\\xc8debug.h" 3
+#pragma intrinsic(__builtin_software_breakpoint)
+extern void __builtin_software_breakpoint(void);
+# 99 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c90\\stdlib.h" 2 3
+
+
+
+
+
+extern int atexit(void (*)(void));
+extern char * getenv(const char *);
+extern char ** environ;
+extern int system(char *);
+extern void qsort(void *, size_t, size_t, int (*)(const void *, const void *));
+extern void * bsearch(const void *, void *, size_t, size_t, int(*)(const void *, const void *));
+extern int abs(int);
+extern long labs(long);
+
+extern char * itoa(char * buf, int val, int base);
+extern char * utoa(char * buf, unsigned val, int base);
+
+
+
+
+extern char * ltoa(char * buf, long val, int base);
+extern char * ultoa(char * buf, unsigned long val, int base);
+
+extern char * ftoa(float f, int * status);
+# 5 "./KeyPad.h" 2
+
+# 1 "./main.h" 1
+# 6 "./KeyPad.h" 2
 
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\xc.h" 1 3
 # 18 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\xc.h" 3
@@ -35,11 +237,6 @@ extern double __fpnormalize(double);
 
 
 
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c90\\xc8debug.h" 1 3
-# 13 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c90\\xc8debug.h" 3
-#pragma intrinsic(__builtin_software_breakpoint)
-extern void __builtin_software_breakpoint(void);
-# 23 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\xc.h" 2 3
 
 
 
@@ -2391,204 +2588,12 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 27 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\xc.h" 2 3
-# 6 "./Controls.h" 2
-
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c90\\stdio.h" 1 3
-
-
-
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\__size_t.h" 1 3
-
-
-
-typedef unsigned size_t;
-# 4 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c90\\stdio.h" 2 3
-
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\__null.h" 1 3
-# 5 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c90\\stdio.h" 2 3
-
-
-
-
-
-
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c90\\stdarg.h" 1 3
-
-
-
-
-
-
-typedef void * va_list[1];
-
-#pragma intrinsic(__va_start)
-extern void * __va_start(void);
-
-#pragma intrinsic(__va_arg)
-extern void * __va_arg(void *, ...);
-# 11 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c90\\stdio.h" 2 3
-# 43 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c90\\stdio.h" 3
-struct __prbuf
-{
- char * ptr;
- void (* func)(char);
-};
-# 85 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c90\\stdio.h" 3
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c90\\conio.h" 1 3
-
-
-
-
-
-
-
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c90\\errno.h" 1 3
-# 29 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c90\\errno.h" 3
-extern int errno;
-# 8 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c90\\conio.h" 2 3
-
-
-
-
-extern void init_uart(void);
-
-extern char getch(void);
-extern char getche(void);
-extern void putch(char);
-extern void ungetch(char);
-
-extern __bit kbhit(void);
-
-
-
-extern char * cgets(char *);
-extern void cputs(const char *);
-# 85 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c90\\stdio.h" 2 3
-
-
-
-extern int cprintf(char *, ...);
-#pragma printf_check(cprintf)
-
-
-
-extern int _doprnt(struct __prbuf *, const register char *, register va_list);
-# 180 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c90\\stdio.h" 3
-#pragma printf_check(vprintf) const
-#pragma printf_check(vsprintf) const
-
-extern char * gets(char *);
-extern int puts(const char *);
-extern int scanf(const char *, ...) __attribute__((unsupported("scanf() is not supported by this compiler")));
-extern int sscanf(const char *, const char *, ...) __attribute__((unsupported("sscanf() is not supported by this compiler")));
-extern int vprintf(const char *, va_list) __attribute__((unsupported("vprintf() is not supported by this compiler")));
-extern int vsprintf(char *, const char *, va_list) __attribute__((unsupported("vsprintf() is not supported by this compiler")));
-extern int vscanf(const char *, va_list ap) __attribute__((unsupported("vscanf() is not supported by this compiler")));
-extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupported("vsscanf() is not supported by this compiler")));
-
-#pragma printf_check(printf) const
-#pragma printf_check(sprintf) const
-extern int sprintf(char *, const char *, ...);
-extern int printf(const char *, ...);
-# 7 "./Controls.h" 2
-
-# 1 "./KeyPad.h" 1
-
-
-
-
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c90\\stdlib.h" 1 3
-
-
-
-
-
-
-typedef unsigned short wchar_t;
-
-
-
-
-
-
-
-typedef struct {
- int rem;
- int quot;
-} div_t;
-typedef struct {
- unsigned rem;
- unsigned quot;
-} udiv_t;
-typedef struct {
- long quot;
- long rem;
-} ldiv_t;
-typedef struct {
- unsigned long quot;
- unsigned long rem;
-} uldiv_t;
-# 65 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c90\\stdlib.h" 3
-extern double atof(const char *);
-extern double strtod(const char *, const char **);
-extern int atoi(const char *);
-extern unsigned xtoi(const char *);
-extern long atol(const char *);
-
-
-
-extern long strtol(const char *, char **, int);
-
-extern int rand(void);
-extern void srand(unsigned int);
-extern void * calloc(size_t, size_t);
-extern div_t div(int numer, int denom);
-extern udiv_t udiv(unsigned numer, unsigned denom);
-extern ldiv_t ldiv(long numer, long denom);
-extern uldiv_t uldiv(unsigned long numer,unsigned long denom);
-
-
-
-extern unsigned long _lrotl(unsigned long value, unsigned int shift);
-extern unsigned long _lrotr(unsigned long value, unsigned int shift);
-extern unsigned int _rotl(unsigned int value, unsigned int shift);
-extern unsigned int _rotr(unsigned int value, unsigned int shift);
-
-
-
-
-extern void * malloc(size_t);
-extern void free(void *);
-extern void * realloc(void *, size_t);
-# 104 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c90\\stdlib.h" 3
-extern int atexit(void (*)(void));
-extern char * getenv(const char *);
-extern char ** environ;
-extern int system(char *);
-extern void qsort(void *, size_t, size_t, int (*)(const void *, const void *));
-extern void * bsearch(const void *, void *, size_t, size_t, int(*)(const void *, const void *));
-extern int abs(int);
-extern long labs(long);
-
-extern char * itoa(char * buf, int val, int base);
-extern char * utoa(char * buf, unsigned val, int base);
-
-
-
-
-extern char * ltoa(char * buf, long val, int base);
-extern char * ultoa(char * buf, unsigned long val, int base);
-
-extern char * ftoa(float f, int * status);
-# 5 "./KeyPad.h" 2
-
-# 1 "./main.h" 1
-# 6 "./KeyPad.h" 2
+# 7 "./KeyPad.h" 2
 # 20 "./KeyPad.h"
 extern const int keyPadMatrix[];
 
 int KeyPadGetKey(void);
-# 8 "./Controls.h" 2
+# 5 "./main.h" 2
 
 # 1 "./Lcd.h" 1
 
@@ -2609,19 +2614,7 @@ void Lcd_Write_String(char *a);
 void Lcd_Write_Integer(int a);
 void Lcd_Shift_Right(void);
 void Lcd_Shift_Left(void);
-# 9 "./Controls.h" 2
-# 24 "./Controls.h"
-void ConfigInit(void);
-int RunMotor(void);
-int StopMotor(void);
-int configurarAntiHorario(void);
-int configurarHorario(void);
-int VerificarInversionGiro(void);
-int Encoder(void);
-void testFn(void);
-# 4 "./main.h" 2
-
-
+# 6 "./main.h" 2
 
 
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c90\\stdbool.h" 1 3
@@ -2649,48 +2642,240 @@ void testFn(void);
 
 extern char keypress;
 extern _Bool LastState;
-# 7 "main.c" 2
+# 4 "./Controls.h" 2
+
+# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c90\\stdbool.h" 1 3
+# 5 "./Controls.h" 2
+# 24 "./Controls.h"
+void ConfigInit(void);
+int RunMotor(void);
+int StopMotor(void);
+int configurarAntiHorario(void);
+int configurarHorario(void);
+int VerificarInversionGiro(void);
+int Encoder(void);
+void testFn(void);
+# 8 "Controls.c" 2
 
 
-char keypress='0';
-_Bool LastState=0;
+int Grados;
+int key2 = '0';
+int buffer = 0;
+int CmHorario = 0;
+int CmAntiHorario = 0;
+int cm = 0;
+int lastCm = 0;
 
-int main() {
-    ConfigInit();
-    Lcd_Init();
+
+
+
+void ConfigInit() {
+
+
+    OSCCONbits.IRCF = 0x7;
+    OSCCONbits.SCS = 0;
+    OSCTUNE = 0x00;
+
+
+    ANSELH = ANSEL = 0;
+
+
+    TRISB = 0x01;
+
+
+    TRISC = 0x00;
+    PORTC = 0x00;
+
+
+    TRISA = 0xE8;
+    PORTA = 0x00;
+
+}
+
+
+
+
+int RunMotor() {
+    if (CmAntiHorario != 0 && CmHorario != 0) {
+        RC0 = 1;
+        RC1 = 0;
+    }
+    return 0;
+}
+
+
+
+
+int StopMotor() {
+    RC1 = 0;
+    RC0 = 0;
+    return 0;
+}
+
+
+
+
+
+int configurarAntiHorario() {
+
+    buffer = 0;
     StopMotor();
-    configurarHorario();
-    configurarAntiHorario();
+
+    Lcd_Clear();
+    Lcd_Set_Cursor(1, 1);
+    Lcd_Write_String("Atras: ");
+    Lcd_Set_Cursor(2, 1);
+    Lcd_Write_String("0 Cm");
 
     while (1) {
 
         keypress = KeyPadGetKey();
-
-
-        if (keypress != 0xFF) {
-
-            switch (keypress) {
+        if (keypress != keyPadMatrix[ 0x10 ]) {
+            key2 = keypress;
+            switch (key2) {
                 case 'A':
-                    configurarHorario();
                     break;
-                case'B':
-                    configurarAntiHorario();
+                case 'B':
+                    buffer = 0;
+                    Lcd_Clear();
+                    Lcd_Set_Cursor(1, 1);
+                    Lcd_Write_String("Atras: ");
+                    Lcd_Set_Cursor(2, 1);
+                    Lcd_Write_String("0 Cm");
                     break;
-                case'C':
-                    StopMotor();
+                case 'C':
                     break;
-                case'D':
+                case 'D':
+                    Grados = 0;
+                    CmAntiHorario = buffer;
                     RunMotor();
+                    if (CmAntiHorario != 0) {
+                        return 0;
+                    }
                     break;
+                case '*':
+                    break;
+                case '#':
+                    break;
+                default:
+                    buffer = (10 * buffer + key2);
+                    buffer -= 48;
+                    Lcd_Set_Cursor(2, 1);
+                    Lcd_Write_Integer(buffer);
+                    Lcd_Write_String(" Cm");
+            }
+        }
+        _delay((unsigned long)((1)*(8000000/4000.0)));
+    }
+}
+
+
+
+
+
+int configurarHorario() {
+
+    buffer = 0;
+    StopMotor();
+
+    Lcd_Clear();
+    Lcd_Set_Cursor(1, 1);
+    Lcd_Write_String("Adelante: ");
+    Lcd_Set_Cursor(2, 1);
+    Lcd_Write_String("0 Cm");
+
+    while (1) {
+
+        keypress = KeyPadGetKey();
+        if (keypress != keyPadMatrix[ 0x10 ]) {
+            key2 = keypress;
+            switch (key2) {
+
+                case 'A':
+                    buffer = 0;
+                    Lcd_Clear();
+                    Lcd_Set_Cursor(1, 1);
+                    Lcd_Write_String("Adelante: ");
+                    Lcd_Set_Cursor(2, 1);
+                    Lcd_Write_String("0 Cm");
+                    break;
+                case 'B':
+                    break;
+                case 'C':
+                    break;
+                case 'D':
+                    Grados = 0;
+                    CmHorario = buffer;
+                    RunMotor();
+                    if (CmHorario != 0) {
+                        return 0;
+                    }
+                    break;
+                case '*':
+                    break;
+                case '#':
+                    break;
+                default:
+                    buffer = (10 * buffer + key2);
+                    buffer -= 48;
+                    Lcd_Set_Cursor(2, 1);
+                    Lcd_Write_Integer(buffer);
+                    Lcd_Write_String(" Cm");
             }
         }
 
+    }
+}
 
-        if (RB0 == 1 && LastState == 0) {
-            Encoder();
-        } else if (RB0 == 0) {
-            LastState = 0;
-        }
+
+
+
+
+int VerificarInversionGiro() {
+    if (RC0 && (Grados * 0.97 >= CmHorario)) {
+        Grados = 0;
+        RC0 = !RC0;
+        RC1 = !RC1;
+        lastCm = 0;
+    } else if (RC1 && Grados * 0.97 >= CmAntiHorario) {
+        Grados = 0;
+        RC0 = !RC0;
+        RC1 = !RC1;
+        lastCm = 0;
+    }
+    return 0;
+}
+
+
+
+
+
+int Encoder() {
+    LastState = 1;
+    Grados++;
+    VerificarInversionGiro();
+    RC2 = !RC2;
+    cm = Grados * 0.97;
+
+    if (RC0 && (cm > lastCm)) {
+        lastCm = cm + 0.9;
+        Lcd_Clear();
+        Lcd_Set_Cursor(1, 1);
+        Lcd_Write_String("Dir: Adelante");
+        Lcd_Set_Cursor(2, 1);
+        Lcd_Write_Integer(cm);
+        Lcd_Write_String(" Cm de: ");
+        Lcd_Write_Integer(CmHorario);
+    } else if (RC1 && (cm > lastCm)) {
+        lastCm = cm + 0.9;
+        cm = Grados * 0.97;
+        Lcd_Clear();
+        Lcd_Set_Cursor(1, 1);
+        Lcd_Write_String("Dir: Atras");
+        Lcd_Set_Cursor(2, 1);
+        Lcd_Write_Integer(Grados * 0.97);
+        Lcd_Write_String(" Cm de: ");
+        Lcd_Write_Integer(CmAntiHorario);
     }
     return 0;
 }

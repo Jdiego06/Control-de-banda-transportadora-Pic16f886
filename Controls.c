@@ -1,16 +1,29 @@
+/*---------------------------------------------------------------------------------------
+ * Description:
+ * 				This code contains a set of functions that allow
+ *              you to configure the system, as well as control 
+ *              the motors, and read the pulses of the encoder
+ * --------------------------------------------------------------------------------------*/
 
+#include "Controls.h"
 
-int Grados = 0;
+int Grados;
 int key2 = '0';
 int buffer = 0;
 int CmHorario = 0;
 int CmAntiHorario = 0;
-bool LastState = false;
-char keypress = '0';
 int cm = 0;
 int lastCm = 0;
 
+/*---------------------------------------------------------------------------------------
+ *		Disable the analog ports and configure the ports as outputs or inputs.
+ * --------------------------------------------------------------------------------------*/
 void ConfigInit() {
+
+    //Oscillator
+    OSCCONbits.IRCF = 0x7; //8MHz Clock
+    OSCCONbits.SCS = 0;
+    OSCTUNE = 0x00;
 
     //All Pins Digitals
     ANSELH = ANSEL = 0;
@@ -23,10 +36,14 @@ void ConfigInit() {
     PORTC = 0x00;
 
     //For Keypad
-    TRISA = 0xf0;
+    TRISA = 0xE8;
     PORTA = 0x00;
+
 }
 
+/*---------------------------------------------------------------------------------------
+ *                                      Start the engine
+ * --------------------------------------------------------------------------------------*/
 int RunMotor() {
     if (CmAntiHorario != 0 && CmHorario != 0) {
         MotorHorario = 1;
@@ -35,12 +52,19 @@ int RunMotor() {
     return 0;
 }
 
+/*---------------------------------------------------------------------------------------
+ *                                      Stop the engine
+ * --------------------------------------------------------------------------------------*/
 int StopMotor() {
     MotorAntiHorario = 0;
     MotorHorario = 0;
     return 0;
 }
 
+/*---------------------------------------------------------------------------------------
+ *             This function configures the amount of displacement 
+ *             of the motor counterclockwise, by means of the keyboard input.
+ * --------------------------------------------------------------------------------------*/
 int configurarAntiHorario() {
 
     buffer = 0;
@@ -94,7 +118,10 @@ int configurarAntiHorario() {
     }
 }
 
-
+/*---------------------------------------------------------------------------------------
+ *             This function configures the amount of displacement 
+ *             of the motor clockwise, by means of the keyboard input.
+ * --------------------------------------------------------------------------------------*/
 int configurarHorario() {
 
     buffer = 0;
@@ -149,6 +176,10 @@ int configurarHorario() {
     }
 }
 
+/*---------------------------------------------------------------------------------------
+ *			This function checks if the current displacement is equal to the programmed
+ *          one, and if so, reverses the motor rotation
+ * --------------------------------------------------------------------------------------*/
 int VerificarInversionGiro() {
     if (MotorHorario && (Grados * CteVueltas >= CmHorario)) {
         Grados = 0;
@@ -164,12 +195,15 @@ int VerificarInversionGiro() {
     return 0;
 }
 
+/*---------------------------------------------------------------------------------------
+ *			This function takes the current displacement count, and prints on the LCD,
+ *          the direction of rotation, and the distance in cm
+ * --------------------------------------------------------------------------------------*/
 int Encoder() {
     LastState = true;
-    RC2 = !RC2;
     Grados++;
     VerificarInversionGiro();
-
+    RC2 = !RC2;
     cm = Grados * CteVueltas;
 
     if (MotorHorario && (cm > lastCm)) {
