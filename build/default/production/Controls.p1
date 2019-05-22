@@ -799,137 +799,143 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;Controls.c: 186:         RC0 = !RC0;
 [e = _RC0 ! _RC0 ]
 "187
-[; ;Controls.c: 187:         RC1 = !RC1;
-[e = _RC1 ! _RC1 ]
+[; ;Controls.c: 187:         _delay((unsigned long)((1000)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
 "188
-[; ;Controls.c: 188:         lastCm = 0;
-[e = _lastCm -> 0 `i ]
+[; ;Controls.c: 188:         RC1 = !RC1;
+[e = _RC1 ! _RC1 ]
 "189
-[; ;Controls.c: 189:     } else if (RC1 && Grados * 0.97 >= CmAntiHorario) {
+[; ;Controls.c: 189:         lastCm = 0;
+[e = _lastCm -> 0 `i ]
+"190
+[; ;Controls.c: 190:     } else if (RC1 && Grados * 0.97 >= CmAntiHorario) {
 }
 [e $U 175  ]
 [e :U 174 ]
 [e $ ! && _RC1 >= * -> _Grados `d .0.97 -> _CmAntiHorario `d 176  ]
 {
-"190
-[; ;Controls.c: 190:         Grados = 0;
-[e = _Grados -> 0 `i ]
 "191
-[; ;Controls.c: 191:         RC0 = !RC0;
-[e = _RC0 ! _RC0 ]
+[; ;Controls.c: 191:         Grados = 0;
+[e = _Grados -> 0 `i ]
 "192
 [; ;Controls.c: 192:         RC1 = !RC1;
 [e = _RC1 ! _RC1 ]
 "193
-[; ;Controls.c: 193:         lastCm = 0;
-[e = _lastCm -> 0 `i ]
+[; ;Controls.c: 193:         _delay((unsigned long)((1000)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
 "194
-[; ;Controls.c: 194:     }
+[; ;Controls.c: 194:         RC0 = !RC0;
+[e = _RC0 ! _RC0 ]
+"195
+[; ;Controls.c: 195:         lastCm = 0;
+[e = _lastCm -> 0 `i ]
+"196
+[; ;Controls.c: 196:     }
 }
 [e :U 176 ]
 [e :U 175 ]
-"195
-[; ;Controls.c: 195:     return 0;
+"197
+[; ;Controls.c: 197:     return 0;
 [e ) -> 0 `i ]
 [e $UE 173  ]
-"196
-[; ;Controls.c: 196: }
+"198
+[; ;Controls.c: 198: }
 [e :UE 173 ]
 }
-"202
-[; ;Controls.c: 202: int Encoder() {
+"204
+[; ;Controls.c: 204: int Encoder() {
 [v _Encoder `(i ~T0 @X0 1 ef ]
 {
 [e :U _Encoder ]
 [f ]
-"203
-[; ;Controls.c: 203:     LastState = 1;
-[e = _LastState -> -> 1 `i `a ]
-"204
-[; ;Controls.c: 204:     Grados++;
-[e ++ _Grados -> 1 `i ]
 "205
-[; ;Controls.c: 205:     VerificarInversionGiro();
-[e ( _VerificarInversionGiro ..  ]
+[; ;Controls.c: 205:     LastState = 1;
+[e = _LastState -> -> 1 `i `a ]
 "206
-[; ;Controls.c: 206:     RC2 = !RC2;
-[e = _RC2 ! _RC2 ]
+[; ;Controls.c: 206:     Grados++;
+[e ++ _Grados -> 1 `i ]
 "207
-[; ;Controls.c: 207:     cm = Grados * 0.97;
-[e = _cm -> * -> _Grados `d .0.97 `i ]
+[; ;Controls.c: 207:     VerificarInversionGiro();
+[e ( _VerificarInversionGiro ..  ]
+"208
+[; ;Controls.c: 208:     RC2 = !RC2;
+[e = _RC2 ! _RC2 ]
 "209
-[; ;Controls.c: 209:     if (RC0 && (cm > lastCm)) {
+[; ;Controls.c: 209:     cm = Grados * 0.97;
+[e = _cm -> * -> _Grados `d .0.97 `i ]
+"211
+[; ;Controls.c: 211:     if (RC0 && (cm > lastCm)) {
 [e $ ! && _RC0 > _cm _lastCm 178  ]
 {
-"210
-[; ;Controls.c: 210:         lastCm = cm + 0.9;
-[e = _lastCm -> + -> _cm `d .0.9 `i ]
-"211
-[; ;Controls.c: 211:         Lcd_Clear();
-[e ( _Lcd_Clear ..  ]
 "212
-[; ;Controls.c: 212:         Lcd_Set_Cursor(1, 1);
-[e ( _Lcd_Set_Cursor (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
+[; ;Controls.c: 212:         lastCm = cm + 0.9;
+[e = _lastCm -> + -> _cm `d .0.9 `i ]
 "213
-[; ;Controls.c: 213:         Lcd_Write_String("Dir: Adelante");
-[e ( _Lcd_Write_String (1 :s 11C ]
+[; ;Controls.c: 213:         Lcd_Clear();
+[e ( _Lcd_Clear ..  ]
 "214
-[; ;Controls.c: 214:         Lcd_Set_Cursor(2, 1);
-[e ( _Lcd_Set_Cursor (2 , -> -> 2 `i `uc -> -> 1 `i `uc ]
+[; ;Controls.c: 214:         Lcd_Set_Cursor(1, 1);
+[e ( _Lcd_Set_Cursor (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
 "215
-[; ;Controls.c: 215:         Lcd_Write_Integer(cm);
-[e ( _Lcd_Write_Integer (1 _cm ]
+[; ;Controls.c: 215:         Lcd_Write_String("Dir: Adelante");
+[e ( _Lcd_Write_String (1 :s 11C ]
 "216
-[; ;Controls.c: 216:         Lcd_Write_String(" Cm de: ");
-[e ( _Lcd_Write_String (1 :s 12C ]
+[; ;Controls.c: 216:         Lcd_Set_Cursor(2, 1);
+[e ( _Lcd_Set_Cursor (2 , -> -> 2 `i `uc -> -> 1 `i `uc ]
 "217
-[; ;Controls.c: 217:         Lcd_Write_Integer(CmHorario);
-[e ( _Lcd_Write_Integer (1 _CmHorario ]
+[; ;Controls.c: 217:         Lcd_Write_Integer(cm);
+[e ( _Lcd_Write_Integer (1 _cm ]
 "218
-[; ;Controls.c: 218:     } else if (RC1 && (cm > lastCm)) {
+[; ;Controls.c: 218:         Lcd_Write_String(" Cm de: ");
+[e ( _Lcd_Write_String (1 :s 12C ]
+"219
+[; ;Controls.c: 219:         Lcd_Write_Integer(CmHorario);
+[e ( _Lcd_Write_Integer (1 _CmHorario ]
+"220
+[; ;Controls.c: 220:     } else if (RC1 && (cm > lastCm)) {
 }
 [e $U 179  ]
 [e :U 178 ]
 [e $ ! && _RC1 > _cm _lastCm 180  ]
 {
-"219
-[; ;Controls.c: 219:         lastCm = cm + 0.9;
-[e = _lastCm -> + -> _cm `d .0.9 `i ]
-"220
-[; ;Controls.c: 220:         cm = Grados * 0.97;
-[e = _cm -> * -> _Grados `d .0.97 `i ]
 "221
-[; ;Controls.c: 221:         Lcd_Clear();
-[e ( _Lcd_Clear ..  ]
+[; ;Controls.c: 221:         lastCm = cm + 0.9;
+[e = _lastCm -> + -> _cm `d .0.9 `i ]
 "222
-[; ;Controls.c: 222:         Lcd_Set_Cursor(1, 1);
-[e ( _Lcd_Set_Cursor (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
+[; ;Controls.c: 222:         cm = Grados * 0.97;
+[e = _cm -> * -> _Grados `d .0.97 `i ]
 "223
-[; ;Controls.c: 223:         Lcd_Write_String("Dir: Atras");
-[e ( _Lcd_Write_String (1 :s 13C ]
+[; ;Controls.c: 223:         Lcd_Clear();
+[e ( _Lcd_Clear ..  ]
 "224
-[; ;Controls.c: 224:         Lcd_Set_Cursor(2, 1);
-[e ( _Lcd_Set_Cursor (2 , -> -> 2 `i `uc -> -> 1 `i `uc ]
+[; ;Controls.c: 224:         Lcd_Set_Cursor(1, 1);
+[e ( _Lcd_Set_Cursor (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
 "225
-[; ;Controls.c: 225:         Lcd_Write_Integer(Grados * 0.97);
-[e ( _Lcd_Write_Integer (1 -> * -> _Grados `d .0.97 `i ]
+[; ;Controls.c: 225:         Lcd_Write_String("Dir: Atras");
+[e ( _Lcd_Write_String (1 :s 13C ]
 "226
-[; ;Controls.c: 226:         Lcd_Write_String(" Cm de: ");
-[e ( _Lcd_Write_String (1 :s 14C ]
+[; ;Controls.c: 226:         Lcd_Set_Cursor(2, 1);
+[e ( _Lcd_Set_Cursor (2 , -> -> 2 `i `uc -> -> 1 `i `uc ]
 "227
-[; ;Controls.c: 227:         Lcd_Write_Integer(CmAntiHorario);
-[e ( _Lcd_Write_Integer (1 _CmAntiHorario ]
+[; ;Controls.c: 227:         Lcd_Write_Integer(Grados * 0.97);
+[e ( _Lcd_Write_Integer (1 -> * -> _Grados `d .0.97 `i ]
 "228
-[; ;Controls.c: 228:     }
+[; ;Controls.c: 228:         Lcd_Write_String(" Cm de: ");
+[e ( _Lcd_Write_String (1 :s 14C ]
+"229
+[; ;Controls.c: 229:         Lcd_Write_Integer(CmAntiHorario);
+[e ( _Lcd_Write_Integer (1 _CmAntiHorario ]
+"230
+[; ;Controls.c: 230:     }
 }
 [e :U 180 ]
 [e :U 179 ]
-"229
-[; ;Controls.c: 229:     return 0;
+"231
+[; ;Controls.c: 231:     return 0;
 [e ) -> 0 `i ]
 [e $UE 177  ]
-"230
-[; ;Controls.c: 230: }
+"232
+[; ;Controls.c: 232: }
 [e :UE 177 ]
 }
 [a 13C 68 105 114 58 32 65 116 114 97 115 0 ]

@@ -39,7 +39,7 @@
 [v _configurarHorario configurarHorario `(i  1 e 2 0 ]
 "183
 [v _VerificarInversionGiro VerificarInversionGiro `(i  1 e 2 0 ]
-"202
+"204
 [v _Encoder Encoder `(i  1 e 2 0 ]
 "19 D:\Practica3Potencia.X\KeyPad.c
 [v _KeyPadGetKey KeyPadGetKey `(i  1 e 2 0 ]
@@ -199,10 +199,10 @@
 {
 "75
 } 0
-"202 D:\Practica3Potencia.X\Controls.c
+"204 D:\Practica3Potencia.X\Controls.c
 [v _Encoder Encoder `(i  1 e 2 0 ]
 {
-"230
+"232
 } 0
 "43 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c90\common\fltol.c
 [v ___fltol __fltol `(l  1 e 4 0 ]
@@ -233,7 +233,7 @@
 "183 D:\Practica3Potencia.X\Controls.c
 [v _VerificarInversionGiro VerificarInversionGiro `(i  1 e 2 0 ]
 {
-"196
+"198
 } 0
 "10 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c90\common\xxtofl.c
 [v ___xxtofl __xxtofl `(d  1 e 4 0 ]

@@ -2835,12 +2835,14 @@ int VerificarInversionGiro() {
     if (RC0 && (Grados * 0.97 >= CmHorario)) {
         Grados = 0;
         RC0 = !RC0;
+        _delay((unsigned long)((1000)*(8000000/4000.0)));
         RC1 = !RC1;
         lastCm = 0;
     } else if (RC1 && Grados * 0.97 >= CmAntiHorario) {
         Grados = 0;
-        RC0 = !RC0;
         RC1 = !RC1;
+        _delay((unsigned long)((1000)*(8000000/4000.0)));
+        RC0 = !RC0;
         lastCm = 0;
     }
     return 0;

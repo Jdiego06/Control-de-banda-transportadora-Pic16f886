@@ -3,11 +3,14 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/D:/Practica3Potencia.X/KeyPad.c</file>
+            <file>file:/D:/Practica3Potencia.X/main.h</file>
             <file>file:/D:/Practica3Potencia.X/Lcd.h</file>
             <file>file:/D:/Practica3Potencia.X/main.c</file>
-            <file>file:/D:/Practica3Potencia.X/Config.h</file>
-            <file>file:/D:/Practica3Potencia.X/SubRoutines.c</file>
-            <file>file:/D:/Practica3Potencia.X/Config.c</file>
+            <file>file:/D:/Practica3Potencia.X/Controls.c</file>
+            <file>file:/D:/Practica3Potencia.X/Controls.h</file>
+            <file>file:/D:/Practica3Potencia.X/Lcd.c</file>
+            <file>file:/D:/Practica3Potencia.X/KeyPad.h</file>
         </group>
     </open-files>
 </project-private>

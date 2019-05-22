@@ -184,12 +184,14 @@ int VerificarInversionGiro() {
     if (MotorHorario && (Grados * CteVueltas >= CmHorario)) {
         Grados = 0;
         MotorHorario = !MotorHorario;
+        __delay_ms(1000);
         MotorAntiHorario = !MotorAntiHorario;
         lastCm = 0;
     } else if (MotorAntiHorario && Grados * CteVueltas >= CmAntiHorario) {
         Grados = 0;
-        MotorHorario = !MotorHorario;
         MotorAntiHorario = !MotorAntiHorario;
+        __delay_ms(1000);
+        MotorHorario = !MotorHorario;
         lastCm = 0;
     }
     return 0;

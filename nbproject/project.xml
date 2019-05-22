@@ -6,9 +6,9 @@
             <name>Practica3Potencia</name>
             <creation-uuid>ad06030b-cb2f-4c56-90d6-6b43f2324dfd</creation-uuid>
             <make-project-type>0</make-project-type>
-            <c-extensions/>
+            <c-extensions>c</c-extensions>
             <cpp-extensions/>
-            <header-extensions>c,h</header-extensions>
+            <header-extensions>h</header-extensions>
             <asminc-extensions/>
             <sourceEncoding>ISO-8859-1</sourceEncoding>
             <make-dep-projects/>
